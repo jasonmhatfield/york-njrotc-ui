@@ -1,0 +1,266 @@
+.ribbon-checker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ecf0f1; /* Light color to stand out against the dark background */
+    padding: 20px 20px 80px;
+}
+
+.ribbon-checker h2.center {
+    font-size: 2rem;
+    color: #ffd700;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.ribbon-checker h3, .ribbon-checker h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffd700;
+}
+
+.ribbon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a2a3a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 40px;
+}
+
+.ribbon-selector, .selected-ribbons {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #16222a; /* Matching the background color of the page */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+.ribbon-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-y: auto; /* Add vertical scrolling */
+    max-height: 500px; /* Adjust the max height */
+    background-color: #34495e; /* Dark background for contrast */
+    border: 1px solid #ecf0f1; /* Light border for contrast */
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.ribbon-flex-container:hover {
+    background-color: #2c3e50; /* Slightly darker on hover */
+}
+
+.ribbon-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ecf0f1;
+}
+
+.custom-checkbox {
+    accent-color: #ffd700; /* Gold color for checkboxes */
+    width: 15px;
+    height: 15px;
+}
+
+.info-button {
+    background-color: #ffd700;
+    color: #16222a;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.info-button:hover,
+.info-button:focus {
+    background-color: #003366;
+    color: #ffd700;
+}
+
+label {
+    font-weight: 600;
+    color: #ecf0f1;
+}
+
+.selected-ribbons h4 {
+    margin-top: 1rem;
+}
+
+.ribbon-row {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-row {
+    justify-content: center;
+}
+
+.description, .no-ribbons-message {
+    font-size: 1.25rem;
+    padding: 0 2rem;
+    margin: 5px 5px 20px 20px;
+    color: #ecf0f1;
+}
+
+.no-ribbons-message {
+    text-align: center;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.modal-content-wrapper {
+    background-color: #1a2a3a; /* Matching the background color of the application */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-header, .modal-footer {
+    width: 100%;
+    text-align: center;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 10px;
+}
+
+.modal-ribbon-image {
+    display: block;
+    max-width: 150%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.btn {
+    background-color: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+    width: calc(50% - 1rem); /* Ensures two buttons fit nicely in a row */
+    box-sizing: border-box;
+    font-size: 1rem; /* Consistent font size */
+}
+
+.btn:hover {
+    color: gold; /* Change color on hover */
+    background-color: #004080; /* Slightly lighter blue on hover */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #1a2a3a; /* Matching the background color of the application */
+    border-top: 1px solid #ddd; /* A slight border to separate from the list */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+@media (min-width: 750px) {
+    .ribbon-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 1rem auto;
+    }
+
+    .ribbon-selector,
+    .selected-ribbons {
+        max-width: 110%;
+        min-height: 140px;
+        margin: 0;
+    }
+
+    .selected-ribbons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ribbon-row {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 749px) {
+    .ribbon-container {
+        flex-direction: column-reverse; /* Stack the selected ribbons above the ribbon selector */
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

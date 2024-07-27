@@ -1,0 +1,145 @@
+.tabs {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #ffd700;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #ffd700;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    font-weight: bold;
+    border-bottom: 3px solid #ffd700;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #16222a; /* Match the background of the rest of the page */
+    color: #ecf0f1; /* Light color to stand out against the dark background */
+    padding-bottom: 80px;
+}
+
+.calendar-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 80px; /* Increased padding to ensure gap between last card and bottom of the page */
+}
+
+.calendar-card {
+    background: linear-gradient(145deg, #1a5f7a, #2980b9);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Use 100% width on small screens */
+    max-width: 340px; /* Keep the max-width for larger screens */
+    display: flex;
+    flex-direction: column;
+    color: #ecf0f1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.calendar-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.calendar-card-top {
+    flex-grow: 1;
+}
+
+.calendar-card-bottom {
+    margin-top: auto;
+}
+
+.date-header {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5em;
+    margin: -20px -20px 20px -20px;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.event-title {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.event-time, .event-description, .event-location {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.event-location {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.event-location a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.event-location a:hover {
+    text-decoration: underline;
+    color: #ffd700;  /* Changed to gold */
+}
+
+.event-map {
+    border: none;
+    margin-top: 12px;
+    border-radius: 8px;
+    width: 100%;
+    height: 180px;
+}
+
+.loading, .error, .date-text {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        display: none; /* Hide tabs on mobile */
+    }
+
+    .calendar-cards {
+        flex-direction: column;
+        align-items: center; /* Center cards on mobile */
+    }
+
+    .calendar-card {
+        width: 100%; /* Use 90% width on mobile */
+        max-width: 90%; /* Ensure cards don't exceed screen width */
+    }
+}

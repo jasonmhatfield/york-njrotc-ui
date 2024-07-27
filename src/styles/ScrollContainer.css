@@ -1,0 +1,22 @@
+.scroll-container {
+    flex-grow: 1;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: calc(100vh - 80px); /* Adjust height to take available space */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+    padding-bottom: 20px; /* Add padding at the bottom */
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.scroll-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
