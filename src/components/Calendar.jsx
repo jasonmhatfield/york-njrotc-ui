@@ -9,7 +9,6 @@ const Calendar = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [mapsLoaded, setMapsLoaded] = useState(0);
   const [activeTab, setActiveTab] = useState(new Date().getMonth());
   const containerRef = useRef(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
@@ -33,7 +32,7 @@ const Calendar = () => {
   }, [apiKey, calendarId]);
 
   const handleMapLoad = useCallback(() => {
-    setMapsLoaded(prevCount => prevCount + 1);
+    // Do something when the map is loaded if needed
   }, []);
 
   const formatAddress = (address) => {
