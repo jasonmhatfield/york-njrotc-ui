@@ -1,35 +1,35 @@
-name: Deploy to DreamHost
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the React app
-        run: npm run build
-
-      - name: Deploy to DreamHost
-        env:
-          SSH_KEY: ${{ secrets.DREAMHOST_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H pdx1-shared-a1-45.dreamhost.com >> ~/.ssh/known_hosts
-          rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/yorknjrotc.com
+#name: Deploy to DreamHost
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '16'
+#
+#      - name: Install dependencies
+#        run: npm install
+#
+#      - name: Build the React app
+#        run: npm run build
+#
+#      - name: Deploy to DreamHost
+#        env:
+#          SSH_KEY: ${{ secrets.DREAMHOST_SSH_KEY }}
+#        run: |
+#          mkdir -p ~/.ssh
+#          echo "$SSH_KEY" > ~/.ssh/id_rsa
+#          chmod 600 ~/.ssh/id_rsa
+#          ssh-keyscan -H pdx1-shared-a1-45.dreamhost.com >> ~/.ssh/known_hosts
+#          rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/yorknjrotc.com
