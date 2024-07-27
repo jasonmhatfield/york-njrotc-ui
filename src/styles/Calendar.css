@@ -18,20 +18,11 @@
     border-bottom: 3px solid #ffd700;
 }
 
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ecf0f1; /* Light color to stand out against the dark background */
-    padding: 20px 20px 80px;
-}
-
 .calendar-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 100%;
     padding-top: 20px;
     padding-bottom: 80px; /* Increased padding to ensure gap between last card and bottom of the page */
 }
@@ -42,6 +33,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%; /* Use 100% width on small screens */
+    height: 425px;
     max-width: 340px; /* Keep the max-width for larger screens */
     display: flex;
     flex-direction: column;
