@@ -32,8 +32,8 @@ jobs:
       - name: Add DreamHost to known_hosts
         run: |
           mkdir -p ~/.ssh
+          echo "pdx1-shared-a1-45.dreamhost.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArKUEsIyxL5EtLkrOnbPpPbB8I29sUw2zGdlTTtQoVZo4/l2x1XlPQSP9aDo2tKP0yJlAeqBtBq9o/GGVBa8kOgYZ39XfOnnAE/24qzNfLvRvMGmIfgERvY5bpl0mZGYe12z9qUVUl5cULfStklViZVZ7nZSmFNEsZ4hy4RL56zOpkFiPba4NsQrpoxmX9gZBCHybDQu++cihbV5/rUl89J6ldEPIYcmNYLBnO9S2MPmKrPIRup1G9EYgyo7B3YyFhb0wzOh9Q6msMzzf2jRXmT7DoSIT9X34Y1ft/IjMR0o3+sg4Uu/9O89R8EqW8XxTC4K9pFgE5IdERikHZ56nw=="
           ssh-keyscan -H pdx1-shared-a1-45.dreamhost.com >> ~/.ssh/known_hosts
 
       - name: Copy files via SCP
-        run: |
-          scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/yorknjrotc.com
+        run: scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/yorknjrotc.com
