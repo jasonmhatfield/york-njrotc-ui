@@ -6,7 +6,7 @@
       <paths name="DreamHost">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/dh_fkjmnz/yorknjrotc.com" local="$PROJECT_DIR$/build" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/build" web="/" />
           </mappings>
         </serverdata>
       </paths>

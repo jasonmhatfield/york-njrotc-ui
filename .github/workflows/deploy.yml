@@ -31,4 +31,4 @@ jobs:
 
       - name: Copy files via SCP
         run: |
-          scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/your_remote_directory
+          scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/
