@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="DreamHost" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="DreamHost" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+    <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="DreamHost">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/dh_fkjmnz/yorknjrotc.com" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/dh_fkjmnz/yorknjrotc.com" local="$PROJECT_DIR$/build" web="/" />
           </mappings>
         </serverdata>
       </paths>

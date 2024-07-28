@@ -205,7 +205,7 @@ const Calendar = () => {
         ))}
       </div>
       <div className="month dropdown">
-        <select onChange={(e) => setActiveTab(Number(e.target.value))} value={activeTab}>
+        <select className="month-selector" onChange={(e) => setActiveTab(Number(e.target.value))} value={activeTab}>
           {months.map((month) => (
             <option key={month} value={month}>
               {new Date(0, month).toLocaleString('en-US', { month: 'long' })}

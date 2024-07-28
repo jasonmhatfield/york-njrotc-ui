@@ -1,8 +1,16 @@
+.cadet-staff-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .staff-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
     border-bottom: gold solid 2px;
 }
 
@@ -20,8 +28,10 @@
     flex: 1;
     gap: 20px;
     overflow-y: auto; /* Enable scrolling within the section content */
-    /* Add padding to the bottom for small screens */
-    padding: 20px 20px 50px;
+}
+
+.staff-card {
+    margin-bottom: 30px;
 }
 
 .large-cards .staff-card {
@@ -36,10 +46,17 @@
     width: 225px;
 }
 
+p {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    padding: 1px;
+    margin: 1px 1px 5px;
+}
+
 .staff-image {
     width: 100%;
     height: auto;
-    margin: 15px auto;
+    margin: 10px auto;
     border-radius: 10px;
     object-fit: cover; /* Ensure the image covers the container without being cut off */
 }
@@ -71,4 +88,10 @@
 
 .enlisted .staff-image {
     box-shadow: 0 0 10px 0 silver;
+}
+
+@media (max-width: 575px) {
+    .large-cards .staff-card, .medium-cards .staff-card, .small-cards .staff-card {
+        width: 300px;
+    }
 }

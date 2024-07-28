@@ -1,4 +1,24 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto; /* Enable scrolling within the main content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+  box-sizing: border-box; /* Include padding in height calculation */
 }

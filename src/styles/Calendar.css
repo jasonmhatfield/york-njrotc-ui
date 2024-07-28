@@ -1,3 +1,10 @@
+.calendar-container {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
 .tabs {
     display: flex;
     justify-content: center;
@@ -23,17 +30,21 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 80px; /* Increased padding to ensure gap between last card and bottom of the page */
+    padding: 20px 0;
+    max-width: 1200px;
+}
+
+.month-selector {
+    width: 170px;
 }
 
 .calendar-card {
-    background: linear-gradient(145deg, #1a5f7a, #2980b9);
+    background: linear-gradient(145deg, #1a5f7a, #003165);
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%; /* Use 100% width on small screens */
-    height: 425px;
+    min-height: 425px;
     max-width: 340px; /* Keep the max-width for larger screens */
     display: flex;
     flex-direction: column;
@@ -118,7 +129,7 @@
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 740px) {
     .tabs {
         display: none; /* Hide tabs on mobile */
     }
@@ -126,10 +137,5 @@
     .calendar-cards {
         flex-direction: column;
         align-items: center; /* Center cards on mobile */
-    }
-
-    .calendar-card {
-        width: 100%; /* Use 90% width on mobile */
-        max-width: 90%; /* Ensure cards don't exceed screen width */
     }
 }

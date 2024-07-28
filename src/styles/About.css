@@ -1,11 +1,12 @@
 .about-container {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #16222a; /* Match the background of the rest of the page */
-    color: #ecf0f1; /* Light color to stand out against the dark background */
-    padding-bottom: 80px;
+    margin: 0 auto;
+    background-color: #16222a;
+    color: #ecf0f1;
+    padding-top: 20px;
 }
 
 .about-intro-section {
@@ -21,12 +22,13 @@
 
 .about-intro-section h1 {
     font-size: 2.5rem;
-    color: #ffd700; /* Gold color for headings */
+    color: #ffd700;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
     animation: fadeIn 1.5s ease-in-out;
+    max-width: 700px;
 }
 
 .about-intro-section p {
@@ -35,8 +37,9 @@
     margin-bottom: 15px;
 }
 
-.content-section {
+.content-section, .contact-section {
     margin-bottom: 40px;
+    max-width: 700px;
     text-align: center;
     padding: 20px;
     background-color: #1a2a3a;
@@ -56,15 +59,6 @@
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 15px;
-}
-
-.contact-section {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a2a3a;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1s ease-in-out;
 }
 
 .contact-section h2 {
@@ -91,6 +85,23 @@
 
 .contact-section ul li a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 575px) {
+    .about-intro-section {
+        margin-bottom: 0;
+    }
+    .about-intro-section h1 {
+        font-size: 1.5rem;
+    }
+    .about-intro-section img {
+        max-width: 125px;
+        margin-bottom: 0;
+    }
+    .content-section, .contact-section {
+        max-width: 85dvw;
+        margin-bottom: 20px;
+    }
 }
 
 /* Animations */

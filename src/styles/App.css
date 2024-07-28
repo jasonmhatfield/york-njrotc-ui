@@ -4,19 +4,20 @@ body, html {
     padding: 0;
     background: linear-gradient(to right, #3a6073, #16222a); /* Background gradient */
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #root {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden; /* Prevent the root from scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main-content {
     flex: 1;
     overflow-y: auto; /* Enable scrolling within the main content */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
     flex-direction: column;
     padding-bottom: 120px; /* Further increased padding to ensure the last card is fully visible */
