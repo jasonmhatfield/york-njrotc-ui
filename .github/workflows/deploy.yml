@@ -29,6 +29,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Add DreamHost to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H pdx1-shared-a1-45.dreamhost.com >> ~/.ssh/known_hosts
+
       - name: Copy files via SCP
         run: |
-          scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/
+          scp -r build/* dh_fkjmnz@pdx1-shared-a1-45.dreamhost.com:/home/dh_fkjmnz/yorknjrotc.com
