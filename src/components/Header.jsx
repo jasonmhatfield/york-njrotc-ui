@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/Header.css';
 
-const Header = ({ currentPage, setCurrentPage }) => {
+const Header = () => {
   const [isCadetResourcesOpen, setIsCadetResourcesOpen] = useState(false);
+  const [selectedPage, setSelectedPage] = useState(window.location.pathname);
 
   const toggleCadetResources = () => {
     setIsCadetResourcesOpen(!isCadetResourcesOpen);
@@ -10,11 +12,6 @@ const Header = ({ currentPage, setCurrentPage }) => {
 
   const closeCadetResources = () => {
     setIsCadetResourcesOpen(false);
-  };
-
-  const handleDropdownChange = (event) => {
-    setCurrentPage(event.target.value);
-    closeCadetResources();
   };
 
   useEffect(() => {
@@ -30,6 +27,11 @@ const Header = ({ currentPage, setCurrentPage }) => {
     };
   }, [isCadetResourcesOpen]);
 
+  const handlePageChange = (page) => {
+    setSelectedPage(page);
+    window.location.href = page;
+  };
+
   return (
     <header className="header-container">
       <div className="header-content">
@@ -41,42 +43,43 @@ const Header = ({ currentPage, setCurrentPage }) => {
           <nav>
             <ul className="header-menu">
               <li>
-                <button className={currentPage === 'home' ? 'active' : ''} onClick={() => { setCurrentPage('home'); closeCadetResources(); }}>Home</button>
+                <NavLink to="/" exact activeClassName="active" onClick={() => handlePageChange('/')}>Home</NavLink>
               </li>
               <li>
-                <button className={currentPage === 'about' ? 'active' : ''} onClick={() => { setCurrentPage('about'); closeCadetResources(); }}>About</button>
+                <NavLink to="/about" activeClassName="active" onClick={() => handlePageChange('/about')}>About</NavLink>
               </li>
               <li>
-                <button className={currentPage === 'calendar' ? 'active' : ''} onClick={() => { setCurrentPage('calendar'); closeCadetResources(); }}>Calendar</button>
+                <NavLink to="/calendar" activeClassName="active" onClick={() => handlePageChange('/calendar')}>Calendar</NavLink>
               </li>
               <li>
-                <button className={currentPage === 'cadet-staff' ? 'active' : ''} onClick={() => { setCurrentPage('cadet-staff'); closeCadetResources(); }}>Cadet Staff</button>
+                <NavLink to="/cadet-staff" activeClassName="active" onClick={() => handlePageChange('/cadet-staff')}>Cadet Staff</NavLink>
               </li>
               <li>
-                <button className={currentPage === 'announcements' ? 'active' : ''} onClick={() => { setCurrentPage('announcements'); closeCadetResources(); }}>Announcements</button>
+                <NavLink to="/quarterdeck" activeClassName="active" onClick={() => handlePageChange('/quarterdeck')}>Quarterdeck</NavLink>
               </li>
-              <li className="cadet-resources">
+              {/* Hiding the entire Cadet Resources button and dropdown */}
+              {/* <li className="cadet-resources">
                 <button onClick={toggleCadetResources}>Cadet Resources</button>
                 {isCadetResourcesOpen && (
                   <ul className="dropdown-menu">
                     <li className="dropdown-menu-item">
-                      <button className={currentPage === 'pqs' ? 'active' : ''} onClick={() => { setCurrentPage('pqs'); closeCadetResources(); }}>PQS</button>
-                      <button className={currentPage === 'ribbon-checker' ? 'active' : ''} onClick={() => { setCurrentPage('ribbon-checker'); closeCadetResources(); }}>Ribbon Checker</button>
+                      <NavLink to="/pqs" activeClassName="active" onClick={() => handlePageChange('/pqs')}>PQS</NavLink>
+                      <NavLink to="/ribbon-checker" activeClassName="active" onClick={() => handlePageChange('/ribbon-checker')}>Ribbon Checker</NavLink>
                     </li>
                   </ul>
                 )}
-              </li>
+              </li> */}
             </ul>
           </nav>
           <div className="dropdown">
-            <select onChange={handleDropdownChange} value={currentPage}>
-              <option value="home">Home</option>
-              <option value="about">About</option>
-              <option value="calendar">Calendar</option>
-              <option value="cadet-staff">Cadet Staff</option>
-              <option value="announcements">Announcements</option>
-              <option value="ribbon-checker">Ribbon Checker</option>
-              <option value={"pqs"}>PQS</option>
+            <select value={selectedPage} onChange={(event) => handlePageChange(event.target.value)}>
+              <option value="/">Home</option>
+              <option value="/about">About</option>
+              <option value="/calendar">Calendar</option>
+              <option value="/cadet-staff">Cadet Staff</option>
+              <option value="/quarterdeck">Quarterdeck</option>
+              {/* Hiding the Cadet Resources options */}
+              {/* <option value="/pqs">PQS</option> */}
             </select>
           </div>
         </div>
