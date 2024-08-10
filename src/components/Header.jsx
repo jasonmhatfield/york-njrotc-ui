@@ -52,6 +52,9 @@ const Header = ({ currentPage, setCurrentPage }) => {
               <li>
                 <button className={currentPage === 'cadet-staff' ? 'active' : ''} onClick={() => { setCurrentPage('cadet-staff'); closeCadetResources(); }}>Cadet Staff</button>
               </li>
+              <li>
+                <button className={currentPage === 'announcements' ? 'active' : ''} onClick={() => { setCurrentPage('announcements'); closeCadetResources(); }}>Announcements</button>
+              </li>
               <li className="cadet-resources">
                 <button onClick={toggleCadetResources}>Cadet Resources</button>
                 {isCadetResourcesOpen && (
@@ -60,7 +63,6 @@ const Header = ({ currentPage, setCurrentPage }) => {
                       <button className={currentPage === 'pqs' ? 'active' : ''} onClick={() => { setCurrentPage('pqs'); closeCadetResources(); }}>PQS</button>
                       <button className={currentPage === 'ribbon-checker' ? 'active' : ''} onClick={() => { setCurrentPage('ribbon-checker'); closeCadetResources(); }}>Ribbon Checker</button>
                     </li>
-                    {/* Add more items here if needed */}
                   </ul>
                 )}
               </li>
@@ -72,6 +74,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
               <option value="about">About</option>
               <option value="calendar">Calendar</option>
               <option value="cadet-staff">Cadet Staff</option>
+              <option value="announcements">Announcements</option>
               <option value="ribbon-checker">Ribbon Checker</option>
               <option value={"pqs"}>PQS</option>
             </select>

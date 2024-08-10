@@ -7,6 +7,7 @@ import RibbonChecker from './components/RibbonChecker';
 import CadetStaff from './components/CadetStaff';
 import ScrollContainer from './components/ScrollContainer';
 import PQS from './components/PQS';
+import AnnouncementsPage from './components/AnnouncementsPage';
 import './styles/App.css';
 
 const App = () => {
@@ -26,6 +27,8 @@ const App = () => {
         return <CadetStaff />;
       case 'pqs':
         return <PQS />;
+      case 'announcements':
+        return <AnnouncementsPage />;
       default:
         return <Home />;
     }
