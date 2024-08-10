@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/RibbonChecker.css';
 import ribbonsData from '../data/ribbonsData';
 
@@ -8,6 +8,10 @@ const RibbonChecker = () => {
     return savedRibbons ? JSON.parse(savedRibbons) : ribbonsData;
   });
   const [currentRibbon, setCurrentRibbon] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when component mounts
+  }, []);
 
   useEffect(() => {
     sessionStorage.setItem('selectedRibbons', JSON.stringify(ribbons));
@@ -71,33 +75,38 @@ const RibbonChecker = () => {
   return (
     <div className="ribbon-checker">
       <h2 className="center">Ribbon Checker</h2>
-      <div className = "ribbon-container">
-        <div className = "selected-ribbons">
+      <div className="ribbon-container">
+        <div className="selected-ribbons">
           <h4>Selected Ribbons</h4>
           {renderRibbons(selectedRibbons)}
         </div>
-        <div className = "ribbon-selector">
+        <div className="ribbon-selector">
           <h3>Choose Ribbons</h3>
-          <div className = "ribbon-flex-container">
+          <div className="ribbon-flex-container">
             {ribbons.sort((a, b) => a.precedence - b.precedence).map(ribbon => (
-              <div key = {ribbon.id} className = "ribbon-item">
-                <button onClick = {() => setCurrentRibbon(ribbon)} className = "info-button">ℹ</button>
-                <input type = "checkbox" className = "custom-checkbox" id = {ribbon.id} checked = {ribbon.selected}
-                       onChange = {() => handleCheckboxChange(ribbon.id)}/>
-                <label htmlFor = {ribbon.id}>{ribbon.name}</label>
+              <div key={ribbon.id} className="ribbon-item">
+                <button onClick={() => setCurrentRibbon(ribbon)} className="info-button">ℹ</button>
+                <input
+                  type="checkbox"
+                  className="custom-checkbox"
+                  id={ribbon.id}
+                  checked={ribbon.selected}
+                  onChange={() => handleCheckboxChange(ribbon.id)}
+                />
+                <label htmlFor={ribbon.id}>{ribbon.name}</label>
               </div>
             ))}
           </div>
-          <div className = "center buttons-container">
-            <button onClick = {handleSelectAll} className = "btn btn-primary">Select All</button>
-            <button onClick = {handleClearSelection} className = "btn btn-primary">Clear Selection</button>
+          <div className="center buttons-container">
+            <button onClick={handleSelectAll} className="btn btn-primary">Select All</button>
+            <button onClick={handleClearSelection} className="btn btn-primary">Clear Selection</button>
           </div>
         </div>
       </div>
 
       {currentRibbon && (
-        <div className = "modal-backdrop" onClick = {() => setCurrentRibbon(null)}>
-          <div className = "modal-content-wrapper" onClick = {(e) => e.stopPropagation()}>
+        <div className="modal-backdrop" onClick={() => setCurrentRibbon(null)}>
+          <div className="modal-content-wrapper" onClick={(e) => e.stopPropagation()}>
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">{currentRibbon.name}</h5>

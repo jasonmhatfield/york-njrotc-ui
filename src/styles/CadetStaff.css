@@ -1,5 +1,5 @@
 .cadet-staff-container {
-    max-width: 100%;
+    max-width: 1200px;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 }
 
 .staff-section-content {
-    width: 100%;
+    width: 100dvw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

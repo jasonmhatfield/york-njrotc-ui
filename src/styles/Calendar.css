@@ -32,6 +32,7 @@
     gap: 20px;
     padding: 20px 0;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .month-selector {
@@ -45,7 +46,7 @@
     padding: 20px;
     width: 100%; /* Use 100% width on small screens */
     min-height: 425px;
-    max-width: 340px; /* Keep the max-width for larger screens */
+    max-width: 340px;
     display: flex;
     flex-direction: column;
     color: #ecf0f1;
@@ -137,5 +138,9 @@
     .calendar-cards {
         flex-direction: column;
         align-items: center; /* Center cards on mobile */
+    }
+
+    .calendar-card {
+        max-width: 310px;
     }
 }

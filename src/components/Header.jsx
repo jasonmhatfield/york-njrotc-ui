@@ -57,6 +57,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
                 {isCadetResourcesOpen && (
                   <ul className="dropdown-menu">
                     <li className="dropdown-menu-item">
+                      <button className={currentPage === 'pqs' ? 'active' : ''} onClick={() => { setCurrentPage('pqs'); closeCadetResources(); }}>PQS</button>
                       <button className={currentPage === 'ribbon-checker' ? 'active' : ''} onClick={() => { setCurrentPage('ribbon-checker'); closeCadetResources(); }}>Ribbon Checker</button>
                     </li>
                     {/* Add more items here if needed */}
@@ -72,6 +73,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
               <option value="calendar">Calendar</option>
               <option value="cadet-staff">Cadet Staff</option>
               <option value="ribbon-checker">Ribbon Checker</option>
+              <option value={"pqs"}>PQS</option>
             </select>
           </div>
         </div>

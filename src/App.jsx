@@ -6,6 +6,7 @@ import Calendar from './components/Calendar';
 import RibbonChecker from './components/RibbonChecker';
 import CadetStaff from './components/CadetStaff';
 import ScrollContainer from './components/ScrollContainer';
+import PQS from './components/PQS';
 import './styles/App.css';
 
 const App = () => {
@@ -23,6 +24,8 @@ const App = () => {
         return <RibbonChecker />;
       case 'cadet-staff':
         return <CadetStaff />;
+      case 'pqs':
+        return <PQS />;
       default:
         return <Home />;
     }
