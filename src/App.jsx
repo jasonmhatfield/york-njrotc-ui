@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
@@ -7,37 +8,35 @@ import RibbonChecker from './components/RibbonChecker';
 import CadetStaff from './components/CadetStaff';
 import ScrollContainer from './components/ScrollContainer';
 import PQS from './components/PQS';
+import Quarterdeck from './components/Quarterdeck';
+import August2023 from './events/2023/08-August';
+import September2023 from './events/2023/09-September';
+import October2023 from './events/2023/10-October';
+import November2023 from './events/2023/11-November';
 import './styles/App.css';
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home />;
-      case 'about':
-        return <About />;
-      case 'calendar':
-        return <Calendar />;
-      case 'ribbon-checker':
-        return <RibbonChecker />;
-      case 'cadet-staff':
-        return <CadetStaff />;
-      case 'pqs':
-        return <PQS />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div id="root">
-      <Header setCurrentPage={setCurrentPage} />
-      <ScrollContainer>
-        {renderPage()}
-      </ScrollContainer>
-    </div>
+    <Router>
+      <div id="root">
+        <Header />
+        <ScrollContainer>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/ribbon-checker" element={<RibbonChecker />} />
+            <Route path="/cadet-staff" element={<CadetStaff />} />
+            <Route path="/pqs" element={<PQS />} />
+            <Route path="/quarterdeck" element={<Quarterdeck />} />
+            <Route path="/events/2023/08-August" element={<August2023 />} />
+            <Route path="/events/2023/09-September" element={<September2023 />} />
+            <Route path="/events/2023/10-October" element={<October2023 />} />
+            <Route path="/events/2023/11-November" element={<November2023 />} />
+          </Routes>
+        </ScrollContainer>
+      </div>
+    </Router>
   );
 };
 
