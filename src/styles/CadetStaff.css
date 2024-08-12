@@ -27,7 +27,7 @@
     justify-content: center;
     flex: 1;
     gap: 20px;
-    overflow-y: auto; /* Enable scrolling within the section content */
+    overflow-y: auto;
 }
 
 .staff-card {
@@ -58,7 +58,7 @@ p {
     height: auto;
     margin: 10px auto;
     border-radius: 10px;
-    object-fit: cover; /* Ensure the image covers the container without being cut off */
+    object-fit: cover;
 }
 
 .staff-card {

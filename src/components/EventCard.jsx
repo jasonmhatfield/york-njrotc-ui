@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/EventCard.css';
+import '../styles/Quarterdeck.css';
 
 const EventCard = ({ title, imageUrl, link }) => {
   const navigate = useNavigate();
