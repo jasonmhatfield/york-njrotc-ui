@@ -5,7 +5,7 @@
 }
 
 .scroll-container::-webkit-scrollbar {
-    display: none;  /* Hide scrollbar in Chrome, Safari, and Opera */
+    display: none;
 }
 
 @media (max-width: 575px) {
