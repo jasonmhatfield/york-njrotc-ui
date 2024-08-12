@@ -14,7 +14,7 @@ const Quarterdeck = () => {
   }, []);
 
   const renderChiefChat = () => (
-    <div className="chief-chat-section">
+    <div className="quarterdeck-page-container chief-chat-section">
       <div className="video-container">
         <iframe
           src="https://www.youtube.com/embed/CKfhw2SPY_U?si=BxzoLcIYAl7_83QC"
@@ -36,7 +36,7 @@ const Quarterdeck = () => {
 
     return (
       <div className="deck-log-section">
-        <div className="event-card-container">
+        <div className="quarterdeck-page-container">
           {yearData.map(({ month, imageUrl, link }) => (
             <EventCard key={month} title={`${month} ${selectedYear}`} imageUrl={imageUrl} link={link} />
           ))}
