@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    min-height: calc(100vh - 120px); /* Ensure it fills the viewport minus header */
+    min-height: calc(100vh - 120px);
     box-sizing: border-box;
     justify-content: flex-start;
 }
@@ -55,21 +55,28 @@
 }
 
 .chief-chat-section, .deck-log-section {
-    width: 90%;
-    max-width: 800px;
     text-align: center;
-    padding: 10px 20px;
+    margin-bottom: 20px;
     background-color: #1a2a3a;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.deck-log-section {
+    width: 470px;
+    padding: 0 15px;
+}
+
+.chief-chat-section {
+    width: 100%;
+    min-width: 470px;
+    max-width: 800px;
+    padding: 15px;
 }
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Aspect ratio of 16:9 */
+    padding-bottom: 56.25%;
     width: 100%;
     height: 0;
     max-width: 100%;
@@ -86,52 +93,4 @@
     height: 100%;
     border: none;
     border-radius: 8px;
-    object-fit: contain;
-}
-
-.event-card {
-    background-color: #1a2a3a;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.event-card h3 {
-    font-size: 1.5rem;
-    color: #ffd700;
-    margin-bottom: 10px;
-}
-
-.event-card p {
-    font-size: 1.2rem;
-    color: #ecf0f1;
-}
-
-@media (max-width: 575px) {
-    .chief-chat-section {
-        padding: 5px 10px;
-        max-height: calc(95vh - 200px); /* Adjusted to avoid overflow */
-    }
-
-    .navigation button {
-        max-width: 200px;
-        margin: 10px 5px;
-    }
-
-    .video-container {
-        max-height: 90vh;
-    }
-
-    .quarterdeck-page-container {
-        padding: 10px;
-        min-height: calc(100vh - 145px); /* Ensure it fills the viewport minus header on mobile */
-    }
 }

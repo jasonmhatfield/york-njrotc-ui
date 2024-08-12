@@ -9,6 +9,10 @@ import CadetStaff from './components/CadetStaff';
 import ScrollContainer from './components/ScrollContainer';
 import PQS from './components/PQS';
 import Quarterdeck from './components/Quarterdeck';
+import August2023 from './events/2023/08-August';
+import September2023 from './events/2023/09-September';
+import October2023 from './events/2023/10-October';
+import November2023 from './events/2023/11-November';
 import './styles/App.css';
 
 const App = () => {
@@ -25,7 +29,10 @@ const App = () => {
             <Route path="/cadet-staff" element={<CadetStaff />} />
             <Route path="/pqs" element={<PQS />} />
             <Route path="/quarterdeck" element={<Quarterdeck />} />
-            {/* Add more routes here as needed */}
+            <Route path="/events/2023/08-August" element={<August2023 />} />
+            <Route path="/events/2023/09-September" element={<September2023 />} />
+            <Route path="/events/2023/10-October" element={<October2023 />} />
+            <Route path="/events/2023/11-November" element={<November2023 />} />
           </Routes>
         </ScrollContainer>
       </div>
