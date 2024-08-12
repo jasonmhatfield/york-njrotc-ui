@@ -6,10 +6,6 @@ const Header = () => {
   const [isCadetResourcesOpen, setIsCadetResourcesOpen] = useState(false);
   const [selectedPage, setSelectedPage] = useState(window.location.pathname);
 
-  const toggleCadetResources = () => {
-    setIsCadetResourcesOpen(!isCadetResourcesOpen);
-  };
-
   const closeCadetResources = () => {
     setIsCadetResourcesOpen(false);
   };
