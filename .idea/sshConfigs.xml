@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig host="pdx1-shared-a1-45.dreamhost.com" id="a27fd9e0-e70f-407f-8a95-ffa7a07b239a" keyPath="C:\Users\jason\.ssh\id_rsa" port="22" nameFormat="DESCRIPTIVE" username="dh_fkjmnz" useOpenSSHConfig="false" />
-    </configs>
-  </component>
-</project>
