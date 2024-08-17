@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
-import config from '../config';
+import config from '../config/config';
 import '../styles/Calendar.css';
 
 const CALENDAR_ID = 3;

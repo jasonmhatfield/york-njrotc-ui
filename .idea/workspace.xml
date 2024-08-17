@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="change folder name">
+      <change afterPath="$PROJECT_DIR$/src/components/AdminLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/AdminLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/EntityManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/awards/AwardManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/cadets/CadetManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/events/EventManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/family/FamilyManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ranks/RankManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/units/UnitManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jasonmhatfield"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/jasonmhatfield/york-njrotc-ui.git",
+    "accountId": "67cb5ed2-fccc-4a46-9d67-d75879bf4b92"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2knM6NEsTqCCQHmB3AiKCIEth9o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{}</component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "admin-development",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/styles/admin/units",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\units" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\ranks" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\family" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\config" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\common" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\cadet" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\family" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -22,5 +109,52 @@
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="" />
+      <created>1723914711523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723914711523</updated>
+      <workItem from="1723914713545" duration="7187000" />
+    </task>
+    <task id="LOCAL-00001" summary="change folder name">
+      <option name="closed" value="true" />
+      <created>1723914846534</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723914846534</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change folder name" />
+    <option name="LAST_COMMIT_MESSAGE" value="change folder name" />
   </component>
 </project>
