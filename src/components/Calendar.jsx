@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
-import config from '../config/config';
 import '../styles/Calendar.css';
 
 const CALENDAR_ID = 3;
 
-const Calendar = () => {
+const Calendar = ({ config }) => {
   const { apiKey, calendarId } = config.calendars.find(key => key.id === CALENDAR_ID);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);

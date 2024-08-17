@@ -4,26 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="change folder name">
-      <change afterPath="$PROJECT_DIR$/src/components/AdminLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/AdminLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/EntityManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/awards/AwardManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/cadets/CadetManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Modal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/common/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/events/EventManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/family/FamilyManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/ranks/RankManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/units/UnitManager.jsx" afterDir="false" />
+    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="admin progress 30%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/EntityManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/EntityManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/common/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/common/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +66,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -126,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723914711523</updated>
-      <workItem from="1723914713545" duration="7187000" />
+      <workItem from="1723914713545" duration="11005000" />
     </task>
     <task id="LOCAL-00001" summary="change folder name">
       <option name="closed" value="true" />
@@ -136,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723914846534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="admin progress 30%">
+      <option name="closed" value="true" />
+      <created>1723931098510</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723931098510</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change folder name" />
-    <option name="LAST_COMMIT_MESSAGE" value="change folder name" />
+    <MESSAGE value="admin progress 30%" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin progress 30%" />
   </component>
 </project>

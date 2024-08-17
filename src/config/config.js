@@ -3,17 +3,17 @@ const config = {
   calendars: [
     {
       id: 1,
-      apiKey: "AIzaSyCZWVtOWcSPTLqhNEUZW1A8HD16iFjb2WQ",
+      apiKey: "YOUR_API_KEY_1",
       calendarId: "jasonmichaelhatfield"
     },
     {
       id: 2,
-      apiKey: "AIzaSyCqbtpMVA2F5JZyLyWe_dv8dqPgdqd9hLY",
+      apiKey: "YOUR_API_KEY_2",
       calendarId: "yorknjrotc1993"
     },
     {
       id: 3,
-      apiKey: "AIzaSyCZWVtOWcSPTLqhNEUZW1A8HD16iFjb2WQ",
+      apiKey: "YOUR_API_KEY_3",
       calendarId: "yorknjrotc1993"
     }
   ],
@@ -27,7 +27,7 @@ const config = {
     cadets: '/cadets',
     events: '/events',
     family: '/family',
-    ranks: '/ranks',
+    ranks: '/cadet-ranks',
     units: '/units',
   },
 

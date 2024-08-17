@@ -4,75 +4,72 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
   const sidebarStyle = {
     width: '250px',
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#1a202c',
     color: '#fff',
     height: '100vh',
     padding: '20px 10px',
     position: 'fixed',
+    left: 0,
+    top: 0,
+    overflowY: 'auto',
   };
 
   const navStyle = {
-    listStyleType: 'none',
+    listStyle: 'none',
     padding: 0,
+    margin: 0,
   };
 
   const navItemStyle = {
-    marginBottom: '15px',
+    marginBottom: '10px',
   };
 
-  const navLinkStyle = {
+  const navLinkStyle = (isActive) => ({
     color: '#fff',
     textDecoration: 'none',
     fontSize: '1rem',
-    display: 'block',
-    padding: '10px',
-    borderRadius: '5px',
-    transition: 'background-color 0.3s',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '12px 15px',
+    borderRadius: '8px',
+    transition: 'all 0.3s',
+    backgroundColor: isActive ? '#2d3748' : 'transparent',
+    '&:hover': {
+      backgroundColor: '#2d3748',
+    },
+  });
+
+  const iconStyle = {
+    marginRight: '10px',
+    fontSize: '1.2rem',
   };
 
-  const activeLinkStyle = {
-    backgroundColor: '#34495e',
-  };
+  const navItems = [
+    { path: '/admin', icon: 'fas fa-tachometer-alt', label: 'Dashboard' },
+    { path: '/admin/cadets', icon: 'fas fa-user-graduate', label: 'Manage Cadets' },
+    { path: '/admin/awards', icon: 'fas fa-medal', label: 'Manage Awards' },
+    { path: '/admin/events', icon: 'fas fa-calendar-alt', label: 'Manage Events' },
+    { path: '/admin/units', icon: 'fas fa-building', label: 'Manage Units' },
+    { path: '/admin/family', icon: 'fas fa-users', label: 'Manage Family Members' },
+    { path: '/admin/ranks', icon: 'fas fa-chevron-up', label: 'Manage Ranks' },
+  ];
 
   return (
     <aside style={sidebarStyle}>
       <nav>
         <ul style={navStyle}>
-          <li style={navItemStyle}>
-            <NavLink to="/admin" end style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-tachometer-alt"></i> Dashboard
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/cadets" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-user-graduate"></i> Manage Cadets
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/awards" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-medal"></i> Manage Awards
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/events" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-calendar-alt"></i> Manage Events
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/units" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-building"></i> Manage Units
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/family" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-users"></i> Manage Family Members
-            </NavLink>
-          </li>
-          <li style={navItemStyle}>
-            <NavLink to="/admin/ranks" style={navLinkStyle} activeStyle={activeLinkStyle}>
-              <i className="fas fa-chevron-up"></i> Manage Ranks
-            </NavLink>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.path} style={navItemStyle}>
+              <NavLink
+                to={item.path}
+                end={item.path === '/admin'}
+                style={({ isActive }) => navLinkStyle(isActive)}
+              >
+                <i className={item.icon} style={iconStyle}></i>
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

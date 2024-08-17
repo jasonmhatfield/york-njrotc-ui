@@ -7,22 +7,23 @@ const AdminLayout = () => {
   const layoutStyle = {
     display: 'flex',
     minHeight: '100vh',
+    backgroundColor: '#f7fafc',
   };
 
   const contentStyle = {
-    marginLeft: '250px', // Matches the width of the sidebar
-    padding: '20px',
-    width: '100%',
-    backgroundColor: '#ecf0f1',
+    marginLeft: '250px',
+    flexGrow: 1,
+    padding: '80px 30px 30px',
+    overflowY: 'auto',
   };
 
   return (
     <div style={layoutStyle}>
       <Header />
       <Sidebar />
-      <div style={contentStyle}>
+      <main style={contentStyle}>
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };

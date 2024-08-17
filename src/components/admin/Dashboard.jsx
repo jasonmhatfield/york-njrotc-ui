@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const dashboardStyle = {
     padding: '20px',
   };
@@ -8,12 +11,12 @@ const Dashboard = () => {
   const headerStyle = {
     fontSize: '2rem',
     marginBottom: '20px',
-    color: '#2c3e50',
+    color: '#2d3748',
   };
 
   const cardContainerStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
     gap: '20px',
   };
 
@@ -21,68 +24,51 @@ const Dashboard = () => {
     backgroundColor: '#ffffff',
     padding: '20px',
     borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '1.2rem',
     fontWeight: 'bold',
-    color: '#34495e',
-    transition: 'transform 0.3s',
+    color: '#2d3748',
+    transition: 'transform 0.3s, box-shadow 0.3s',
     cursor: 'pointer',
+    '&:hover': {
+      transform: 'translateY(-5px)',
+      boxShadow: '0 6px 8px rgba(0, 0, 0, 0.15)',
+    },
   };
 
-  const cardHoverStyle = {
-    transform: 'scale(1.05)',
+  const iconStyle = {
+    fontSize: '2.5rem',
+    marginBottom: '10px',
   };
+
+  const cards = [
+    { title: 'Manage Cadets', path: '/admin/cadets', icon: 'fas fa-user-graduate' },
+    { title: 'Manage Awards', path: '/admin/awards', icon: 'fas fa-medal' },
+    { title: 'Manage Events', path: '/admin/events', icon: 'fas fa-calendar-alt' },
+    { title: 'Manage Units', path: '/admin/units', icon: 'fas fa-building' },
+    { title: 'Manage Family Members', path: '/admin/family', icon: 'fas fa-users' },
+    { title: 'Manage Ranks', path: '/admin/ranks', icon: 'fas fa-chevron-up' },
+  ];
 
   return (
     <div style={dashboardStyle}>
       <h1 style={headerStyle}>Admin Dashboard</h1>
-      <p>Welcome to the NJROTC Admin Dashboard! Use the sidebar to manage cadets, awards, events, and more.</p>
+      <p>Welcome to the NJROTC Admin Dashboard. Click on a card to manage the respective entity.</p>
       <div style={cardContainerStyle}>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Cadets
-        </div>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Awards
-        </div>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Events
-        </div>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Units
-        </div>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Family Members
-        </div>
-        <div
-          style={cardStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Manage Ranks
-        </div>
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            style={cardStyle}
+            onClick={() => navigate(card.path)}
+          >
+            <i className={card.icon} style={iconStyle}></i>
+            {card.title}
+          </div>
+        ))}
       </div>
     </div>
   );

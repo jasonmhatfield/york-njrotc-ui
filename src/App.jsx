@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
@@ -13,29 +13,10 @@ import September2023 from './events/2023/09-September';
 import October2023 from './events/2023/10-October';
 import November2023 from './events/2023/11-November';
 
-// Admin Imports
 import AdminLayout from './components/admin/AdminLayout';
 import Dashboard from './components/admin/Dashboard';
-
-// Manager Components
 import EntityManager from './components/admin/EntityManager';
-
-// Configuration import
 import config from './config/config';
-
-import './styles/App.css';
-
-// Public Layout
-const PublicLayout = () => {
-  return (
-    <div>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
-};
 
 const App = () => {
   return (
@@ -43,10 +24,10 @@ const App = () => {
       <div id="root">
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<PublicLayout />}>
+          <Route path="/" element={<Header />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="calendar" element={<Calendar />} />
+            <Route path="calendar" element={<Calendar config={config} />} />
             <Route path="ribbon-checker" element={<RibbonChecker />} />
             <Route path="cadet-staff" element={<CadetStaff />} />
             <Route path="pqs" element={<PQS />} />
@@ -59,16 +40,41 @@ const App = () => {
 
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminLayout />}>
-            {/* Dashboard */}
             <Route index element={<Dashboard />} />
-
-            {/* Entity Managers */}
-            <Route path="awards" element={<EntityManager entity="awards" />} />
-            <Route path="cadets" element={<EntityManager entity="cadets" />} />
-            <Route path="events" element={<EntityManager entity="events" />} />
-            <Route path="family" element={<EntityManager entity="family" />} />
-            <Route path="ranks" element={<EntityManager entity="ranks" />} />
-            <Route path="units" element={<EntityManager entity="units" />} />
+            {Object.entries(config.routes).map(([key, path]) => (
+              <Route key={key} path={path.substring(1)}>
+                <Route
+                  index
+                  element={
+                    <EntityManager
+                      entity={key}
+                      apiEndpoint={`${config.apiBaseUrl}${path}`}
+                      fields={config.entityFields[key]}
+                    />
+                  }
+                />
+                <Route
+                  path="new"
+                  element={
+                    <EntityManager
+                      entity={key}
+                      apiEndpoint={`${config.apiBaseUrl}${path}`}
+                      fields={config.entityFields[key]}
+                    />
+                  }
+                />
+                <Route
+                  path=":id"
+                  element={
+                    <EntityManager
+                      entity={key}
+                      apiEndpoint={`${config.apiBaseUrl}${path}`}
+                      fields={config.entityFields[key]}
+                    />
+                  }
+                />
+              </Route>
+            ))}
           </Route>
         </Routes>
       </div>
