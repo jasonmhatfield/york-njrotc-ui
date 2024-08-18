@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import '../styles/Calendar.css';
 
-const CALENDAR_ID = 3;
+const CALENDAR_ID = 1;
 
 const Calendar = ({ config }) => {
   const { apiKey, calendarId } = config.calendars.find(key => key.id === CALENDAR_ID);
