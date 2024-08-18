@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
   const [isCadetResourcesOpen, setIsCadetResourcesOpen] = useState(false);
-  const [selectedPage, setSelectedPage] = useState(window.location.pathname);
+  const navigate = useNavigate();
 
   const closeCadetResources = () => {
     setIsCadetResourcesOpen(false);
@@ -24,43 +24,42 @@ const Header = () => {
   }, [isCadetResourcesOpen]);
 
   const handlePageChange = (page) => {
-    setSelectedPage(page);
-    window.location.href = page;
+    navigate(page);
   };
 
   return (
     <header className="header-container">
       <div className="header-content">
         <div className="logo-container left">
-          <img src='/images/anchor-logo.png' alt="Anchor Logo" className="logo" />
+          <img src="/images/anchor-logo.png" alt="Anchor Logo" className="logo" />
         </div>
         <div className="title-nav-container">
           <h1 className="title">York Comprehensive High School NJROTC</h1>
           <nav>
             <ul className="header-menu">
               <li>
-                <NavLink to="/" exact activeClassName="active" onClick={() => handlePageChange('/')}>Home</NavLink>
+                <NavLink to="/" exact activeClassName="active">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/about" activeClassName="active" onClick={() => handlePageChange('/about')}>About</NavLink>
+                <NavLink to="/about" activeClassName="active">About</NavLink>
               </li>
               <li>
-                <NavLink to="/calendar" activeClassName="active" onClick={() => handlePageChange('/calendar')}>Calendar</NavLink>
+                <NavLink to="/calendar" activeClassName="active">Calendar</NavLink>
               </li>
               <li>
-                <NavLink to="/cadet-staff" activeClassName="active" onClick={() => handlePageChange('/cadet-staff')}>Cadet Staff</NavLink>
+                <NavLink to="/cadet-staff" activeClassName="active">Cadet Staff</NavLink>
               </li>
               <li>
-                <NavLink to="/quarterdeck" activeClassName="active" onClick={() => handlePageChange('/quarterdeck')}>Quarterdeck</NavLink>
+                <NavLink to="/quarterdeck" activeClassName="active">Quarterdeck</NavLink>
               </li>
               {/* Hiding the entire Cadet Resources button and dropdown */}
               {/* <li className="cadet-resources">
-                <button onClick={toggleCadetResources}>Cadet Resources</button>
+                <button onClick={() => setIsCadetResourcesOpen(prev => !prev)}>Cadet Resources</button>
                 {isCadetResourcesOpen && (
                   <ul className="dropdown-menu">
                     <li className="dropdown-menu-item">
-                      <NavLink to="/pqs" activeClassName="active" onClick={() => handlePageChange('/pqs')}>PQS</NavLink>
-                      <NavLink to="/ribbon-checker" activeClassName="active" onClick={() => handlePageChange('/ribbon-checker')}>Ribbon Checker</NavLink>
+                      <NavLink to="/pqs" activeClassName="active">PQS</NavLink>
+                      <NavLink to="/ribbon-checker" activeClassName="active">Ribbon Checker</NavLink>
                     </li>
                   </ul>
                 )}
@@ -68,7 +67,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className="dropdown">
-            <select value={selectedPage} onChange={(event) => handlePageChange(event.target.value)}>
+            <select value={window.location.pathname} onChange={(event) => handlePageChange(event.target.value)}>
               <option value="/">Home</option>
               <option value="/about">About</option>
               <option value="/calendar">Calendar</option>
@@ -80,7 +79,7 @@ const Header = () => {
           </div>
         </div>
         <div className="logo-container right">
-          <img src='/images/anchor-logo.png' alt="Anchor Logo" className="logo" />
+          <img src="/images/anchor-logo.png" alt="Anchor Logo" className="logo" />
         </div>
       </div>
     </header>

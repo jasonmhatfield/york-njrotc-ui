@@ -1,24 +1,57 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+/*code {*/
+/*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+/*  monospace;*/
+/*}*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .main-content {
-  flex: 1;
-  overflow-y: auto; /* Enable scrolling within the main content */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 120px;
-  box-sizing: border-box; /* Include padding in height calculation */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
+
+
+/*#root {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  max-height: 800px;*/
+/*  overflow-x: hidden;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.main-content {*/
+/*  flex: 1;*/
+/*  overflow-y: auto; !* Enable scrolling within the main content *!*/
+/*  overflow-x: hidden; !* Prevent horizontal scrolling *!*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  padding-bottom: 120px;*/
+/*  box-sizing: border-box; !* Include padding in height calculation *!*/
+/*}*/
+
+/*.admin-root {*/
+/*  !* Reset styles for admin section *!*/
+/*  all: initial;*/
+/*  * {*/
+/*    all: unset;*/
+/*  }*/
+/*}*/

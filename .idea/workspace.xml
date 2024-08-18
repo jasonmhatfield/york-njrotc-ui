@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="admin progress 40%" />
+    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="admin progress 40%">
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/EventParticipation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/FamilyMemberForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/PhotoManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageEvents.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageUnit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/common/StyledComponents.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mock/cadets.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mock/events.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mock/unitInfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/theme.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/cadetUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/dateUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdminLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Announcements.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/EntityManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/awards/AwardManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/cadets/CadetManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/Modal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/Sidebar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/events/EventManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/family/FamilyManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ranks/RankManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/units/UnitManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,40 +52,40 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="admin-development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jasonmhatfield"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jasonmhatfield&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/jasonmhatfield/york-njrotc-ui.git",
-    "accountId": "67cb5ed2-fccc-4a46-9d67-d75879bf4b92"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jasonmhatfield/york-njrotc-ui.git&quot;,
+    &quot;accountId&quot;: &quot;67cb5ed2-fccc-4a46-9d67-d75879bf4b92&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2knM6NEsTqCCQHmB3AiKCIEth9o" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.Dashboard.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "admin-development",
+    "git-widget-placeholder": "restart",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/styles/admin/units",
@@ -67,14 +106,17 @@
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\family" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\config" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\common" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\cadet" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\family" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\mock" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\utils" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageCadets" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\styles" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="Dashboard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" working-dir="$PROJECT_DIR$/src/components/admin">
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -88,6 +130,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.Dashboard.jsx" />
       </list>
     </recent_temporary>
   </component>
@@ -108,6 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723914711523</updated>
       <workItem from="1723914713545" duration="11061000" />
+      <workItem from="1723941393268" duration="12266000" />
     </task>
     <task id="LOCAL-00001" summary="change folder name">
       <option name="closed" value="true" />
@@ -133,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723934988830</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="admin progress 40%">
+      <option name="closed" value="true" />
+      <created>1723941410296</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723941410296</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,7 +13,6 @@ const Home = () => (
 
     <section className="highlight-section">
       <h2>Leadership</h2>
-      {/* <img src="path/to/leadership-image.jpg" alt="Leadership" className="highlight-image" /> */}
       <p>
         NJROTC cadets develop leadership skills through various training programs, competitions, and exercises designed to build their confidence and leadership abilities.
       </p>
@@ -21,7 +20,6 @@ const Home = () => (
 
     <section className="highlight-section">
       <h2>Community</h2>
-      {/* <img src="path/to/community-image.jpg" alt="Community" className="highlight-image" /> */}
       <p>
         Our cadets are active members of the community, participating in events and service projects that help them develop a sense of civic duty and pride.
       </p>
@@ -29,7 +27,6 @@ const Home = () => (
 
     <section className="highlight-section">
       <h2>Academics</h2>
-      {/* <img src="path/to/academics-image.jpg" alt="Academics" className="highlight-image" /> */}
       <p>
         NJROTC emphasizes academic excellence, providing cadets with the skills and knowledge they need to succeed in both their military and civilian careers.
       </p>

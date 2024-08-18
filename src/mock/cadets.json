@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "rank": "Cadet",
+    "dateOfBirth": "2005-05-15",
+    "grade": "11",
+    "nsLevel": "NS2",
+    "leadershipPosition": "Squad Leader",
+    "platoon": 1,
+    "familyMembers": [
+      { "relation": "Mother", "name": "Jane Doe", "contact": "555-1234" },
+      { "relation": "Father", "name": "Jack Doe", "contact": "555-5678" }
+    ],
+    "photos": [
+      { "id": 1, "url": "/path/to/photo1.jpg", "isActive": true, "date": "2023-09-01" },
+      { "id": 2, "url": "/path/to/photo2.jpg", "isActive": false, "date": "2022-09-01" }
+    ],
+    "eventParticipation": [
+      { "id": 1, "eventName": "Annual Military Ball", "date": "2023-05-15", "hours": 4 },
+      { "id": 2, "eventName": "Community Service Project", "date": "2023-06-01", "hours": 6 }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "rank": "Cadet Petty Officer",
+    "dateOfBirth": "2004-08-22",
+    "grade": "12",
+    "nsLevel": "NS3",
+    "leadershipPosition": "Platoon Commander",
+    "platoon": 2,
+    "familyMembers": [
+      { "relation": "Mother", "name": "Sarah Smith", "contact": "555-9876" },
+      { "relation": "Father", "name": "Mike Smith", "contact": "555-5432" }
+    ],
+    "photos": [
+      { "id": 3, "url": "/path/to/photo3.jpg", "isActive": true, "date": "2023-08-15" }
+    ],
+    "eventParticipation": [
+      { "id": 3, "eventName": "Leadership Academy", "date": "2023-07-10", "hours": 40 },
+      { "id": 4, "eventName": "Veterans Day Parade", "date": "2022-11-11", "hours": 5 }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "michael.johnson@example.com",
+    "rank": "Cadet Chief Petty Officer",
+    "dateOfBirth": "2005-02-10",
+    "grade": "11",
+    "nsLevel": "NS3",
+    "leadershipPosition": "Company Chief",
+    "platoon": 1,
+    "familyMembers": [
+      { "relation": "Mother", "name": "Lisa Johnson", "contact": "555-7890" },
+      { "relation": "Father", "name": "Robert Johnson", "contact": "555-0123" }
+    ],
+    "photos": [
+      { "id": 4, "url": "/path/to/photo4.jpg", "isActive": true, "date": "2023-09-05" }
+    ],
+    "eventParticipation": [
+      { "id": 5, "eventName": "Drill Competition", "date": "2023-04-20", "hours": 8 },
+      { "id": 6, "eventName": "Memorial Day Ceremony", "date": "2023-05-29", "hours": 3 }
+    ]
+  }
+]

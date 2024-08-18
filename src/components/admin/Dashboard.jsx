@@ -1,76 +1,116 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { People, Event, Info, Settings, Logout } from '@mui/icons-material';
+import ManageCadets from './ManageCadets';
+import ManageEvents from './ManageEvents';
+import ManageUnit from './ManageUnit';
+import { Card, Button } from './common/StyledComponents';
+import styled from 'styled-components';
+import { theme } from '../../styles/theme';
+
+const AdminDashboard = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+    background-color: ${theme.colors.background};
+`;
+
+const Sidebar = styled.div`
+    width: 250px;
+    background-color: ${theme.colors.surface};
+    padding: ${theme.spacing.md};
+`;
+
+const Logo = styled.div`
+    font-size: 24px;
+    font-weight: bold;
+    color: ${theme.colors.primary};
+    margin-bottom: ${theme.spacing.xl};
+`;
+
+const MenuItem = styled(Button)`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: ${theme.spacing.sm};
+    background-color: ${props => props.active ? theme.colors.primary : 'transparent'};
+    color: ${props => props.active ? theme.colors.textLight : theme.colors.text};
+
+    &:hover {
+        background-color: ${props => props.active ? theme.colors.primary : theme.colors.background};
+    }
+`;
+
+const Content = styled.div`
+    flex: 1;
+    padding: ${theme.spacing.md};
+`;
+
+const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: ${theme.spacing.md};
+`;
+
+const Title = styled.h1`
+    font-size: 28px;
+    font-weight: bold;
+    color: ${theme.colors.text};
+`;
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState('Cadets');
 
-  const dashboardStyle = {
-    padding: '20px',
-  };
-
-  const headerStyle = {
-    fontSize: '2rem',
-    marginBottom: '20px',
-    color: '#2d3748',
-  };
-
-  const cardContainerStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-    gap: '20px',
-  };
-
-  const cardStyle = {
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    color: '#2d3748',
-    transition: 'transform 0.3s, box-shadow 0.3s',
-    cursor: 'pointer',
-    '&:hover': {
-      transform: 'translateY(-5px)',
-      boxShadow: '0 6px 8px rgba(0, 0, 0, 0.15)',
-    },
-  };
-
-  const iconStyle = {
-    fontSize: '2.5rem',
-    marginBottom: '10px',
-  };
-
-  const cards = [
-    { title: 'Manage Cadets', path: '/admin/cadets', icon: 'fas fa-user-graduate' },
-    { title: 'Manage Awards', path: '/admin/awards', icon: 'fas fa-medal' },
-    { title: 'Manage Events', path: '/admin/events', icon: 'fas fa-calendar-alt' },
-    { title: 'Manage Units', path: '/admin/units', icon: 'fas fa-building' },
-    { title: 'Manage Family Members', path: '/admin/family', icon: 'fas fa-users' },
-    { title: 'Manage Ranks', path: '/admin/ranks', icon: 'fas fa-chevron-up' },
+  const menuItems = [
+    { name: 'Cadets', icon: <People /> },
+    { name: 'Events', icon: <Event /> },
+    { name: 'Unit Info', icon: <Info /> },
+    { name: 'Settings', icon: <Settings /> },
   ];
 
+  const renderActiveSection = () => {
+    switch (activeSection) {
+      case 'Cadets':
+        return <ManageCadets />;
+      case 'Events':
+        return <ManageEvents />;
+      case 'Unit Info':
+        return <ManageUnit />;
+      case 'Settings':
+        return <div>Settings Component</div>;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div style={dashboardStyle}>
-      <h1 style={headerStyle}>Admin Dashboard</h1>
-      <p>Welcome to the NJROTC Admin Dashboard. Click on a card to manage the respective entity.</p>
-      <div style={cardContainerStyle}>
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            style={cardStyle}
-            onClick={() => navigate(card.path)}
+    <AdminDashboard>
+      <Sidebar>
+        <Logo>NJROTC</Logo>
+        {menuItems.map((item) => (
+          <MenuItem
+            key={item.name}
+            active={activeSection === item.name}
+            onClick={() => setActiveSection(item.name)}
           >
-            <i className={card.icon} style={iconStyle}></i>
-            {card.title}
-          </div>
+            {item.icon}
+            {item.name}
+          </MenuItem>
         ))}
-      </div>
-    </div>
+      </Sidebar>
+      <Content>
+        <Header>
+          <Title>{activeSection}</Title>
+          <Button variant="secondary">
+            <Logout /> Logout
+          </Button>
+        </Header>
+        <Card>
+          {renderActiveSection()}
+        </Card>
+      </Content>
+    </AdminDashboard>
   );
 };
 
