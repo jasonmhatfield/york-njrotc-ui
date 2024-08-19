@@ -4,10 +4,443 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="admin progress 40%">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="admin progress 60%">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/staff/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/FilterBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/config/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/CadetList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/Dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/FilterBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/ManageCadets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/Modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/anchor-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/anchor-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/01/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/01/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/01/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/01/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/01/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/01/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/01/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/01/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/02/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/02/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/02/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/02/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/02/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/02/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/02/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/02/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/02/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/02/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/08-August.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/08-August.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/12/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/12/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/12/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/12/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/12/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/12/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/19/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/19/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/19/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/19/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/26/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/26/30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/08-August/classroom/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/08-August/classroom/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/02/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/02/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/09-September.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/09-September.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/15/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/15/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/15/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/15/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/15/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/15/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/15/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/15/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/33.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/34.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/42.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/45.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/46.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/47.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/48.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/50.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/51.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/52.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/53.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-1/54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-1/54.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/33.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/34.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/42.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/23-2/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/23-2/44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/09-September/30/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/09-September/30/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/06/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/06/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/10-October.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/10-October.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/13/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/13/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/06.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/10-October/21/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/10-October/21/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/04/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/04/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11-November.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11-November.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/33.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/34.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/42.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/45.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/46.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/47.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/48.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/50.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/51.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/52.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/53.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/54.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/55.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/56.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/56.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/57.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/57.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/58.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/58.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/59.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/59.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/60.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/60.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/61.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/61.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/62.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/62.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/63.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/63.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/64.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/64.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/65.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/65.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/66.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/66.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/67.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/67.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/68.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/68.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/69.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/69.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/70.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/70.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/71.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/71.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/72.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/72.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/73.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/73.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/74.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/74.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/75.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/75.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/11/76.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/11/76.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/16/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/16/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/20/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/20/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/20/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/20/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/20/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/20/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/20/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/20/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/events/2023/11-November/23/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/events/2023/11-November/23/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/01-meritorious-achievement.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/01-meritorious-achievement.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/02-distinguished-unit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/02-distinguished-unit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/03-distinguished-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/03-distinguished-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/04-honor-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/04-honor-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/05-cadet-achievement.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/05-cadet-achievement.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/06-unit-achievement.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/06-unit-achievement.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/07-aptitude.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/07-aptitude.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/08-naval-science-4-outstanding-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/08-naval-science-4-outstanding-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/09-naval-science-3-outstanding-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/09-naval-science-3-outstanding-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/10-naval-science-2-outstanding-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/10-naval-science-2-outstanding-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/11-naval-science-1-outstanding-cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/11-naval-science-1-outstanding-cadet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/12-exemplary-conduct.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/12-exemplary-conduct.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/13-academic-award.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/13-academic-award.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/14-exemplary-personal-appearance.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/14-exemplary-personal-appearance.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/15-physical-fitness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/15-physical-fitness.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/16-participation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/16-participation.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/17-unit-service.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/17-unit-service.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/18-community-service.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/18-community-service.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/19-drill-team.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/19-drill-team.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/20-color-guard.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/20-color-guard.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/21-rifle-team.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/21-rifle-team.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/22-orienteering.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/22-orienteering.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/23-recruiting.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/23-recruiting.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/24-basic-leadership-training.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/24-basic-leadership-training.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ribbons/25-sea-cruise.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/ribbons/25-sea-cruise.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/ADMIN.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/ADMIN.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/CMC.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/CMC.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/CO.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/CO.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/MAA.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/MAA.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/OPS.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/OPS.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/PAO.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/PAO.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/SUPPO.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/SUPPO.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/WEPS.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/WEPS.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/staff/XO.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/staff/XO.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/unit-photos/york-njrotc-fall-2023.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/unit-photos/york-njrotc-fall-2023.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CadetStaff.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventPhotos.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ScrollContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/EventParticipation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/FamilyMemberForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/PhotoManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageEvents/ManageEvents.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageUnit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageUnit/ManageUnit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/common/StyledComponents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/common/StyledComponents.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/08-August.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/08-August.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/09-September.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/09-September.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/10-October.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/10-October.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/11-November.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/11-November.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/About.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/CadetStaff.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/EventPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/events.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/MonthEvents.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ScrollContainer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/theme.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/theme.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/cadetUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/utils/cadetUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/dateUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/utils/dateUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/loadEventData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/utils/loadEventData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/loadImages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/utils/loadImages.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,65 +450,38 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="admin-development" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;jasonmhatfield&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/jasonmhatfield/york-njrotc-ui.git&quot;,
-    &quot;accountId&quot;: &quot;67cb5ed2-fccc-4a46-9d67-d75879bf4b92&quot;
-  }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2knM6NEsTqCCQHmB3AiKCIEth9o" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.Dashboard.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;restart&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/styles/admin/units&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "restart",
+    "last_opened_file_path": "C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/components/admin/utils",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "npm.start.executor": "Run"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\units" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\ranks" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles\admin\family" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets\images" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets\images\events" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\mock" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\utils" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageCadets" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\styles" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\styles" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\assets" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageUnit" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageEvents" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -96,81 +502,14 @@
       <list>
         <item itemvalue="npm.start" />
         <item itemvalue="Node.js.Dashboard.jsx" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="902f3374-b08b-4117-8854-cae37b89b636" name="Changes" comment="" />
-      <created>1723914711523</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1723914711523</updated>
-      <workItem from="1723914713545" duration="11061000" />
-      <workItem from="1723941393268" duration="12266000" />
-    </task>
-    <task id="LOCAL-00001" summary="change folder name">
-      <option name="closed" value="true" />
-      <created>1723914846534</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1723914846534</updated>
-    </task>
-    <task id="LOCAL-00002" summary="admin progress 30%">
-      <option name="closed" value="true" />
-      <created>1723931098510</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1723931098510</updated>
-    </task>
-    <task id="LOCAL-00003" summary="admin progress 40%">
-      <option name="closed" value="true" />
-      <created>1723934988830</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1723934988830</updated>
-    </task>
-    <task id="LOCAL-00004" summary="admin progress 40%">
-      <option name="closed" value="true" />
-      <created>1723941410296</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1723941410296</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change folder name" />
-    <MESSAGE value="admin progress 30%" />
-    <MESSAGE value="admin progress 40%" />
     <MESSAGE value="admin progress 60%" />
     <option name="LAST_COMMIT_MESSAGE" value="admin progress 60%" />
   </component>

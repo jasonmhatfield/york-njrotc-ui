@@ -29,6 +29,8 @@ export const Input = styled.input`
     border-radius: ${theme.borderRadius.sm};
     font-family: ${theme.fonts.main};
     font-size: 14px;
+    color: ${theme.colors.text};
+    background-color: ${theme.colors.surface};
 
     &:focus {
         outline: none;
@@ -43,6 +45,7 @@ export const Select = styled.select`
     border-radius: ${theme.borderRadius.sm};
     font-family: ${theme.fonts.main};
     font-size: 14px;
+    color: ${theme.colors.text};
     background-color: ${theme.colors.surface};
 
     &:focus {

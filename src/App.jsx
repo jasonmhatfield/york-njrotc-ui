@@ -12,8 +12,8 @@ import August2023 from './events/2023/08-August';
 import September2023 from './events/2023/09-September';
 import October2023 from './events/2023/10-October';
 import November2023 from './events/2023/11-November';
-
 import Dashboard from './components/admin/Dashboard';
+
 import config from './config/config'
 
 const App = () => {

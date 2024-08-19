@@ -1,85 +1,236 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import '../styles/Header.css';
+import anchorLogo from '../assets/images/anchor-logo.png';
+
+const styles = {
+  headerContainer: {
+    color: '#fff',
+    textAlign: 'center',
+    position: 'sticky',
+    top: 0,
+    zIndex: 1000,
+    backgroundColor: '#00264d',
+    padding: '10px 0',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.15)',
+    width: '100%',
+  },
+  headerContent: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '0 auto',
+    width: '100%',
+    maxWidth: '1200px',
+    minHeight: '100px',
+    padding: '0 20px',
+  },
+  logoContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logo: {
+    height: '80%',
+    maxHeight: '60px',
+  },
+  titleNavContainer: {
+    width: '100%',
+    textAlign: 'center',
+  },
+  title: {
+    fontSize: '2rem',
+    margin: '0.5rem 0',
+    color: 'gold',
+    textAlign: 'center',
+  },
+  headerMenu: {
+    listStyle: 'none',
+    padding: 0,
+    margin: '10px 0',
+    display: 'flex',
+    gap: '1rem',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
+  navLink: {
+    textDecoration: 'none',
+    color: '#fff',
+    fontSize: '1.2rem',
+    padding: '8px 20px',
+    transition: 'color 0.3s, background-color 0.3s, transform 0.3s ease',
+    borderRadius: '5px',
+    backgroundColor: '#1e3c72',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.15)',
+  },
+  navLinkActive: {
+    backgroundColor: '#ffd700',
+    color: '#1e3c72',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  },
+  mobileMenuButton: {
+    display: 'none',
+    backgroundColor: '#1e3c72',
+    color: '#fff',
+    border: 'none',
+    padding: '10px',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    fontSize: '1.2rem',
+    margin: '10px 0',
+    width: '100%',
+  },
+  mobileMenuOpen: {
+    display: 'block',
+    width: '100%',
+    textAlign: 'center',
+  },
+  mobileNav: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: '#00264d',
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    padding: '10px 0',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.15)',
+    zIndex: 1000,
+  },
+  '@media (max-width: 575px)': {
+    headerContent: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '10px',
+    },
+    title: {
+      marginBottom: '20px',
+    },
+    headerMenu: {
+      display: 'none',
+    },
+    dropdown: {
+      display: 'block',
+    },
+    mobileMenuButton: {
+      display: 'block',
+    },
+    logo: {
+      display: 'hidden',
+    },
+  }
+};
 
 const Header = () => {
-  const [isCadetResourcesOpen, setIsCadetResourcesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const closeCadetResources = () => {
-    setIsCadetResourcesOpen(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.cadet-resources') && isCadetResourcesOpen) {
-        closeCadetResources();
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isCadetResourcesOpen]);
-
   const handlePageChange = (page) => {
+    setIsMobileMenuOpen(false);
     navigate(page);
   };
 
   return (
-    <header className="header-container">
-      <div className="header-content">
-        <div className="logo-container left">
-          <img src="/images/anchor-logo.png" alt="Anchor Logo" className="logo" />
+    <header style={styles.headerContainer}>
+      <div style={styles.headerContent}>
+        <div style={styles.logoContainer}>
+          <img src={anchorLogo} alt="Anchor Logo" style={styles.logo} />
         </div>
-        <div className="title-nav-container">
-          <h1 className="title">York Comprehensive High School NJROTC</h1>
+        <div style={styles.titleNavContainer}>
+          <h1 style={styles.title}>York Comprehensive High School NJROTC</h1>
           <nav>
-            <ul className="header-menu">
+            <ul style={{ ...styles.headerMenu, display: isMobileMenuOpen ? 'none' : 'flex' }}>
               <li>
-                <NavLink to="/" exact activeClassName="active">Home</NavLink>
+                <NavLink
+                  to="/"
+                  style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/about" activeClassName="active">About</NavLink>
+                <NavLink
+                  to="/about"
+                  style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                >
+                  About
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/calendar" activeClassName="active">Calendar</NavLink>
+                <NavLink
+                  to="/calendar"
+                  style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                >
+                  Calendar
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/cadet-staff" activeClassName="active">Cadet Staff</NavLink>
+                <NavLink
+                  to="/cadet-staff"
+                  style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                >
+                  Cadet Staff
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/quarterdeck" activeClassName="active">Quarterdeck</NavLink>
+                <NavLink
+                  to="/quarterdeck"
+                  style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                >
+                  Quarterdeck
+                </NavLink>
               </li>
-              {/* Hiding the entire Cadet Resources button and dropdown */}
-              {/* <li className="cadet-resources">
-                <button onClick={() => setIsCadetResourcesOpen(prev => !prev)}>Cadet Resources</button>
-                {isCadetResourcesOpen && (
-                  <ul className="dropdown-menu">
-                    <li className="dropdown-menu-item">
-                      <NavLink to="/pqs" activeClassName="active">PQS</NavLink>
-                      <NavLink to="/ribbon-checker" activeClassName="active">Ribbon Checker</NavLink>
-                    </li>
-                  </ul>
-                )}
-              </li> */}
             </ul>
           </nav>
-          <div className="dropdown">
-            <select value={window.location.pathname} onChange={(event) => handlePageChange(event.target.value)}>
-              <option value="/">Home</option>
-              <option value="/about">About</option>
-              <option value="/calendar">Calendar</option>
-              <option value="/cadet-staff">Cadet Staff</option>
-              <option value="/quarterdeck">Quarterdeck</option>
-              {/* Hiding the Cadet Resources options */}
-              {/* <option value="/pqs">PQS</option> */}
-            </select>
-          </div>
+          <button
+            style={styles.mobileMenuButton}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+          </button>
+          {isMobileMenuOpen && (
+            <div style={styles.mobileNav}>
+              <NavLink
+                to="/"
+                style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                onClick={() => handlePageChange('/')}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                onClick={() => handlePageChange('/about')}
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/calendar"
+                style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                onClick={() => handlePageChange('/calendar')}
+              >
+                Calendar
+              </NavLink>
+              <NavLink
+                to="/cadet-staff"
+                style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                onClick={() => handlePageChange('/cadet-staff')}
+              >
+                Cadet Staff
+              </NavLink>
+              <NavLink
+                to="/quarterdeck"
+                style={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
+                onClick={() => handlePageChange('/quarterdeck')}
+              >
+                Quarterdeck
+              </NavLink>
+            </div>
+          )}
         </div>
-        <div className="logo-container right">
-          <img src="/images/anchor-logo.png" alt="Anchor Logo" className="logo" />
+        <div style={styles.logoContainer}>
+          <img src={anchorLogo} alt="Anchor Logo" style={styles.logo} />
         </div>
       </div>
     </header>

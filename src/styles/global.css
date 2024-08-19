@@ -1,0 +1,237 @@
+/* Global Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #16222a;
+    color: #ecf0f1;
+    height: 100%;
+    overflow-x: hidden;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+}
+
+/* Common Text Styles */
+h1, h2, h3, h4 {
+    color: #ffd700; /* Gold color for all headings */
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* Button Styles */
+button {
+    cursor: pointer;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #004080;
+    color: #ffd700;
+}
+
+button:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container and Section Styles */
+.container, .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #1a2a3a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox Utility Classes */
+.u-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.u-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Card Styles */
+.card {
+    background-color: #1a2a3a;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card:hover, .card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+}
+
+/* Scroll Container */
+.scroll-container {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    padding-right: 15px; /* Adjust this if needed to ensure content doesn't overflow */
+    box-sizing: content-box;
+}
+
+/* Invisible Scrollbar */
+.scroll-container::-webkit-scrollbar {
+    width: 2px; /* Make the scrollbar very thin */
+    background-color: transparent; /* Transparent background */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1); /* Almost invisible thumb */
+    border-radius: 10px; /* Rounded for a smooth look */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more visible on hover */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent track */
+}
+
+/* Scrollbar for Firefox */
+.scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Adjusting Body to Prevent Jumping */
+body {
+    overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+}
+
+/* Prevents scrollbar from affecting layout width */
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+/* Animation Styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animation-fadeIn {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.animation-zoomIn {
+    animation: zoomIn 1s ease-in-out;
+}
+
+.animation-slideIn {
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 575px) {
+    .container, .section {
+        width: 90vw;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
