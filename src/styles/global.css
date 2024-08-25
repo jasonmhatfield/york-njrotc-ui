@@ -11,10 +11,7 @@ body, html {
     color: #ecf0f1;
     height: 100%;
     overflow-x: hidden;
-    font-size: 16px; /* Base font size */
-}
-
-body {
+    font-size: 16px;
     overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
 }
 
@@ -55,7 +52,6 @@ button:focus {
 img {
     max-width: 100%;
     height: auto;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
 }
 
 /* Container and Section Styles */
@@ -158,12 +154,6 @@ img {
     scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
 
-/* Adjusting Body to Prevent Jumping */
-body {
-    overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
-}
-
-/* Prevents scrollbar from affecting layout width */
 body::-webkit-scrollbar {
     width: 2px;
 }
@@ -176,7 +166,6 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
     background-color: transparent;
 }
-
 
 /* Animation Styles */
 @keyframes fadeIn {

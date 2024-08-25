@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Add, Close, Save, AccountCircle } from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {AccountCircle, Add, Close, Save} from '@mui/icons-material';
 import './styles/AdminDashboard.component.css';
 
-const ManageCadets = ({ cadetData }) => {
-  const [cadets, setCadets] = useState(cadetData || []);
+const ManageCadets = () => {
+  const [cadets, setCadets] = useState([]);
   const [editingCadet, setEditingCadet] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,15 +11,59 @@ const ManageCadets = ({ cadetData }) => {
   const [filterStatus, setFilterStatus] = useState('');
   const [isFormChanged, setIsFormChanged] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [ranks, setRanks] = useState([]);
+
+  const platoons = ['Alpha', 'Bravo', 'Charlie'];
 
   useEffect(() => {
-    if (cadetData) {
-      setCadets(cadetData);
-    }
-  }, [cadetData]);
+    fetchCadets();
+    fetchRanks();
+  }, []);
 
-  const openModal = (cadet = { firstName: '', lastName: '', rank: '', platoon: '', status: 'ACTIVE', photoUrl: '' }) => {
-    setEditingCadet(cadet);
+  const fetchCadets = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/cadets');
+      if (!response.ok) throw new Error('Failed to fetch cadets');
+      const data = await response.json();
+      const formattedData = data.map(cadet => ({
+        ...cadet,
+        platoon: cadet.platoon
+          ? cadet.platoon.charAt(0).toUpperCase() + cadet.platoon.slice(1).toLowerCase()
+          : '',
+        status: cadet.status
+          ? cadet.status.charAt(0).toUpperCase() + cadet.status.slice(1).toLowerCase()
+          : ''
+      }));
+      setCadets(formattedData);
+    } catch (error) {
+      console.error('Error fetching cadets:', error);
+    }
+  };
+
+  const fetchRanks = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/ranks');
+      if (!response.ok) throw new Error('Failed to fetch ranks');
+      const data = await response.json();
+      setRanks(data);
+    } catch (error) {
+      console.error('Error fetching ranks:', error);
+    }
+  };
+
+  const openModal = (cadet = null) => {
+    if (cadet) {
+      setEditingCadet({...cadet});
+    } else {
+      setEditingCadet({
+        firstName: '',
+        lastName: '',
+        rank: null,
+        platoon: '',
+        status: 'ACTIVE',
+        photoUrl: ''
+      });
+    }
     setIsModalOpen(true);
     setIsFormChanged(false);
     setUploadedImage(null);
@@ -33,14 +77,21 @@ const ManageCadets = ({ cadetData }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditingCadet(prev => ({ ...prev, [name]: value }));
+    setEditingCadet(prev => {
+      if (name === 'rank') {
+        return {...prev, rank: ranks.find(r => r.id.toString() === value) || null};
+      }
+      return {...prev, [name]: value};
+    });
     setIsFormChanged(true);
   };
 
   const handleSave = async () => {
     try {
       const method = editingCadet.id ? 'PUT' : 'POST';
-      const url = editingCadet.id ? `http://localhost:8080/api/cadets/${editingCadet.id}` : 'http://localhost:8080/api/cadets';
+      const url = editingCadet.id
+        ? `http://localhost:8080/api/cadets/${editingCadet.id}`
+        : 'http://localhost:8080/api/cadets';
 
       const response = await fetch(url, {
         method,
@@ -57,9 +108,10 @@ const ManageCadets = ({ cadetData }) => {
           : [...prevCadets, updatedCadet]
       );
       closeModal();
+      fetchCadets(); // Refresh the cadet list to ensure we have the latest data
     } catch (error) {
       console.error('Error saving cadet:', error);
-      // Optionally, show an error message to the user
+      alert(`Failed to save cadet: ${error.message}`);
     }
   };
 
@@ -81,27 +133,22 @@ const ManageCadets = ({ cadetData }) => {
       const updatedPhotoUrl = await response.text();
 
       setEditingCadet(prev => ({ ...prev, photoUrl: updatedPhotoUrl }));
-      setCadets(prevCadets =>
-        prevCadets.map(c => (c.id === editingCadet.id ? { ...c, photoUrl: updatedPhotoUrl } : c))
-      );
       setUploadedImage(updatedPhotoUrl);
       setIsFormChanged(true);
     } catch (error) {
       console.error('Error uploading image:', error);
-      // Optionally, show an error message to the user
+      alert(`Failed to upload image: ${error.message}`);
     }
   };
 
   const filteredCadets = cadets.filter(cadet => {
-    return (
-      (cadet.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        cadet.lastName.toLowerCase().includes(searchTerm.toLowerCase())) &&
-      (filterPlatoon ? cadet.platoon === filterPlatoon : true) &&
-      (filterStatus ? cadet.status === filterStatus : true)
-    );
-  });
+    const matchesSearchTerm = cadet.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      cadet.lastName.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesPlatoon = filterPlatoon ? cadet.platoon === filterPlatoon : true;
+    const matchesStatus = filterStatus ? cadet.status === filterStatus.charAt(0).toUpperCase() + filterStatus.slice(1).toLowerCase() : true;
 
-  const uniquePlatoons = [...new Set(cadets.map(cadet => cadet.platoon))];
+    return matchesSearchTerm && matchesPlatoon && matchesStatus;
+  });
 
   return (
     <div className="manage-cadets">
@@ -112,17 +159,18 @@ const ManageCadets = ({ cadetData }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <select value={filterPlatoon} onChange={(e) => setFilterPlatoon(e.target.value)}>
-          <option value="">All Platoons</option>
-          {uniquePlatoons.map(platoon => (
-            <option key={platoon} value={platoon}>{platoon}</option>
+        <select value = {filterPlatoon} onChange = {(e) => setFilterPlatoon(e.target.value)}>
+          <option value = "">All Platoons</option>
+          {platoons.map(platoon => (
+            <option key = {platoon} value = {platoon}>{platoon}</option>
           ))}
         </select>
-        <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
-          <option value="">All Statuses</option>
-          <option value="ACTIVE">Active</option>
-          <option value="INACTIVE">Inactive</option>
-          <option value="GRADUATED">Graduated</option>
+
+        <select value = {filterStatus} onChange = {(e) => setFilterStatus(e.target.value)}>
+          <option value = "">All Statuses</option>
+          <option value = "ACTIVE">Active</option>
+          <option value = "INACTIVE">Inactive</option>
+          <option value = "GRADUATED">Graduated</option>
         </select>
       </div>
       <button className="add-button" onClick={() => openModal()}>
@@ -204,31 +252,35 @@ const ManageCadets = ({ cadetData }) => {
                   <select
                     id="rank"
                     name="rank"
-                    value={editingCadet.rank ? editingCadet.rank.rankName : ''}
+                    value = {editingCadet.rank ? editingCadet.rank.id : ''}
                     onChange={handleInputChange}
                   >
                     <option value="">Select Rank</option>
-                    <option value="Ensign">Ensign</option>
-                    <option value="Lieutenant">Lieutenant</option>
-                    {/* Add more rank options as needed */}
+                    {ranks.map(rank => (
+                      <option key = {rank.id} value = {rank.id}>{rank.rankName}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="platoon">Platoon</label>
-                  <input
-                    type="text"
+                  <select
                     id="platoon"
                     name="platoon"
                     value={editingCadet.platoon || ''}
                     onChange={handleInputChange}
-                  />
+                  >
+                    <option value = "">Select Platoon</option>
+                    {platoons.map(platoon => (
+                      <option key = {platoon} value = {platoon}>{platoon}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="status">Status</label>
                   <select
                     id="status"
                     name="status"
-                    value={editingCadet.status || 'ACTIVE'}
+                    value = {editingCadet.status || ''}
                     onChange={handleInputChange}
                   >
                     <option value="ACTIVE">Active</option>
