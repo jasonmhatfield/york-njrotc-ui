@@ -3,7 +3,7 @@ import { People, Logout } from '@mui/icons-material';
 import ManageCadets from './ManageCadets';
 import './styles/AdminDashboard.component.css';
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState('Cadets');
   const [cadetData, setCadetData] = useState([]);
   const dashboardRef = useRef(null);
@@ -76,4 +76,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AdminDashboard;

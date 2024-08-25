@@ -12,7 +12,7 @@ import August2023 from './events/2023/08-August';
 import September2023 from './events/2023/09-September';
 import October2023 from './events/2023/10-October';
 import November2023 from './events/2023/11-November';
-import Dashboard from './components/admin/Dashboard';
+import AdminDashboard from './components/admin/AdminDashboard';
 
 import config from './config/config'
 
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="events/2023/11-November" element={<November2023 />} />
 
         {/* Admin Routes */}
-        <Route path="/admin/*" element={<Dashboard />} />
+        <Route path="/admin/*" element={<AdminDashboard />} />
       </Routes>
     </div>
   );

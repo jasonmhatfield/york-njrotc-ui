@@ -91,20 +91,41 @@ const ManageCadets = () => {
       const method = editingCadet.id ? 'PUT' : 'POST';
       const url = editingCadet.id
         ? `http://localhost:8080/api/cadets/${editingCadet.id}`
-        : 'http://localhost:8080/api/cadets';
+        : `http://localhost:8080/api/cadets`;
+
+      const { firstName, lastName, status, platoon, photoUrl, rank } = editingCadet;
+
+      const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
+
+      const payload = {
+        firstName: firstName || "",
+        lastName: lastName || "",
+        status: status ? status.toUpperCase() : "ACTIVE",
+        platoon: platoon ? platoon.toUpperCase() : "ALPHA",
+        photoUrl: imageName || "",
+        rank: rank || null,
+      };
+
+      console.log('Payload:', payload);
 
       const response = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(editingCadet),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error('Failed to save cadet');
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
+        throw new Error('Failed to save cadet');
+      }
 
       const updatedCadet = await response.json();
       setCadets(prevCadets =>
         editingCadet.id
-          ? prevCadets.map(c => (c.id === updatedCadet.id ? updatedCadet : c))
+          ? prevCadets.map(cadet => (cadet.id === updatedCadet.id ? updatedCadet : cadet))
           : [...prevCadets, updatedCadet]
       );
       closeModal();
@@ -152,7 +173,7 @@ const ManageCadets = () => {
 
   return (
     <div className="manage-cadets">
-      <div className="filter-section">
+      <div className = "filter-add-section">
         <input
           type="text"
           placeholder="Search by name"
@@ -165,17 +186,16 @@ const ManageCadets = () => {
             <option key = {platoon} value = {platoon}>{platoon}</option>
           ))}
         </select>
-
         <select value = {filterStatus} onChange = {(e) => setFilterStatus(e.target.value)}>
           <option value = "">All Statuses</option>
           <option value = "ACTIVE">Active</option>
           <option value = "INACTIVE">Inactive</option>
           <option value = "GRADUATED">Graduated</option>
         </select>
+        <button className = "add-button" onClick = {() => openModal()}>
+          <Add/> Add Cadet
+        </button>
       </div>
-      <button className="add-button" onClick={() => openModal()}>
-        <Add /> Add Cadet
-      </button>
       <table>
         <thead>
         <tr>
@@ -187,7 +207,7 @@ const ManageCadets = () => {
         </thead>
         <tbody>
         {filteredCadets.map(cadet => (
-          <tr key={cadet.id} onClick={() => openModal(cadet)} className="clickable-row">
+          <tr key = {cadet.id} onClick = {() => openModal(cadet)} className = "clickable-row">
             <td>{`${cadet.firstName} ${cadet.lastName}`}</td>
             <td>{cadet.rank ? cadet.rank.rankName : 'N/A'}</td>
             <td>{cadet.platoon}</td>
@@ -196,7 +216,6 @@ const ManageCadets = () => {
         ))}
         </tbody>
       </table>
-
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -233,7 +252,7 @@ const ManageCadets = () => {
                     type="text"
                     id="firstName"
                     name="firstName"
-                    value={editingCadet.firstName || ''}
+                    value = {editingCadet.firstName}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -243,7 +262,7 @@ const ManageCadets = () => {
                     type="text"
                     id="lastName"
                     name="lastName"
-                    value={editingCadet.lastName || ''}
+                    value = {editingCadet.lastName}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -266,12 +285,12 @@ const ManageCadets = () => {
                   <select
                     id="platoon"
                     name="platoon"
-                    value={editingCadet.platoon || ''}
+                    value = {editingCadet.platoon}
                     onChange={handleInputChange}
                   >
                     <option value = "">Select Platoon</option>
                     {platoons.map(platoon => (
-                      <option key = {platoon} value = {platoon}>{platoon}</option>
+                      <option key = {platoon} value = {platoon.toUpperCase()}>{platoon}</option>
                     ))}
                   </select>
                 </div>
@@ -280,7 +299,7 @@ const ManageCadets = () => {
                   <select
                     id="status"
                     name="status"
-                    value = {editingCadet.status || ''}
+                    value = {editingCadet.status}
                     onChange={handleInputChange}
                   >
                     <option value="ACTIVE">Active</option>
@@ -307,6 +326,6 @@ const ManageCadets = () => {
       )}
     </div>
   );
-};
+}
 
 export default ManageCadets;
