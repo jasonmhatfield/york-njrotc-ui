@@ -1,55 +1,75 @@
 import React, { useState, useEffect } from 'react';
-import * as staffImages from '../assets/images/staff';
-
-const staffData = {
-  triad: [
-    { title: 'Commanding Officer', name: 'Cadet LCDR Gideon Hatfield', image: staffImages.CO, rank: 'officer' },
-    { title: 'Executive Officer', name: 'Cadet LT Liam Miller', image: staffImages.XO, rank: 'officer' },
-    { title: 'Command Master Chief', name: 'Cadet MCPO Trey Arnett', image: staffImages.CMC, rank: 'enlisted' },
-  ],
-  wardroom: [
-    { title: 'Operations Officer', name: 'Cadet LTJG Gabby Clinton', image: staffImages.OPS, rank: 'officer' },
-    { title: 'Supply Officer', name: 'Cadet LTJG Logan Zelakowski', image: staffImages.SUPPO, rank: 'officer' },
-    { title: 'Admin Officer', name: 'Cadet ENS Addy Branch', image: staffImages.ADMIN, rank: 'officer' },
-  ],
-  unitStaff: [
-    { title: 'Master At Arms', name: 'Cadet CPO Kam LaForge', image: staffImages.MAA, rank: 'enlisted' },
-    { title: 'PAO', name: 'Cadet CPO Maygan Kimble', image: staffImages.PAO, rank: 'enlisted' },
-    { title: 'WEPS', name: 'Cadet CPO Hunter King', image: staffImages.WEPS, rank: 'enlisted' },
-  ],
-};
 
 const CadetStaff = () => {
   const [loading, setLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState(0);
-  const totalImages = Object.values(staffData).flat().length;
+  const [cadetData, setCadetData] = useState([]);
 
+  // Fetch cadet staff data from the API
   useEffect(() => {
-    if (loadedImages === totalImages) {
-      setLoading(false);
-    }
-  }, [loadedImages, totalImages]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/cadets');
+        const data = await response.json();
+        setCadetData(data.filter(cadet => cadet.status === 'ACTIVE')); // Filter active cadets
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching cadet data:', error);
+      }
+    };
 
-  const handleImageLoad = () => {
-    setLoadedImages((prev) => prev + 1);
+    fetchData();
+  }, []);
+
+  const isEnlisted = (rankPrecedence) => {
+    return rankPrecedence > 6; // Enlisted ranks have a precedence greater than 6
   };
 
-  const renderStaffCards = (section) => {
-    return staffData[section].map((staff, index) => (
-      <div key={index} style={styles.staffCard(staff.rank)}>
-        <img
-          src={staff.image}
-          alt={`${staff.title} ${staff.name}`}
-          style={styles.staffImage(staff.rank)}
-          onLoad={handleImageLoad}
-        />
-        <div style={styles.staffInfo}>
-          <p style={styles.staffName}>{staff.name}</p>
+  const getStaffMember = (positionTitle) => {
+    return cadetData.find(cadet => cadet.cadetPosition && cadet.cadetPosition.position === positionTitle);
+  };
+
+  const renderStaffCards = (staffCategory) => {
+    return staffCategory.map((staff, index) => {
+      const staffMember = getStaffMember(staff.title);
+      if (!staffMember) return null; // Hide the card if no cadet is in this position
+
+      const rankType = isEnlisted(staffMember.rank.rankPrecedence) ? 'enlisted' : 'officer';
+
+      return (
+        <div key={index} style={styles.staffCard(rankType)}>
+          <img
+            src={staffMember.photoUrl} // Assume the API provides the correct image URL
+            alt={`${staff.title} ${staffMember.firstName} ${staffMember.lastName}`}
+            style={styles.staffImage(rankType)}
+            onLoad={() => setLoading(false)}
+          />
+          <div style={styles.staffInfo}>
+            <p style={styles.staffName}>{`Cadet ${staffMember.rank.rankName} ${staffMember.firstName} ${staffMember.lastName}`}</p>
+          </div>
+          <p style={styles.staffTitle}>{staff.title}</p>
         </div>
-        <p style={styles.staffTitle}>{staff.title}</p>
-      </div>
-    ));
+      );
+    });
   };
+
+  // Define the staff categories based on the position titles
+  const triad = [
+    { title: 'Commanding Officer' },
+    { title: 'Executive Officer' },
+    { title: 'Command Master Chief' },
+  ];
+
+  const wardroom = [
+    { title: 'Operations Officer' },
+    { title: 'Supply Officer' },
+    { title: 'Administration Officer' },
+  ];
+
+  const unitStaff = [
+    { title: 'Master-at-Arms' },
+    { title: 'Public Affairs Officer' },
+    { title: 'Weapons Officer' },
+  ];
 
   return (
     <div style={styles.container}>
@@ -57,15 +77,15 @@ const CadetStaff = () => {
       <div style={{ display: loading ? 'none' : 'block' }}>
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>The Triad</h2>
-          <div style={styles.sectionContent}>{renderStaffCards('triad')}</div>
+          <div style={styles.sectionContent}>{renderStaffCards(triad)}</div>
         </div>
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>The Wardroom</h2>
-          <div style={styles.sectionContent}>{renderStaffCards('wardroom')}</div>
+          <div style={styles.sectionContent}>{renderStaffCards(wardroom)}</div>
         </div>
         <div style={{ ...styles.section, borderBottom: 'none' }}>
           <h2 style={styles.sectionTitle}>Unit Staff</h2>
-          <div style={styles.sectionContent}>{renderStaffCards('unitStaff')}</div>
+          <div style={styles.sectionContent}>{renderStaffCards(unitStaff)}</div>
         </div>
       </div>
     </div>

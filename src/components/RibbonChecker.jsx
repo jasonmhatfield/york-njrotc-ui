@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import ribbonsData from '../data/ribbonsData';
 
 const RibbonChecker = () => {
-  const [ribbons, setRibbons] = useState(() => {
-    const savedRibbons = sessionStorage.getItem('selectedRibbons');
-    return savedRibbons ? JSON.parse(savedRibbons) : ribbonsData;
-  });
+  const [ribbons, setRibbons] = useState([]);
   const [currentRibbon, setCurrentRibbon] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top when component mounts
+    fetch('http://localhost:8080/api/ribbons')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setRibbons(data))
+      .catch(error => {
+        console.error('Error fetching ribbons:', error);
+        alert('Failed to fetch ribbons. Please check the console for more details.');
+      });
   }, []);
 
   useEffect(() => {
@@ -37,28 +44,26 @@ const RibbonChecker = () => {
     const rows = [];
     let index = 0;
 
-    // Top row, which may have 1 to 3 ribbons
     const topRowCount = totalRibbons % 3 === 0 ? 3 : totalRibbons % 3;
     const topRow = selectedRibbons.slice(index, index + topRowCount);
     rows.push(
       <div key={`row-${index}`} style={{ ...styles.ribbonRow, ...styles.centeredRow }}>
         {topRow.map(ribbon => (
           <div key={ribbon.id} style={styles.ribbonImage}>
-            <img src={ribbon.imagePath} alt={ribbon.name} title={ribbon.name} />
+            <img src={ribbon.imageUrl} alt={ribbon.name} title={ribbon.name} />
           </div>
         ))}
       </div>
     );
     index += topRowCount;
 
-    // Subsequent rows, each with 3 ribbons
     while (index < totalRibbons) {
       const row = selectedRibbons.slice(index, index + 3);
       rows.push(
         <div key={`row-${index}`} style={styles.ribbonRow}>
           {row.map(ribbon => (
             <div key={ribbon.id} style={styles.ribbonImage}>
-              <img src={ribbon.imagePath} alt={ribbon.name} title={ribbon.name} />
+              <img src={ribbon.imageUrl} alt={ribbon.name} title={ribbon.name} />
             </div>
           ))}
         </div>
@@ -111,7 +116,7 @@ const RibbonChecker = () => {
                 <h5 style={styles.modalTitle}>{currentRibbon.name}</h5>
               </div>
               <div style={styles.modalBody}>
-                <img src={currentRibbon.imagePath} alt={currentRibbon.name} style={styles.modalRibbonImage} />
+                <img src={currentRibbon.imageUrl} alt={currentRibbon.name} style={styles.modalRibbonImage} />
                 <p style={styles.description}>{currentRibbon.description}</p>
               </div>
               <div style={styles.modalFooter}>
@@ -222,6 +227,7 @@ const styles = {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   modalContentWrapper: {
     backgroundColor: '#1a2a3a',
@@ -251,7 +257,7 @@ const styles = {
   },
   modalRibbonImage: {
     display: 'block',
-    maxWidth: '150%',
+    maxWidth: '100%',
     margin: '0 auto',
     paddingTop: '1rem',
     paddingBottom: '1rem',
