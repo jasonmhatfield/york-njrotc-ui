@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { People, Logout } from '@mui/icons-material';
 import ManageCadets from './ManageCadets/ManageCadets';
-import './styles/Dashboard.css';
+import './styles/AdminDashboard.component.css';
 
 const Dashboard = () => {
   const [activeSection, setActiveSection] = useState('Cadets');

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/events.css';
+import '../../styles/Events.component.css';
 
 const August2023 = () => {
   const [selectedDay, setSelectedDay] = useState(null);

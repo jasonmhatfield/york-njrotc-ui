@@ -1,3 +1,7 @@
+.ribbon-checker {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
 .ribbon-container {
     max-width: 100%;
     overflow-x: hidden;
@@ -10,53 +14,34 @@
     background-color: #1a2a3a;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.ribbon-checker h2.center {
-    font-size: 2rem;
-    color: #ffd700;
-    text-align: center;
-    margin: 20px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
-.ribbon-checker h3, .ribbon-checker h4 {
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffd700;
-}
-
-.ribbon-selector, .selected-ribbons {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: #16222a; /* Matching the background color of the page */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.ribbon-selector {
-    width: 430px;
 }
 
 .selected-ribbons {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #16222a;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 325px;
 }
 
+.ribbon-selector {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #16222a;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 430px;
+}
+
 .ribbon-flex-container {
-    overflow-y: auto; /* Add vertical scrolling */
+    overflow-y: auto;
     max-height: calc(100vh - 450px);
-    background-color: #34495e; /* Dark background for contrast */
-    border: 1px solid #ecf0f1; /* Light border for contrast */
+    background-color: #34495e;
+    border: 1px solid #ecf0f1;
     padding: 10px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-}
-
-.ribbon-flex-container:hover {
-    background-color: #2c3e50; /* Slightly darker on hover */
 }
 
 .ribbon-item {
@@ -65,10 +50,11 @@
     gap: 0.5rem;
     color: #ecf0f1;
     font-size: 1.4rem;
+    border-radius: 1px;
 }
 
 .custom-checkbox {
-    accent-color: #ffd700; /* Gold color for checkboxes */
+    accent-color: #ffd700;
     width: 15px;
     height: 15px;
 }
@@ -86,19 +72,9 @@
     height: 18px;
 }
 
-.info-button:hover,
-.info-button:focus {
-    background-color: #003366;
-    color: #ffd700;
-}
-
-label {
+.label {
     font-weight: 600;
     color: #ecf0f1;
-}
-
-.selected-ribbons h4 {
-    margin-top: 1rem;
 }
 
 .ribbon-row {
@@ -110,7 +86,7 @@ label {
     justify-content: center;
 }
 
-.description, .no-ribbons-message {
+.description {
     font-size: 1.25rem;
     padding: 0 2rem;
     margin: 5px 5px 20px 20px;
@@ -118,7 +94,9 @@ label {
 }
 
 .no-ribbons-message {
+    font-size: 1.25rem;
     text-align: center;
+    color: #ecf0f1;
 }
 
 .modal-backdrop {
@@ -130,10 +108,11 @@ label {
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .modal-content-wrapper {
-    background-color: #1a2a3a; /* Matching the background color of the application */
+    background-color: #1a2a3a;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     max-width: 600px;
@@ -147,7 +126,7 @@ label {
     align-items: center;
 }
 
-.modal-header, .modal-footer {
+.modal-header {
     width: 100%;
     text-align: center;
 }
@@ -165,10 +144,15 @@ label {
 
 .modal-ribbon-image {
     display: block;
-    max-width: 150%;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.modal-footer {
+    width: 100%;
+    text-align: center;
 }
 
 .btn {
@@ -180,61 +164,26 @@ label {
     margin: 0.5rem;
     border-radius: 6px;
     text-align: center;
-    width: calc(50% - 1rem); /* Ensures two buttons fit nicely in a row */
+    width: calc(50% - 1rem);
     box-sizing: border-box;
-    font-size: 1rem; /* Consistent font size */
-}
-
-.btn:hover {
-    color: gold; /* Change color on hover */
-    background-color: #004080; /* Slightly lighter blue on hover */
+    font-size: 1rem;
 }
 
 .buttons-container {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: #1a2a3a; /* Matching the background color of the application */
-    border-top: 1px solid #ddd; /* A slight border to separate from the list */
-    flex-shrink: 0; /* Prevent shrinking */
+    background-color: #1a2a3a;
+    border-top: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
-@media (max-width: 575px) {
-    .ribbon-selector, .selected-ribbons {
-        width: 80dvw;
-    }
-
-    .ribbon-container {
-        flex-direction: column;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.center {
+    text-align: center;
+    color: #ffd700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 20px 0;
 }

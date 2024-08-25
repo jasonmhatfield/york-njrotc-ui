@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
+import '../styles/Calendar.component.css'; // Import the CSS file
 
 const CALENDAR_ID = 2;
 
@@ -32,7 +33,7 @@ const Calendar = ({ config }) => {
   }, [apiKey, calendarId]);
 
   const handleMapLoad = useCallback(() => {
-    // Do something when the map is loaded if needed
+    // Optional: Implement if there's a need to handle map loading events
   }, []);
 
   const formatAddress = (address) => {
@@ -53,15 +54,15 @@ const Calendar = ({ config }) => {
     return (
       <div
         key={`${event.id}-${eventStartDate.toISOString()}`}
-        style={styles.calendarCard}
+        className="calendar-card"
       >
-        <div style={styles.calendarCardContent}>
-          <div style={styles.calendarCardTop}>
-            <h2 style={styles.dateHeader}>
+        <div className="calendar-card-content">
+          <div className="calendar-card-top">
+            <h2 className="date-header">
               {eventStartDate.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
             </h2>
-            <h3 style={styles.eventTitle}>{event.summary}</h3>
-            <p style={styles.eventTime}>
+            <h3 className="event-title">{event.summary}</h3>
+            <p className="event-time">
               {isAllDay ? 'Time: All Day' : `Time: ${eventStartDate.toLocaleTimeString('en-US', {
                 hour: '2-digit',
                 minute: '2-digit'
@@ -70,11 +71,11 @@ const Calendar = ({ config }) => {
                 minute: '2-digit'
               })}`}
             </p>
-            <p style={styles.eventDescription}>{event.description}</p>
+            <p className="event-description">{event.description}</p>
           </div>
           {event.location && (
-            <div style={styles.calendarCardBottom}>
-              <p style={styles.eventLocation}>
+            <div className="calendar-card-bottom">
+              <p className="event-location">
                 <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location)}`}
                    target="_blank" rel="noopener noreferrer">
                   {formatAddress(event.location)}
@@ -86,7 +87,6 @@ const Calendar = ({ config }) => {
                 allowFullScreen
                 title="Event Location"
                 onLoad={handleMapLoad}
-                style={styles.eventMap}
               ></iframe>
             </div>
           )}
@@ -148,19 +148,19 @@ const Calendar = ({ config }) => {
     const monthName = new Date(0, month).toLocaleString('en-US', { month: 'long' });
 
     return (
-      <div key={month} style={{ ...styles.calendarCardsContainer, display: activeTab === month ? 'block' : 'none' }} ref={containerRef}>
+      <div key={month} className="calendar-cards-container" ref={containerRef}>
         {isCurrentMonth && todayEvents.length > 0 && (
           <>
             <h2>Today's Events</h2>
-            <div style={styles.calendarCards}>
+            <div className="calendar-cards">
               {todayEvents.map(event => splitMultiDayEvent(event))}
             </div>
           </>
         )}
         {eventsForMonth.length === 0 ? (
-          <h2 style={styles.dateText}>{isCurrentMonth ? `No more events for ${monthName}` : `No events for ${monthName} have been scheduled yet.`}</h2>
+          <h2 className="date-text">{isCurrentMonth ? `No more events for ${monthName}` : `No events for ${monthName} have been scheduled yet.`}</h2>
         ) : (
-          <div style={styles.calendarCards}>
+          <div className="calendar-cards">
             {eventsForMonth.flatMap(event => splitMultiDayEvent(event))}
           </div>
         )}
@@ -189,27 +189,27 @@ const Calendar = ({ config }) => {
   }, [activeTab]);
 
   if (loading) {
-    return <div style={styles.loading}>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
-    return <div style={styles.error}>Error loading events.</div>;
+    return <div className="error">Error loading events.</div>;
   }
 
   const currentMonth = new Date().getMonth();
   const months = Array.from({ length: 6 }, (_, i) => (currentMonth + i) % 12);
 
   return (
-    <div style={styles.calendarContainer}>
-      <div style={styles.tabs}>
+    <div className="calendar-container">
+      <div className="tabs">
         {months.map((month) => (
-          <div key={month} style={activeTab === month ? { ...styles.tab, ...styles.activeTab } : styles.tab} onClick={() => setActiveTab(month)}>
+          <div key={month} className={activeTab === month ? 'tab active-tab' : 'tab'} onClick={() => setActiveTab(month)}>
             {new Date(0, month).toLocaleString('en-US', { month: 'long' })}
           </div>
         ))}
       </div>
-      <div style={styles.monthDropdown}>
-        <select style={styles.monthSelector} onChange={(e) => setActiveTab(Number(e.target.value))} value={activeTab}>
+      <div className="month-dropdown">
+        <select className="month-selector" onChange={(e) => setActiveTab(Number(e.target.value))} value={activeTab}>
           {months.map((month) => (
             <option key={month} value={month}>
               {new Date(0, month).toLocaleString('en-US', { month: 'long' })}
@@ -217,148 +217,10 @@ const Calendar = ({ config }) => {
           ))}
         </select>
       </div>
-      {months.map(renderEventsForMonth)}
-      {showScrollIndicator && <div style={styles.scrollIndicator}>↓</div>}
+      {renderEventsForMonth(activeTab)}
+      {showScrollIndicator && <div className="scroll-indicator">↓</div>}
     </div>
   );
 };
 
 export default Calendar;
-
-const styles = {
-  calendarContainer: {
-    width: '100%',
-    maxWidth: '1200px',
-    margin: '0 auto',
-    overflowX: 'hidden',
-  },
-  tabs: {
-    display: 'flex',
-    justifyContent: 'center',
-    padding: '10px 0',
-    borderBottom: '2px solid #ffd700',
-  },
-  tab: {
-    padding: '10px 20px',
-    cursor: 'pointer',
-    fontSize: '1.1rem',
-    color: '#ffd700',
-    transition: 'all 0.3s ease',
-  },
-  activeTab: {
-    fontWeight: 'bold',
-    borderBottom: '3px solid #ffd700',
-  },
-  calendarCardsContainer: {
-    padding: '20px 0',
-  },
-  calendarCards: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '20px',
-    padding: '20px 0',
-    maxWidth: '1200px',
-    margin: '0 auto',
-  },
-  monthDropdown: {
-    width: '100%',
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
-  monthSelector: {
-    padding: '10px',
-    fontSize: '1.1rem',
-    color: '#ffd700',
-    backgroundColor: '#1a5f7a',
-    borderRadius: '5px',
-    border: 'none',
-  },
-  calendarCard: {
-    background: 'linear-gradient(145deg, #1a5f7a, #003165)',
-    borderRadius: '12px',
-    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
-    padding: '20px',
-    width: '100%',
-    minHeight: '425px',
-    maxWidth: '340px',
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#ecf0f1',
-    transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
-  },
-  calendarCardContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    flexGrow: 1,
-  },
-  calendarCardTop: {
-    flexGrow: 1,
-  },
-  calendarCardBottom: {
-    marginTop: 'auto',
-  },
-  dateHeader: {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
-    fontSize: '1.5em',
-    margin: '-20px -20px 20px -20px',
-    padding: '15px',
-    textAlign: 'center',
-    borderTopLeftRadius: '12px',
-    borderTopRightRadius: '12px',
-    fontWeight: 'bold',
-    color: '#ffd700',
-    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
-  },
-  eventTitle: {
-    fontSize: '1.3em',
-    marginBottom: '12px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  eventTime: {
-    marginBottom: '12px',
-    textAlign: 'center',
-  },
-  eventDescription: {
-    marginBottom: '12px',
-    textAlign: 'center',
-  },
-  eventLocation: {
-    marginBottom: '12px',
-    textAlign: 'center',
-  },
-  eventMap: {
-    border: 'none',
-    marginTop: '12px',
-    borderRadius: '8px',
-    width: '100%',
-    height: '180px',
-  },
-  loading: {
-    textAlign: 'center',
-    fontSize: '1.6rem',
-    color: '#ffd700',
-    margin: '20px 0',
-  },
-  error: {
-    textAlign: 'center',
-    fontSize: '1.6rem',
-    color: '#ffd700',
-    margin: '20px 0',
-  },
-  dateText: {
-    textAlign: 'center',
-    fontSize: '1.6rem',
-    color: '#ffd700',
-    margin: '20px 0',
-  },
-  scrollIndicator: {
-    textAlign: 'center',
-    fontSize: '2rem',
-    color: '#ffd700',
-    marginTop: '20px',
-  },
-};

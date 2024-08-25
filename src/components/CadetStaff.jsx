@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/CadetStaff.component.css'; // Import the CSS file
 
 const CadetStaff = () => {
   const [loading, setLoading] = useState(true);
@@ -36,17 +37,17 @@ const CadetStaff = () => {
       const rankType = isEnlisted(staffMember.rank.rankPrecedence) ? 'enlisted' : 'officer';
 
       return (
-        <div key={index} style={styles.staffCard(rankType)}>
+        <div key={index} className={`staff-card ${rankType}`}>
           <img
             src={staffMember.photoUrl} // Assume the API provides the correct image URL
             alt={`${staff.title} ${staffMember.firstName} ${staffMember.lastName}`}
-            style={styles.staffImage(rankType)}
+            className={`staff-image ${rankType}`}
             onLoad={() => setLoading(false)}
           />
-          <div style={styles.staffInfo}>
-            <p style={styles.staffName}>{`Cadet ${staffMember.rank.rankName} ${staffMember.firstName} ${staffMember.lastName}`}</p>
+          <div className="staff-info">
+            <p className="staff-name">{`Cadet ${staffMember.rank.rankName} ${staffMember.firstName} ${staffMember.lastName}`}</p>
           </div>
-          <p style={styles.staffTitle}>{staff.title}</p>
+          <p className="staff-title">{staff.title}</p>
         </div>
       );
     });
@@ -72,83 +73,24 @@ const CadetStaff = () => {
   ];
 
   return (
-    <div style={styles.container}>
-      {loading && <div style={styles.loading}>Loading...</div>}
+    <div className="container">
+      {loading && <div className="loading">Loading...</div>}
       <div style={{ display: loading ? 'none' : 'block' }}>
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>The Triad</h2>
-          <div style={styles.sectionContent}>{renderStaffCards(triad)}</div>
+        <div className="section">
+          <h2 className="section-title">The Triad</h2>
+          <div className="section-content">{renderStaffCards(triad)}</div>
         </div>
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>The Wardroom</h2>
-          <div style={styles.sectionContent}>{renderStaffCards(wardroom)}</div>
+        <div className="section">
+          <h2 className="section-title">The Wardroom</h2>
+          <div className="section-content">{renderStaffCards(wardroom)}</div>
         </div>
-        <div style={{ ...styles.section, borderBottom: 'none' }}>
-          <h2 style={styles.sectionTitle}>Unit Staff</h2>
-          <div style={styles.sectionContent}>{renderStaffCards(unitStaff)}</div>
+        <div className="section" style={{ borderBottom: 'none' }}>
+          <h2 className="section-title">Unit Staff</h2>
+          <div className="section-content">{renderStaffCards(unitStaff)}</div>
         </div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    maxWidth: '1200px',
-    overflowX: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    margin: '0 auto',
-  },
-  loading: {
-    fontSize: '1.5rem',
-    color: '#ffd700',
-  },
-  section: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    borderBottom: '2px solid gold',
-  },
-  sectionTitle: {
-    color: '#ffd700',
-    fontSize: '2rem',
-    margin: '10px 0',
-  },
-  sectionContent: {
-    width: '100%',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '20px',
-  },
-  staffCard: (rank) => ({
-    marginBottom: '30px',
-    width: '250px',
-    textAlign: 'center',
-  }),
-  staffImage: (rank) => ({
-    width: '400px',
-    margin: '10px auto',
-    borderRadius: '10px',
-    objectFit: 'cover',
-    boxShadow: `0 0 10px 0 ${rank === 'officer' ? 'gold' : 'silver'}`,
-  }),
-  staffInfo: {
-    margin: '10px 0',
-  },
-  staffName: {
-    fontSize: '1.3rem',
-    color: '#ecf0f1',
-    padding: '1px',
-    margin: '1px 1px 5px',
-  },
-  staffTitle: {
-    marginTop: '10px',
-    fontSize: '1.2rem',
-    color: '#333',
-  },
 };
 
 export default CadetStaff;

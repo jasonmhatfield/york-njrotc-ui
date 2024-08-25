@@ -1,0 +1,71 @@
+/* CadetStaff.component.css */
+
+.container {
+    max-width: 1200px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.loading {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid gold;
+}
+
+.section-title {
+    color: #ffd700;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.section-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.staff-card {
+    margin-bottom: 30px;
+    width: 250px;
+    text-align: center;
+}
+
+.staff-image {
+    width: 400px;
+    margin: 10px auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 10px 0 silver;
+}
+
+.staff-image.officer {
+    box-shadow: 0 0 10px 0 gold;
+}
+
+.staff-info {
+    margin: 10px 0;
+}
+
+.staff-name {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    padding: 1px;
+    margin: 1px 1px 5px;
+}
+
+.staff-title {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}

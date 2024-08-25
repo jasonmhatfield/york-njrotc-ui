@@ -1,3 +1,5 @@
+/* Quarterdeck.component.css */
+
 .quarterdeck-page-container {
     display: flex;
     flex-direction: column;
@@ -19,9 +21,9 @@
     width: 100%;
 }
 
-.navigation button {
+.button {
     background: #1e3c72;
-    border: 1px solid #2a5298;
+    border: none;
     border-radius: 5px;
     color: #ecf0f1;
     margin: 10px;
@@ -32,29 +34,24 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     max-height: 40px;
     padding: 8px 20px;
+    outline: none;  /* Remove focus outline */
 }
 
-.navigation button:hover {
+.button:hover {
     background: #2a5298;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navigation button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.6);
-}
-
-.navigation button.active {
+.button.active {
     background: #ffd700;
     color: #1e3c72;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    transform: translateY(0);
 }
 
-.chief-chat-section, .deck-log-section {
+.section {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
     background-color: #1a2a3a;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -71,44 +68,6 @@
     max-width: 600px;
 }
 
-.event-card {
-    display: flex;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    gap: 10px;
-    cursor: pointer;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 900px;
-    margin-bottom: 10px;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.event-card-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 8px;
-    width: 200px;
-    max-height: 40px;
-    text-align: center;
-}
-
-.event-card h3 {
-    font-size: 1.5rem;
-    color: #ffd700;
-    text-shadow: 1px 1px 2px #000;
-}
-
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -120,7 +79,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.video-container iframe {
+.iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -129,14 +88,3 @@
     border: none;
     border-radius: 8px;
 }
-
-@media (max-width: 480px) {
-    .chief-chat-section, .deck-log-section {
-        width: 90vw;
-    }
-
-    .event-card {
-        height: 600px;
-    }
-}
-
