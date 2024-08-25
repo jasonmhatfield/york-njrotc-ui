@@ -4,47 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="admin progress 63%">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Remove hard coded images and call to dreamhost through api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/01-meritorious-achievement.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/02-distinguished-unit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/03-distinguished-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/04-honor-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/05-cadet-achievement.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/06-unit-achievement.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/07-aptitude.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/08-naval-science-4-outstanding-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/09-naval-science-3-outstanding-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/10-naval-science-2-outstanding-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/11-naval-science-1-outstanding-cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/12-exemplary-conduct.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/13-academic-award.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/14-exemplary-personal-appearance.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/15-physical-fitness.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/16-participation.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/17-unit-service.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/18-community-service.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/19-drill-team.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/20-color-guard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/21-rifle-team.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/22-orienteering.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/23-recruiting.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/24-basic-leadership-training.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/ribbons/25-sea-cruise.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/ADMIN.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/CMC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/CO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/MAA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/OPS.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/PAO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/SUPPO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/WEPS.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/XO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/staff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CadetStaff.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/FilterBar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ribbonsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ribbonsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/FilterBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/FilterBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,9 +126,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724065185396</updated>
-      <workItem from="1724065186837" duration="18166000" />
+      <workItem from="1724065186837" duration="18439000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
+      <option name="closed" value="true" />
+      <created>1724547320846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724547320846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +146,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="admin progress 60%" />
     <MESSAGE value="admin progress 63%" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin progress 63%" />
+    <MESSAGE value="Remove hard coded images and call to dreamhost through api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove hard coded images and call to dreamhost through api" />
   </component>
 </project>

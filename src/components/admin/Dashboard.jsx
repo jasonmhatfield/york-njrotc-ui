@@ -1,15 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { People, Event, Info, Logout } from '@mui/icons-material';
+import { People, Logout } from '@mui/icons-material';
 import ManageCadets from './ManageCadets/ManageCadets';
-import ManageEvents from './ManageEvents/ManageEvents';
-import ManageUnit from './ManageUnit/ManageUnit';
 import './styles/Dashboard.css';
 
 const Dashboard = () => {
   const [activeSection, setActiveSection] = useState('Cadets');
+  const [cadetData, setCadetData] = useState([]);
   const dashboardRef = useRef(null);
 
   useEffect(() => {
+    // Function to fetch cadet data from the API
+    const fetchCadetData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/cadets');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setCadetData(data); // Store fetched cadet data in state
+      } catch (error) {
+        console.error('Error fetching cadet data:', error);
+      }
+    };
+
+    fetchCadetData(); // Call the function to fetch data on component mount
+
     const adjustHeight = () => {
       if (dashboardRef.current) {
         const headerHeight = document.querySelector('header')?.offsetHeight || 0;
@@ -26,18 +41,14 @@ const Dashboard = () => {
 
   const menuItems = [
     { name: 'Cadets', icon: <People /> },
-    { name: 'Events', icon: <Event /> },
-    { name: 'Unit Info', icon: <Info /> },
+    // { name: 'Events', icon: <Event /> },
+    // { name: 'Unit Info', icon: <Info /> },
   ];
 
   const renderActiveSection = () => {
     switch (activeSection) {
       case 'Cadets':
-        return <ManageCadets />;
-      case 'Events':
-        return <ManageEvents />;
-      case 'Unit Info':
-        return <ManageUnit />;
+        return <ManageCadets cadetData={cadetData} />; // Pass cadet data as props
       default:
         return null;
     }

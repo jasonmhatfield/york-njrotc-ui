@@ -25,7 +25,6 @@ const ManageCadets = () => {
         rank: 'Cadet',
         dateOfBirth: '2005-05-15',
         grade: 10,
-        nsLevel: 'NS1',
         leadershipPosition: 'Squad Leader',
         platoon: 1
       },
@@ -98,13 +97,13 @@ const ManageCadets = () => {
           value = {searchTerm}
           onChange = {(e) => setSearchTerm(e.target.value)}
         />
-        <select name = "nsLevel" value = {filters.nsLevel} onChange = {handleFilterChange}>
-          <option value = "all">All NS Levels</option>
-          <option value = "NS1">NS1</option>
-          <option value = "NS2">NS2</option>
-          <option value = "NS3">NS3</option>
-          <option value = "NS4">NS4</option>
-        </select>
+        {/*<select name = "nsLevel" value = {filters.nsLevel} onChange = {handleFilterChange}>*/}
+        {/*  <option value = "all">All NS Levels</option>*/}
+        {/*  <option value = "NS1">NS1</option>*/}
+        {/*  <option value = "NS2">NS2</option>*/}
+        {/*  <option value = "NS3">NS3</option>*/}
+        {/*  <option value = "NS4">NS4</option>*/}
+        {/*</select>*/}
         <select name = "platoon" value = {filters.platoon} onChange = {handleFilterChange}>
           <option value = "all">All Platoons</option>
           <option value = "1">Platoon 1</option>
