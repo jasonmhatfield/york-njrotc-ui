@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { People, Logout } from '@mui/icons-material';
-import ManageCadets from './ManageCadets/ManageCadets';
+import ManageCadets from './ManageCadets';
 import './styles/AdminDashboard.component.css';
 
 const Dashboard = () => {
@@ -9,30 +9,26 @@ const Dashboard = () => {
   const dashboardRef = useRef(null);
 
   useEffect(() => {
-    // Function to fetch cadet data from the API
     const fetchCadetData = async () => {
       try {
         const response = await fetch('http://localhost:8080/api/cadets');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-        setCadetData(data); // Store fetched cadet data in state
+        setCadetData(data);
       } catch (error) {
         console.error('Error fetching cadet data:', error);
+        // Optionally, set an error state or display a notification to the user
       }
     };
-
-    fetchCadetData(); // Call the function to fetch data on component mount
 
     const adjustHeight = () => {
       if (dashboardRef.current) {
         const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-        const windowHeight = window.innerHeight;
-        dashboardRef.current.style.height = `${windowHeight - headerHeight}px`;
+        dashboardRef.current.style.height = `${window.innerHeight - headerHeight}px`;
       }
     };
 
+    fetchCadetData();
     adjustHeight();
     window.addEventListener('resize', adjustHeight);
 
@@ -40,18 +36,14 @@ const Dashboard = () => {
   }, []);
 
   const menuItems = [
-    { name: 'Cadets', icon: <People /> },
-    // { name: 'Events', icon: <Event /> },
-    // { name: 'Unit Info', icon: <Info /> },
+    { name: 'Cadets', icon: <People /> }
+    // Add more menu items here as needed
   ];
 
-  const renderActiveSection = () => {
-    switch (activeSection) {
-      case 'Cadets':
-        return <ManageCadets cadetData={cadetData} />; // Pass cadet data as props
-      default:
-        return null;
-    }
+  const handleLogout = () => {
+    // Implement logout functionality here
+    console.log('Logout clicked');
+    // For example: redirect to login page or clear session
   };
 
   return (
@@ -70,13 +62,14 @@ const Dashboard = () => {
             </button>
           ))}
         </nav>
-        <button className="admin-dashboard-logout-button">
+        <button className="admin-dashboard-logout-button" onClick={handleLogout}>
           <Logout /> Logout
         </button>
       </div>
       <main className="admin-dashboard-content">
         <div className="admin-dashboard-content-body">
-          {renderActiveSection()}
+          {activeSection === 'Cadets' && <ManageCadets cadetData={cadetData} />}
+          {/* Add more sections here as needed */}
         </div>
       </main>
     </div>

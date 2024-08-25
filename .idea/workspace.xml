@@ -5,49 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Update admin dashboard.">
-      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminModal.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/About.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/CadetStaff.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Calendar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/EventCard.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Home.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CadetStaff.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/CadetModal.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/FilterBar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageEvents/ManageEvents.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageUnit/ManageUnit.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/common/StyledComponents.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/config/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/CadetList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/CadetList.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/Dashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/ManageCadets.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/ManageCadets.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/Modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/utils/cadetUtils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/utils/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/utils/dateUtils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/utils/loadEventData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/utils/loadImages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ribbonsData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/08-August.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/08-August.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/09-September.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/09-September.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/10-October.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/10-October.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/11-November.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/11-November.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Quarterdeck.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Quarterdeck.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/RibbonChecker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/RibbonChecker.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/events.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Events.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets/ManageCadets.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +24,22 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jasonmhatfield"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jasonmhatfield&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/jasonmhatfield/york-njrotc-ui.git",
-    "accountId": "67cb5ed2-fccc-4a46-9d67-d75879bf4b92"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jasonmhatfield/york-njrotc-ui.git&quot;,
+    &quot;accountId&quot;: &quot;67cb5ed2-fccc-4a46-9d67-d75879bf4b92&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2ksH5SNC8zLMUkH7QUqZMLmy68t" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -87,23 +49,23 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "admin-development-v2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/components/admin/utils",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;admin-development-v2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/components/admin/utils&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
@@ -111,11 +73,11 @@
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets\images\events" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin" />
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\assets" />
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageUnit" />
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\ManageEvents" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
