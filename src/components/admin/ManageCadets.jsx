@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {AccountCircle, Add, Close, Save} from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import { AccountCircle, Add, Close, Save } from '@mui/icons-material';
 import './styles/AdminDashboard.component.css';
 
 const ManageCadets = () => {
@@ -12,62 +12,50 @@ const ManageCadets = () => {
   const [isFormChanged, setIsFormChanged] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [ranks, setRanks] = useState([]);
+  const [positions, setPositions] = useState([]); // State to store available positions
 
   const platoons = ['Alpha', 'Bravo', 'Charlie'];
 
   useEffect(() => {
-    fetchCadets();
-    fetchRanks();
+    fetchData('cadets', setCadets, formatCadetsData);
+    fetchData('ranks', setRanks);
+    fetchData('positions', setPositions); // Fetch positions from the API
   }, []);
 
-  const fetchCadets = async () => {
+  const fetchData = async (endpoint, setData, formatter = data => data) => {
     try {
-      const response = await fetch('http://localhost:8080/api/cadets');
-      if (!response.ok) throw new Error('Failed to fetch cadets');
+      const response = await fetch(`http://localhost:8080/api/${endpoint}`);
+      if (!response.ok) throw new Error(`Failed to fetch ${endpoint}`);
       const data = await response.json();
-      const formattedData = data.map(cadet => ({
-        ...cadet,
-        platoon: cadet.platoon
-          ? cadet.platoon.charAt(0).toUpperCase() + cadet.platoon.slice(1).toLowerCase()
-          : '',
-        status: cadet.status
-          ? cadet.status.charAt(0).toUpperCase() + cadet.status.slice(1).toLowerCase()
-          : ''
-      }));
-      setCadets(formattedData);
+      setData(formatter(data));
     } catch (error) {
-      console.error('Error fetching cadets:', error);
+      console.error(`Error fetching ${endpoint}:`, error);
     }
   };
 
-  const fetchRanks = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/api/ranks');
-      if (!response.ok) throw new Error('Failed to fetch ranks');
-      const data = await response.json();
-      setRanks(data);
-    } catch (error) {
-      console.error('Error fetching ranks:', error);
-    }
-  };
+  const formatCadetsData = data =>
+    data.map(cadet => ({
+      ...cadet,
+      platoon: cadet.platoon || '', // Use the existing value, no default
+      status: cadet.status || '',   // Use the existing value, no default
+    }));
 
   const openModal = (cadet = null) => {
-    if (cadet) {
-      setEditingCadet({...cadet});
-    } else {
-      setEditingCadet({
-        firstName: '',
-        lastName: '',
-        rank: null,
-        platoon: '',
-        status: 'ACTIVE',
-        photoUrl: ''
-      });
-    }
+    setEditingCadet(cadet ? { ...cadet } : createEmptyCadet());
     setIsModalOpen(true);
     setIsFormChanged(false);
     setUploadedImage(null);
   };
+
+  const createEmptyCadet = () => ({
+    firstName: '',
+    lastName: '',
+    rank: null,
+    platoon: '',
+    status: '',
+    photoUrl: '',
+    leadershipPosition: '', // Include leadership position
+  });
 
   const closeModal = () => {
     setEditingCadet(null);
@@ -75,44 +63,38 @@ const ManageCadets = () => {
     setUploadedImage(null);
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEditingCadet(prev => {
-      if (name === 'rank') {
-        return {...prev, rank: ranks.find(r => r.id.toString() === value) || null};
-      }
-      return {...prev, [name]: value};
-    });
+  const handleInputChange = ({ target: { name, value } }) => {
+    setEditingCadet(prev => ({
+      ...prev,
+      [name]: name === 'rank' ? ranks.find(r => r.id.toString() === value) || null : value
+    }));
     setIsFormChanged(true);
   };
 
   const handleSave = async () => {
+    const method = editingCadet.id ? 'PUT' : 'POST';
+    const url = editingCadet.id
+      ? `http://localhost:8080/api/cadets/${editingCadet.id}`
+      : `http://localhost:8080/api/cadets`;
+
+    const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition } = editingCadet;
+
+    const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
+
+    const payload = {
+      firstName: firstName || "",
+      lastName: lastName || "",
+      status: status,
+      platoon: platoon,
+      photoUrl: imageName || "",
+      rank: rank || null,
+      leadershipPosition: leadershipPosition || "", // Pass leadership position
+    };
+
     try {
-      const method = editingCadet.id ? 'PUT' : 'POST';
-      const url = editingCadet.id
-        ? `http://localhost:8080/api/cadets/${editingCadet.id}`
-        : `http://localhost:8080/api/cadets`;
-
-      const { firstName, lastName, status, platoon, photoUrl, rank } = editingCadet;
-
-      const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
-
-      const payload = {
-        firstName: firstName || "",
-        lastName: lastName || "",
-        status: status ? status.toUpperCase() : "ACTIVE",
-        platoon: platoon ? platoon.toUpperCase() : "ALPHA",
-        photoUrl: imageName || "",
-        rank: rank || null,
-      };
-
-      console.log('Payload:', payload);
-
       const response = await fetch(url, {
         method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
@@ -128,8 +110,18 @@ const ManageCadets = () => {
           ? prevCadets.map(cadet => (cadet.id === updatedCadet.id ? updatedCadet : cadet))
           : [...prevCadets, updatedCadet]
       );
-      closeModal();
-      fetchCadets(); // Refresh the cadet list to ensure we have the latest data
+
+      setEditingCadet(updatedCadet); // Update editingCadet with the new id
+      setIsFormChanged(false); // Reset the form change state
+
+      // Check if an image needs to be uploaded
+      if (uploadedImage) {
+        handleImageUploadDirectly(uploadedImage, updatedCadet.id);
+      } else {
+        closeModal(); // Close only if no image upload is pending
+      }
+
+      fetchData('cadets', setCadets, formatCadetsData); // Refresh the cadet list
     } catch (error) {
       console.error('Error saving cadet:', error);
       alert(`Failed to save cadet: ${error.message}`);
@@ -140,11 +132,27 @@ const ManageCadets = () => {
     const file = e.target.files[0];
     if (!file) return;
 
+    setUploadedImage(file); // Set the file to be uploaded
+
+    // If the cadet is new and doesn't have an ID, save the record first
+    if (!editingCadet.id) {
+      await handleSave(); // Save the cadet record to get an ID
+    }
+
+    // Proceed with the image upload after saving
+    if (!editingCadet.id) return; // Ensure cadet ID is present before uploading
+
+    handleImageUploadDirectly(file, editingCadet.id);
+  };
+
+  const handleImageUploadDirectly = async (file, cadetId) => {
+    if (!file || !cadetId) return; // Ensure cadet ID and file are present before uploading
+
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-      const response = await fetch(`http://localhost:8080/api/cadets/${editingCadet.id}/uploadImage`, {
+      const response = await fetch(`http://localhost:8080/api/cadets/${cadetId}/uploadImage`, {
         method: 'POST',
         body: formData,
       });
@@ -152,48 +160,45 @@ const ManageCadets = () => {
       if (!response.ok) throw new Error('Failed to upload image');
 
       const updatedPhotoUrl = await response.text();
-
       setEditingCadet(prev => ({ ...prev, photoUrl: updatedPhotoUrl }));
       setUploadedImage(updatedPhotoUrl);
-      setIsFormChanged(true);
+      setIsFormChanged(false);
+      closeModal(); // Close the modal after successful image upload
     } catch (error) {
       console.error('Error uploading image:', error);
       alert(`Failed to upload image: ${error.message}`);
     }
   };
 
-  const filteredCadets = cadets.filter(cadet => {
-    const matchesSearchTerm = cadet.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      cadet.lastName.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesPlatoon = filterPlatoon ? cadet.platoon === filterPlatoon : true;
-    const matchesStatus = filterStatus ? cadet.status === filterStatus.charAt(0).toUpperCase() + filterStatus.slice(1).toLowerCase() : true;
-
-    return matchesSearchTerm && matchesPlatoon && matchesStatus;
-  });
+  const filteredCadets = cadets.filter(({ firstName, lastName, platoon, status }) =>
+    `${firstName} ${lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (!filterPlatoon || platoon === filterPlatoon) &&
+    (!filterStatus || status === filterStatus)
+  );
 
   return (
     <div className="manage-cadets">
-      <div className = "filter-add-section">
+      <div className="filter-add-section">
         <input
           type="text"
           placeholder="Search by name"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}
         />
-        <select value = {filterPlatoon} onChange = {(e) => setFilterPlatoon(e.target.value)}>
-          <option value = "">All Platoons</option>
+        <select value={filterPlatoon} onChange={e => setFilterPlatoon(e.target.value)}>
+          <option value="">All Platoons</option>
           {platoons.map(platoon => (
-            <option key = {platoon} value = {platoon}>{platoon}</option>
+            <option key={platoon} value={platoon}>{platoon}</option>
           ))}
         </select>
-        <select value = {filterStatus} onChange = {(e) => setFilterStatus(e.target.value)}>
-          <option value = "">All Statuses</option>
-          <option value = "ACTIVE">Active</option>
-          <option value = "INACTIVE">Inactive</option>
-          <option value = "GRADUATED">Graduated</option>
+        <select value={filterStatus} onChange={e => setFilterStatus(e.target.value)}>
+          <option value="">All Statuses</option>
+          <option value="ACTIVE">Active</option>
+          <option value="INACTIVE">Inactive</option>
+          <option value="GRADUATED">Graduated</option>
         </select>
-        <button className = "add-button" onClick = {() => openModal()}>
-          <Add/> Add Cadet
+        <button className="add-button" onClick={() => openModal()}>
+          <Add /> Add Cadet
         </button>
       </div>
       <table>
@@ -207,7 +212,7 @@ const ManageCadets = () => {
         </thead>
         <tbody>
         {filteredCadets.map(cadet => (
-          <tr key = {cadet.id} onClick = {() => openModal(cadet)} className = "clickable-row">
+          <tr key={cadet.id} onClick={() => openModal(cadet)} className="clickable-row">
             <td>{`${cadet.firstName} ${cadet.lastName}`}</td>
             <td>{cadet.rank ? cadet.rank.rankName : 'N/A'}</td>
             <td>{cadet.platoon}</td>
@@ -252,7 +257,7 @@ const ManageCadets = () => {
                     type="text"
                     id="firstName"
                     name="firstName"
-                    value = {editingCadet.firstName}
+                    value={editingCadet.firstName}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -262,7 +267,7 @@ const ManageCadets = () => {
                     type="text"
                     id="lastName"
                     name="lastName"
-                    value = {editingCadet.lastName}
+                    value={editingCadet.lastName}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -271,12 +276,12 @@ const ManageCadets = () => {
                   <select
                     id="rank"
                     name="rank"
-                    value = {editingCadet.rank ? editingCadet.rank.id : ''}
+                    value={editingCadet.rank ? editingCadet.rank.id : ''}
                     onChange={handleInputChange}
                   >
                     <option value="">Select Rank</option>
                     {ranks.map(rank => (
-                      <option key = {rank.id} value = {rank.id}>{rank.rankName}</option>
+                      <option key={rank.id} value={rank.id}>{rank.rankName}</option>
                     ))}
                   </select>
                 </div>
@@ -285,12 +290,12 @@ const ManageCadets = () => {
                   <select
                     id="platoon"
                     name="platoon"
-                    value = {editingCadet.platoon}
+                    value={editingCadet.platoon}
                     onChange={handleInputChange}
                   >
-                    <option value = "">Select Platoon</option>
+                    <option value="">Select Platoon</option>
                     {platoons.map(platoon => (
-                      <option key = {platoon} value = {platoon.toUpperCase()}>{platoon}</option>
+                      <option key={platoon} value={platoon}>{platoon}</option>
                     ))}
                   </select>
                 </div>
@@ -299,7 +304,7 @@ const ManageCadets = () => {
                   <select
                     id="status"
                     name="status"
-                    value = {editingCadet.status}
+                    value={editingCadet.status}
                     onChange={handleInputChange}
                   >
                     <option value="ACTIVE">Active</option>
@@ -307,13 +312,23 @@ const ManageCadets = () => {
                     <option value="GRADUATED">Graduated</option>
                   </select>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="leadershipPosition">Leadership Position</label>
+                  <select
+                    id="leadershipPosition"
+                    name="leadershipPosition"
+                    value={editingCadet.leadershipPosition}
+                    onChange={handleInputChange}
+                  >
+                    <option value="">Select Position</option>
+                    {positions.map(position => (
+                      <option key={position.id} value={position.position}>{position.position}</option>
+                    ))}
+                  </select>
+                </div>
               </form>
               <div className="modal-actions">
-                <button
-                  className="cadet-save-button"
-                  onClick={handleSave}
-                  disabled={!isFormChanged}
-                >
+                <button className="cadet-save-button" onClick={handleSave} disabled={!isFormChanged}>
                   <Save /> Save
                 </button>
                 <button className="cadet-close-button" onClick={closeModal}>
@@ -326,6 +341,6 @@ const ManageCadets = () => {
       )}
     </div>
   );
-}
+};
 
 export default ManageCadets;
