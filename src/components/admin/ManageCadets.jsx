@@ -12,14 +12,15 @@ const ManageCadets = () => {
   const [isFormChanged, setIsFormChanged] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [ranks, setRanks] = useState([]);
-  const [positions, setPositions] = useState([]); // State to store available positions
+  const [positions, setPositions] = useState([]);
 
-  const platoons = ['Alpha', 'Bravo', 'Charlie'];
+  const platoons = ['ALPHA', 'BRAVO', 'CHARLIE'];
+  const statuses = ['ACTIVE', 'INACTIVE', 'GRADUATED'];
 
   useEffect(() => {
     fetchData('cadets', setCadets, formatCadetsData);
     fetchData('ranks', setRanks);
-    fetchData('positions', setPositions); // Fetch positions from the API
+    fetchData('positions', data => setPositions(data.sort((a, b) => a.precedence - b.precedence))); // Order positions by precedence
   }, []);
 
   const fetchData = async (endpoint, setData, formatter = data => data) => {
@@ -36,9 +37,25 @@ const ManageCadets = () => {
   const formatCadetsData = data =>
     data.map(cadet => ({
       ...cadet,
-      platoon: cadet.platoon || '', // Use the existing value, no default
-      status: cadet.status || '',   // Use the existing value, no default
+      platoon: cadet.platoon || '',
+      status: cadet.status || '',
     }));
+
+  const formatPlatoonDisplay = (platoon) => {
+    return platoon.charAt(0).toUpperCase() + platoon.slice(1).toLowerCase();
+  };
+
+  const formatPlatoonForBackend = (platoon) => {
+    return platoon.toUpperCase();
+  };
+
+  const formatStatusDisplay = (status) => {
+    return status.charAt(0).toUpperCase() + status.slice(1).toLowerCase();
+  };
+
+  const formatStatusForBackend = (status) => {
+    return status.toUpperCase();
+  };
 
   const openModal = (cadet = null) => {
     setEditingCadet(cadet ? { ...cadet } : createEmptyCadet());
@@ -54,8 +71,8 @@ const ManageCadets = () => {
     platoon: '',
     status: '',
     photoUrl: '',
-    leadershipPosition: '', // Include leadership position
-    cadetPosition: null // Include cadet position
+    leadershipPosition: '',
+    cadetPosition: null
   });
 
   const closeModal = () => {
@@ -69,9 +86,13 @@ const ManageCadets = () => {
       ...prev,
       [name]: name === 'rank'
         ? ranks.find(r => r.id.toString() === value) || null
-        : name === 'cadetPosition'
-          ? positions.find(p => p.id.toString() === value) || null
-          : value
+        : name === 'platoon'
+          ? formatPlatoonForBackend(value)
+          : name === 'status'
+            ? formatStatusForBackend(value)
+            : name === 'cadetPosition'
+              ? positions.find(p => p.id.toString() === value) || null
+              : value
     }));
     setIsFormChanged(true);
   };
@@ -90,11 +111,11 @@ const ManageCadets = () => {
       firstName: firstName || "",
       lastName: lastName || "",
       status: status || null,
-      platoon: platoon || null, // Send null if platoon is an empty string
+      platoon: platoon || null,
       photoUrl: imageName || "",
       rank: rank || null,
       leadershipPosition: leadershipPosition || "",
-      cadetPosition: cadetPosition || null // Include cadet position
+      cadetPosition: cadetPosition || null
     };
 
     try {
@@ -117,17 +138,16 @@ const ManageCadets = () => {
           : [...prevCadets, updatedCadet]
       );
 
-      setEditingCadet(updatedCadet); // Update editingCadet with the new id
-      setIsFormChanged(false); // Reset the form change state
+      setEditingCadet(updatedCadet);
+      setIsFormChanged(false);
 
-      // Check if an image needs to be uploaded
       if (uploadedImage) {
         handleImageUploadDirectly(uploadedImage, updatedCadet.id);
       } else {
-        closeModal(); // Close only if no image upload is pending
+        closeModal();
       }
 
-      fetchData('cadets', setCadets, formatCadetsData); // Refresh the cadet list
+      fetchData('cadets', setCadets, formatCadetsData);
     } catch (error) {
       console.error('Error saving cadet:', error);
       alert(`Failed to save cadet: ${error.message}`);
@@ -138,21 +158,19 @@ const ManageCadets = () => {
     const file = e.target.files[0];
     if (!file) return;
 
-    setUploadedImage(file); // Set the file to be uploaded
+    setUploadedImage(file);
 
-    // If the cadet is new and doesn't have an ID, save the record first
     if (!editingCadet.id) {
-      await handleSave(); // Save the cadet record to get an ID
+      await handleSave();
     }
 
-    // Proceed with the image upload after saving
-    if (!editingCadet.id) return; // Ensure cadet ID is present before uploading
+    if (!editingCadet.id) return;
 
     handleImageUploadDirectly(file, editingCadet.id);
   };
 
   const handleImageUploadDirectly = async (file, cadetId) => {
-    if (!file || !cadetId) return; // Ensure cadet ID and file are present before uploading
+    if (!file || !cadetId) return;
 
     const formData = new FormData();
     formData.append('file', file);
@@ -169,7 +187,7 @@ const ManageCadets = () => {
       setEditingCadet(prev => ({ ...prev, photoUrl: updatedPhotoUrl }));
       setUploadedImage(updatedPhotoUrl);
       setIsFormChanged(false);
-      closeModal(); // Close the modal after successful image upload
+      closeModal();
     } catch (error) {
       console.error('Error uploading image:', error);
       alert(`Failed to upload image: ${error.message}`);
@@ -192,16 +210,16 @@ const ManageCadets = () => {
           onChange={e => setSearchTerm(e.target.value)}
         />
         <select value={filterPlatoon} onChange={e => setFilterPlatoon(e.target.value)}>
-          <option value="">All Platoons</option>
+          <option value="">Select All Platoons</option>
           {platoons.map(platoon => (
-            <option key={platoon} value={platoon}>{platoon}</option>
+            <option key={platoon} value={platoon}>{formatPlatoonDisplay(platoon)}</option>
           ))}
         </select>
         <select value={filterStatus} onChange={e => setFilterStatus(e.target.value)}>
-          <option value="">All Statuses</option>
-          <option value="ACTIVE">Active</option>
-          <option value="INACTIVE">Inactive</option>
-          <option value="GRADUATED">Graduated</option>
+          <option value="">Select All Statuses</option>
+          {statuses.map(status => (
+            <option key={status} value={status}>{formatStatusDisplay(status)}</option>
+          ))}
         </select>
         <button className="add-button" onClick={() => openModal()}>
           <Add /> Add Cadet
@@ -221,8 +239,8 @@ const ManageCadets = () => {
           <tr key={cadet.id} onClick={() => openModal(cadet)} className="clickable-row">
             <td>{`${cadet.firstName} ${cadet.lastName}`}</td>
             <td>{cadet.rank ? cadet.rank.rankName : 'N/A'}</td>
-            <td>{cadet.platoon}</td>
-            <td>{cadet.status}</td>
+            <td>{formatPlatoonDisplay(cadet.platoon)}</td>
+            <td>{formatStatusDisplay(cadet.status)}</td>
           </tr>
         ))}
         </tbody>
@@ -285,7 +303,7 @@ const ManageCadets = () => {
                     value={editingCadet.rank ? editingCadet.rank.id : ''}
                     onChange={handleInputChange}
                   >
-                    <option value="">Select Rank</option>
+                    <option value="" disabled hidden>Select a Rank</option>
                     {ranks.map(rank => (
                       <option key={rank.id} value={rank.id}>{rank.rankName}</option>
                     ))}
@@ -299,9 +317,9 @@ const ManageCadets = () => {
                     value={editingCadet.platoon}
                     onChange={handleInputChange}
                   >
-                    <option value="">Select Platoon</option>
+                    <option value="" disabled hidden>Select a Platoon</option>
                     {platoons.map(platoon => (
-                      <option key={platoon} value={platoon}>{platoon}</option>
+                      <option key={platoon} value={platoon}>{formatPlatoonDisplay(platoon)}</option>
                     ))}
                   </select>
                 </div>
@@ -313,9 +331,10 @@ const ManageCadets = () => {
                     value={editingCadet.status}
                     onChange={handleInputChange}
                   >
-                    <option value="ACTIVE">Active</option>
-                    <option value="INACTIVE">Inactive</option>
-                    <option value="GRADUATED">Graduated</option>
+                    <option value="" disabled hidden>Select a Status</option>
+                    {statuses.map(status => (
+                      <option key={status} value={status}>{formatStatusDisplay(status)}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-group">
@@ -326,7 +345,7 @@ const ManageCadets = () => {
                     value={editingCadet.cadetPosition ? editingCadet.cadetPosition.id : ''}
                     onChange={handleInputChange}
                   >
-                    <option value="">Select Position</option>
+                    <option value="" disabled hidden>Select a Position</option>
                     {positions.map(position => (
                       <option key={position.id} value={position.id}>{position.position}</option>
                     ))}
