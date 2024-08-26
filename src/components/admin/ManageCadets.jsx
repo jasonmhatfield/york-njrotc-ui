@@ -55,6 +55,7 @@ const ManageCadets = () => {
     status: '',
     photoUrl: '',
     leadershipPosition: '', // Include leadership position
+    cadetPosition: null // Include cadet position
   });
 
   const closeModal = () => {
@@ -66,7 +67,11 @@ const ManageCadets = () => {
   const handleInputChange = ({ target: { name, value } }) => {
     setEditingCadet(prev => ({
       ...prev,
-      [name]: name === 'rank' ? ranks.find(r => r.id.toString() === value) || null : value
+      [name]: name === 'rank'
+        ? ranks.find(r => r.id.toString() === value) || null
+        : name === 'cadetPosition'
+          ? positions.find(p => p.id.toString() === value) || null
+          : value
     }));
     setIsFormChanged(true);
   };
@@ -77,18 +82,19 @@ const ManageCadets = () => {
       ? `http://localhost:8080/api/cadets/${editingCadet.id}`
       : `http://localhost:8080/api/cadets`;
 
-    const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition } = editingCadet;
+    const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition, cadetPosition } = editingCadet;
 
     const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
 
     const payload = {
       firstName: firstName || "",
       lastName: lastName || "",
-      status: status,
-      platoon: platoon,
+      status: status || null,
+      platoon: platoon || null, // Send null if platoon is an empty string
       photoUrl: imageName || "",
       rank: rank || null,
-      leadershipPosition: leadershipPosition || "", // Pass leadership position
+      leadershipPosition: leadershipPosition || "",
+      cadetPosition: cadetPosition || null // Include cadet position
     };
 
     try {
@@ -313,16 +319,16 @@ const ManageCadets = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="leadershipPosition">Leadership Position</label>
+                  <label htmlFor="cadetPosition">Position</label>
                   <select
-                    id="leadershipPosition"
-                    name="leadershipPosition"
-                    value={editingCadet.leadershipPosition}
+                    id="cadetPosition"
+                    name="cadetPosition"
+                    value={editingCadet.cadetPosition ? editingCadet.cadetPosition.id : ''}
                     onChange={handleInputChange}
                   >
                     <option value="">Select Position</option>
                     {positions.map(position => (
-                      <option key={position.id} value={position.position}>{position.position}</option>
+                      <option key={position.id} value={position.id}>{position.position}</option>
                     ))}
                   </select>
                 </div>
