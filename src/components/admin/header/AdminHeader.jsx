@@ -1,17 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Logout } from '@mui/icons-material';
+import { useAuth } from '../context/AuthContext'; // Adjust the import path as needed
 import './AdminHeader.component.css'; // Import CSS for styling
 
 const AdminHeader = () => {
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
-    // Clear session storage or any relevant authentication details
-    sessionStorage.clear();
-
-    // Redirect to the home page
-    navigate('/');
+    logout(); // Use the context logout to handle token removal and state update
+    navigate('/'); // Redirect to the home page after logout
   };
 
   return (

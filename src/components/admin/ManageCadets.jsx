@@ -26,7 +26,14 @@ const ManageCadets = () => {
 
   const fetchData = async (endpoint, setData, formatter = data => data) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/${endpoint}`);
+      const token = localStorage.getItem('token'); // Get the token from local storage
+      const response = await fetch(`http://localhost:8080/api/${endpoint}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+        }
+      });
       if (!response.ok) throw new Error(`Failed to fetch ${endpoint}`);
       const data = await response.json();
       const formattedData = formatter(data);
@@ -101,9 +108,13 @@ const ManageCadets = () => {
     };
 
     try {
+      const token = localStorage.getItem('token'); // Retrieve token from local storage
       const response = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Include the token in the request
+        },
         body: JSON.stringify(payload),
       });
 

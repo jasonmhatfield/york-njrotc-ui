@@ -4,7 +4,6 @@ import '../styles/Calendar.component.css'; // Import the CSS file
 const CALENDAR_ID = 2;
 
 const Calendar = ({ config }) => {
-  const { apiKey, calendarId } = config.calendars.find(key => key.id === CALENDAR_ID);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +11,18 @@ const Calendar = ({ config }) => {
   const containerRef = useRef(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
+  // Use default values if config or specific calendar details are not provided
+  const apiKey = config?.calendars?.find(key => key.id === CALENDAR_ID)?.apiKey || '';
+  const calendarId = config?.calendars?.find(key => key.id === CALENDAR_ID)?.calendarId || '';
+
   useEffect(() => {
+    if (!apiKey || !calendarId) {
+      console.error("API key or Calendar ID is missing.");
+      setError(new Error("API key or Calendar ID is missing."));
+      setLoading(false);
+      return;
+    }
+
     const fetchEvents = async () => {
       try {
         const response = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}%40gmail.com/events?singleEvents=true&key=${apiKey}`);

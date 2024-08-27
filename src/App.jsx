@@ -1,7 +1,5 @@
-import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/Header';
-import AdminHeader from '../src/components/admin/header/AdminHeader';  // New Admin Header
+import React, { useCallback } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Calendar from './components/Calendar';
@@ -9,39 +7,73 @@ import RibbonChecker from './components/RibbonChecker';
 import CadetStaff from './components/CadetStaff';
 import PQS from './components/PQS';
 import Quarterdeck from './components/Quarterdeck';
-import August2023 from './events/2023/08-August';
-import September2023 from './events/2023/09-September';
-import October2023 from './events/2023/10-October';
-import November2023 from './events/2023/11-November';
-import AdminDashboard from '../src/components/admin/AdminDashboard';
-
-import config from './config/config'
+import AdminDashboard from './components/admin/AdminDashboard';
+import LoginModal from './components/admin/LoginModal/LoginModal';
+import { useAuth } from './components/admin/context/AuthContext';
+import Header from './components/Header';
+import AdminHeader from './components/admin/header/AdminHeader';
+import config from './config/config';
 
 const App = () => {
-  const location = useLocation(); // Get current location
-  const isAdminRoute = location.pathname.startsWith('/admin'); // Check if it's an admin route
+  const { isAuthenticated, isLoading, token, logout } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showLoginModal, setShowLoginModal] = React.useState(false);
+  const isAdminPath = location.pathname.startsWith('/admin');
+
+  // Validate token on initial load
+  const validateToken = useCallback(async () => {
+    if (!token) return;
+
+    try {
+      const response = await fetch('http://localhost:8080/api/validate-token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        logout(); // Invalidate the token if validation fails
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('Error validating token:', error);
+      logout();
+      navigate('/');
+    }
+  }, [token, logout, navigate]);
+
+  React.useEffect(() => {
+    validateToken();
+  }, [validateToken]);
+
+  React.useEffect(() => {
+    if (isAdminPath && !isAuthenticated && !isLoading) {
+      setShowLoginModal(true); // Show login modal if not authenticated
+    } else {
+      setShowLoginModal(false);
+    }
+  }, [isAdminPath, isAuthenticated, isLoading]);
+
+  if (isLoading) return null; // Show nothing while loading
 
   return (
-    <div>
-      {isAdminRoute ? <AdminHeader /> : <Header />}
+    <>
+      {isAdminPath ? <AdminHeader /> : <Header />}
+      {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="calendar" element={<Calendar config={config} />} />
-        <Route path="ribbon-checker" element={<RibbonChecker />} />
-        <Route path="cadet-staff" element={<CadetStaff />} />
-        <Route path="pqs" element={<PQS />} />
-        <Route path="quarterdeck" element={<Quarterdeck />} />
-        <Route path="events/2023/08-August" element={<August2023 />} />
-        <Route path="events/2023/09-September" element={<September2023 />} />
-        <Route path="events/2023/10-October" element={<October2023 />} />
-        <Route path="events/2023/11-November" element={<November2023 />} />
-
-        {/* Admin Routes */}
-        <Route path="/admin/*" element={<AdminDashboard />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/calendar" element={<Calendar config={config} />} />
+        <Route path="/ribbon-checker" element={<RibbonChecker />} />
+        <Route path="/cadet-staff" element={<CadetStaff />} />
+        <Route path="/pqs" element={<PQS />} />
+        <Route path="/quarterdeck" element={<Quarterdeck />} />
+        <Route path="/admin/*" element={isAuthenticated ? <AdminDashboard /> : <Home />} />
       </Routes>
-    </div>
+    </>
   );
 };
 

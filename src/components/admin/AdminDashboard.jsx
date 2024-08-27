@@ -2,25 +2,38 @@ import React, { useState, useEffect, useRef } from 'react';
 import { People } from '@mui/icons-material';
 import ManageCadets from './ManageCadets';
 import './styles/AdminDashboard.component.css';
+import { useAuth } from './context/AuthContext'; // Ensure this is the correct path
 
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState('Cadets');
   const [cadetData, setCadetData] = useState([]);
   const dashboardRef = useRef(null);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     const fetchCadetData = async () => {
+      if (!isAuthenticated) return;
+
       try {
-        const response = await fetch('http://localhost:8080/api/cadets');
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://localhost:8080/api/cadets', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Ensure token is included
+          }
+        });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         setCadetData(data);
       } catch (error) {
         console.error('Error fetching cadet data:', error);
-        // Optionally, set an error state or display a notification to the user
       }
     };
+    fetchCadetData();
+  }, [isAuthenticated]);
 
+  useEffect(() => {
     const adjustHeight = () => {
       if (dashboardRef.current) {
         const headerHeight = document.querySelector('header')?.offsetHeight || 0;
@@ -28,7 +41,6 @@ const AdminDashboard = () => {
       }
     };
 
-    fetchCadetData();
     adjustHeight();
     window.addEventListener('resize', adjustHeight);
 
