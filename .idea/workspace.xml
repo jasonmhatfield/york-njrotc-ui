@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Add admin login functionality.">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Fix bug where new student could not be created.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +130,7 @@
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
       <workItem from="1724710536753" duration="17426000" />
-      <workItem from="1724761342979" duration="389000" />
+      <workItem from="1724761342979" duration="2017000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -203,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724760959909</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix bug where new student could not be created.">
+      <option name="closed" value="true" />
+      <created>1724761810938</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1724761810938</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +225,7 @@
     <MESSAGE value="Remove hard coded images and call to dreamhost through api" />
     <MESSAGE value="Update admin dashboard." />
     <MESSAGE value="Add admin login functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add admin login functionality." />
+    <MESSAGE value="Fix bug where new student could not be created." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug where new student could not be created." />
   </component>
 </project>

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './LoginModal.component.css';
+import { Visibility, VisibilityOff } from '@mui/icons-material'; // Importing visibility icons
 
 const LoginModal = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
   const [error, setError] = useState('');
-  const { login } = useAuth(); // Removed token since it's not needed for the login request
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -24,7 +26,6 @@ const LoginModal = ({ onClose }) => {
       });
 
       const data = await response.json().catch(() => {
-        // Handle cases where response is not JSON
         setError('An error occurred. Please try again.');
         console.error('Response is not in JSON format');
       });
@@ -33,7 +34,7 @@ const LoginModal = ({ onClose }) => {
         if (data.token) {
           login(data.token);
           onClose();
-          navigate('/admin'); // Use navigate instead of window.location
+          navigate('/admin');
         } else {
           setError('Unexpected response from server');
           console.error('Unexpected server response:', data);
@@ -61,13 +62,22 @@ const LoginModal = ({ onClose }) => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div style={{ position: 'relative', width: '100%' }}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={{ paddingRight: '40px' }} // Ensure space for the toggle icon
+            />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <VisibilityOff /> : <Visibility />}
+            </span>
+          </div>
           <button type="submit">Login</button>
           <button type="button" onClick={onClose}>Cancel</button>
         </form>
