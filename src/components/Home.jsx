@@ -1,6 +1,6 @@
 import React from 'react';
 import unitPhoto from '../assets/images/unit-photos/york-njrotc-fall-2023.jpg';
-import '../styles/Home.component.css'; // Import the CSS file
+import '../styles/Home.component.css';
 
 const Home = () => (
   <main className="home-container">

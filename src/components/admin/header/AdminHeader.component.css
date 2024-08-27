@@ -11,19 +11,19 @@
     background-color: var(--primary-color);
     color: var(--white);
     display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     box-shadow: var(--header-shadow);
     height: 60px;
-    position: relative; /* Allows absolute positioning of the logout button */
+    position: relative;
 }
 
 .admin-header-title {
     margin: 0 auto;
     font-size: 2rem;
     font-weight: bold;
-    text-align: center; /* Ensures the title is centered */
+    text-align: center;
 }
 
 .admin-header-left,
@@ -37,10 +37,10 @@
 }
 
 .admin-header-right {
-    position: absolute; /* Position absolute to place it within header but free from flex alignment */
-    right: 30px; /* Margin from the right side */
-    top: 50%; /* Align vertically to the center of the header */
-    transform: translateY(-50%); /* Fine-tune the vertical alignment */
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .admin-header-logout-button {
@@ -76,7 +76,7 @@
     }
 
     .admin-header-right {
-        position: static; /* Reset position for mobile view */
+        position: static;
         width: 100%;
         justify-content: flex-end;
         margin-top: 10px;

@@ -35,7 +35,7 @@ const App = () => {
       });
 
       if (!response.ok) {
-        logout(); // Invalidate the token if validation fails
+        logout();
         navigate('/');
       }
     } catch (error) {
@@ -51,13 +51,13 @@ const App = () => {
 
   React.useEffect(() => {
     if (isAdminPath && !isAuthenticated && !isLoading) {
-      setShowLoginModal(true); // Show login modal if not authenticated
+      setShowLoginModal(true);
     } else {
       setShowLoginModal(false);
     }
   }, [isAdminPath, isAuthenticated, isLoading]);
 
-  if (isLoading) return null; // Show nothing while loading
+  if (isLoading) return null;
 
   return (
     <>

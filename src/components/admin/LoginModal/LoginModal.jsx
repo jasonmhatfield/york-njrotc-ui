@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './LoginModal.component.css';
-import { Visibility, VisibilityOff } from '@mui/icons-material'; // Importing visibility icons
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const LoginModal = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ const LoginModal = ({ onClose }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={{ paddingRight: '40px' }} // Ensure space for the toggle icon
+              style={{ paddingRight: '40px' }}
             />
             <span
               className="toggle-password"

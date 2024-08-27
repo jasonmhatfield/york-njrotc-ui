@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/CadetStaff.component.css'; // Import the CSS file
+import '../styles/CadetStaff.component.css';
 
 const CadetStaff = () => {
   const [loading, setLoading] = useState(true);
   const [cadetData, setCadetData] = useState([]);
 
-  // Fetch cadet staff data from the API
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:8080/api/cadets');
         const data = await response.json();
-        setCadetData(data.filter(cadet => cadet.status === 'ACTIVE')); // Filter active cadets
+        setCadetData(data.filter(cadet => cadet.status === 'ACTIVE'));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching cadet data:', error);
@@ -22,7 +21,7 @@ const CadetStaff = () => {
   }, []);
 
   const isEnlisted = (rankPrecedence) => {
-    return rankPrecedence > 6; // Enlisted ranks have a precedence greater than 6
+    return rankPrecedence > 6;
   };
 
   const getStaffMember = (positionTitle) => {
@@ -32,14 +31,14 @@ const CadetStaff = () => {
   const renderStaffCards = (staffCategory) => {
     return staffCategory.map((staff, index) => {
       const staffMember = getStaffMember(staff.title);
-      if (!staffMember) return null; // Hide the card if no cadet is in this position
+      if (!staffMember) return null;
 
       const rankType = isEnlisted(staffMember.rank.rankPrecedence) ? 'enlisted' : 'officer';
 
       return (
         <div key={index} className={`staff-card ${rankType}`}>
           <img
-            src={staffMember.photoUrl} // Assume the API provides the correct image URL
+            src={staffMember.photoUrl}
             alt={`${staff.title} ${staffMember.firstName} ${staffMember.lastName}`}
             className={`staff-image ${rankType}`}
             onLoad={() => setLoading(false)}
@@ -53,7 +52,6 @@ const CadetStaff = () => {
     });
   };
 
-  // Define the staff categories based on the position titles
   const triad = [
     { title: 'Commanding Officer' },
     { title: 'Executive Officer' },

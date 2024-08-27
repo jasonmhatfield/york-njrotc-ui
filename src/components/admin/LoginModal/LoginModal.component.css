@@ -4,12 +4,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 1); /* Fully opaque dark background */
+    background-color: rgba(0, 0, 0, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -30,7 +30,7 @@
     z-index: 1001;
     position: relative;
     transform: scale(0.9);
-    animation: scaleIn 0.3s ease-in-out forwards; /* Scale-in animation */
+    animation: scaleIn 0.3s ease-in-out forwards;
 }
 
 @keyframes scaleIn {
@@ -68,7 +68,7 @@
 }
 
 .login-modal-content input:focus {
-    border-color: #007bff; /* Blue border on focus */
+    border-color: #007bff;
     outline: none;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .login-modal-content button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 .password-container {
@@ -96,7 +96,7 @@
 
 .toggle-password {
     position: absolute;
-    right: 10px; /* Aligns the icon inside the input */
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -105,5 +105,5 @@
 }
 
 .toggle-password:hover {
-    color: #0056b3; /* Darker on hover */
+    color: #0056b3;
 }

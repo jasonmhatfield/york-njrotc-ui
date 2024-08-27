@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import anchorLogo from '../assets/images/anchor-logo.png';
-import '../styles/Header.component.css'; // Import the CSS file
+import '../styles/Header.component.css';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

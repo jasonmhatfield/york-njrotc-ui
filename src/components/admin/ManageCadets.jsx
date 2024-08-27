@@ -33,7 +33,7 @@ const ManageCadets = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+          'Authorization': `Bearer ${token}`
         }
       });
       if (!response.ok) throw new Error(`Failed to fetch ${endpoint}`);
@@ -41,7 +41,6 @@ const ManageCadets = () => {
       const formattedData = formatter(data);
 
       if (endpoint === 'cadets') {
-        // Sort cadets by last name, A-Z
         formattedData.sort((a, b) => a.lastName.localeCompare(b.lastName));
       }
 
@@ -99,12 +98,11 @@ const ManageCadets = () => {
 
     const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
 
-    // Prepare payload, converting `platoon` and other enum values to uppercase
     const payload = {
       firstName: firstName || "",
       lastName: lastName || "",
-      status: status.toUpperCase(), // Ensure status is in uppercase if it's an enum
-      platoon: platoon.toUpperCase(), // Convert platoon to uppercase
+      status: status.toUpperCase(),
+      platoon: platoon.toUpperCase(),
       photoUrl: imageName || "",
       rank: rank || null,
       leadershipPosition: leadershipPosition || "",
@@ -115,7 +113,7 @@ const ManageCadets = () => {
         method,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // Ensure this format is correct
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(payload),
       });

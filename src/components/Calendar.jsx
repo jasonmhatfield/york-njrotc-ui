@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
-import '../styles/Calendar.component.css'; // Import the CSS file
+import '../styles/Calendar.component.css';
 
 const CALENDAR_ID = 2;
 
@@ -11,7 +11,6 @@ const Calendar = ({ config }) => {
   const containerRef = useRef(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
-  // Use default values if config or specific calendar details are not provided
   const apiKey = config?.calendars?.find(key => key.id === CALENDAR_ID)?.apiKey || '';
   const calendarId = config?.calendars?.find(key => key.id === CALENDAR_ID)?.calendarId || '';
 
@@ -43,7 +42,6 @@ const Calendar = ({ config }) => {
   }, [apiKey, calendarId]);
 
   const handleMapLoad = useCallback(() => {
-    // Optional: Implement if there's a need to handle map loading events
   }, []);
 
   const formatAddress = (address) => {

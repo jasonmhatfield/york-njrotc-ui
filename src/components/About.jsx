@@ -1,6 +1,6 @@
 import React from 'react';
 import anchorLogo from '../assets/images/anchor-logo.png';
-import '../styles/About.component.css'; // Import the CSS file
+import '../styles/About.component.css';
 
 const About = () => {
   return (

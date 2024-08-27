@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { People } from '@mui/icons-material';
 import ManageCadets from './ManageCadets';
 import './styles/AdminDashboard.component.css';
-import { useAuth } from './context/AuthContext'; // Ensure this is the correct path
+import { useAuth } from './context/AuthContext';
 
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState('Cadets');
@@ -20,7 +20,7 @@ const AdminDashboard = () => {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}` // Ensure token is included
+            'Authorization': `Bearer ${token}`
           }
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -71,7 +71,6 @@ const AdminDashboard = () => {
       <main className="admin-dashboard-content">
         <div className="admin-dashboard-content-body">
           {activeSection === 'Cadets' && <ManageCadets cadetData={cadetData} />}
-          {/* Add more sections here as needed */}
         </div>
       </main>
     </div>
