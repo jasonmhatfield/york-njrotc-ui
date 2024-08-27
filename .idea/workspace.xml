@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Update admin dashboard.">
-      <change afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/context/AuthContext.jsx" afterDir="false" />
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Add admin login functionality.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/eventsData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/cadets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/events.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/unitInfo.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +128,8 @@
       <workItem from="1724065186837" duration="24292000" />
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
-      <workItem from="1724710536753" duration="17126000" />
+      <workItem from="1724710536753" duration="17426000" />
+      <workItem from="1724761342979" duration="389000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -206,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724725970495</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add admin login functionality.">
+      <option name="closed" value="true" />
+      <created>1724760959909</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724760959909</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +215,7 @@
     <MESSAGE value="admin progress 63%" />
     <MESSAGE value="Remove hard coded images and call to dreamhost through api" />
     <MESSAGE value="Update admin dashboard." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update admin dashboard." />
+    <MESSAGE value="Add admin login functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add admin login functionality." />
   </component>
 </project>

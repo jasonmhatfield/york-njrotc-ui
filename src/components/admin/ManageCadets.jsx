@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AccountCircle, Add, Close, Save } from '@mui/icons-material';
 import './styles/AdminDashboard.component.css';
+import { useAuth } from './context/AuthContext';
 
 const ManageCadets = () => {
   const [cadets, setCadets] = useState([]);
@@ -14,6 +15,7 @@ const ManageCadets = () => {
   const [ranks, setRanks] = useState([]);
   const [positions, setPositions] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const { token } = useAuth();
 
   const platoons = ['Alpha', 'Bravo', 'Charlie'];
   const statuses = ['ACTIVE', 'INACTIVE', 'GRADUATED'];
@@ -97,23 +99,23 @@ const ManageCadets = () => {
 
     const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
 
+    // Prepare payload, converting `platoon` and other enum values to uppercase
     const payload = {
       firstName: firstName || "",
       lastName: lastName || "",
-      status: status,
-      platoon: platoon,
+      status: status.toUpperCase(), // Ensure status is in uppercase if it's an enum
+      platoon: platoon.toUpperCase(), // Convert platoon to uppercase
       photoUrl: imageName || "",
       rank: rank || null,
       leadershipPosition: leadershipPosition || "",
     };
 
     try {
-      const token = localStorage.getItem('token'); // Retrieve token from local storage
       const response = await fetch(url, {
         method,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // Include the token in the request
+          'Authorization': `Bearer ${token}`, // Ensure this format is correct
         },
         body: JSON.stringify(payload),
       });
