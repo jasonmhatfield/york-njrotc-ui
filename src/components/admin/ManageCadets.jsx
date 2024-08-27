@@ -13,14 +13,15 @@ const ManageCadets = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [ranks, setRanks] = useState([]);
   const [positions, setPositions] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
-  const platoons = ['ALPHA', 'BRAVO', 'CHARLIE'];
+  const platoons = ['Alpha', 'Bravo', 'Charlie'];
   const statuses = ['ACTIVE', 'INACTIVE', 'GRADUATED'];
 
   useEffect(() => {
     fetchData('cadets', setCadets, formatCadetsData);
     fetchData('ranks', setRanks);
-    fetchData('positions', data => setPositions(data.sort((a, b) => a.precedence - b.precedence))); // Order positions by precedence
+    fetchData('positions', setPositions);
   }, []);
 
   const fetchData = async (endpoint, setData, formatter = data => data) => {
@@ -28,7 +29,14 @@ const ManageCadets = () => {
       const response = await fetch(`http://localhost:8080/api/${endpoint}`);
       if (!response.ok) throw new Error(`Failed to fetch ${endpoint}`);
       const data = await response.json();
-      setData(formatter(data));
+      const formattedData = formatter(data);
+
+      if (endpoint === 'cadets') {
+        // Sort cadets by last name, A-Z
+        formattedData.sort((a, b) => a.lastName.localeCompare(b.lastName));
+      }
+
+      setData(formattedData);
     } catch (error) {
       console.error(`Error fetching ${endpoint}:`, error);
     }
@@ -40,22 +48,6 @@ const ManageCadets = () => {
       platoon: cadet.platoon || '',
       status: cadet.status || '',
     }));
-
-  const formatPlatoonDisplay = (platoon) => {
-    return platoon.charAt(0).toUpperCase() + platoon.slice(1).toLowerCase();
-  };
-
-  const formatPlatoonForBackend = (platoon) => {
-    return platoon.toUpperCase();
-  };
-
-  const formatStatusDisplay = (status) => {
-    return status.charAt(0).toUpperCase() + status.slice(1).toLowerCase();
-  };
-
-  const formatStatusForBackend = (status) => {
-    return status.toUpperCase();
-  };
 
   const openModal = (cadet = null) => {
     setEditingCadet(cadet ? { ...cadet } : createEmptyCadet());
@@ -72,7 +64,6 @@ const ManageCadets = () => {
     status: '',
     photoUrl: '',
     leadershipPosition: '',
-    cadetPosition: null
   });
 
   const closeModal = () => {
@@ -84,15 +75,7 @@ const ManageCadets = () => {
   const handleInputChange = ({ target: { name, value } }) => {
     setEditingCadet(prev => ({
       ...prev,
-      [name]: name === 'rank'
-        ? ranks.find(r => r.id.toString() === value) || null
-        : name === 'platoon'
-          ? formatPlatoonForBackend(value)
-          : name === 'status'
-            ? formatStatusForBackend(value)
-            : name === 'cadetPosition'
-              ? positions.find(p => p.id.toString() === value) || null
-              : value
+      [name]: name === 'rank' ? ranks.find(r => r.id.toString() === value) || null : value
     }));
     setIsFormChanged(true);
   };
@@ -103,19 +86,18 @@ const ManageCadets = () => {
       ? `http://localhost:8080/api/cadets/${editingCadet.id}`
       : `http://localhost:8080/api/cadets`;
 
-    const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition, cadetPosition } = editingCadet;
+    const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition } = editingCadet;
 
     const imageName = photoUrl ? photoUrl.split('/').pop().split('?')[0] : null;
 
     const payload = {
       firstName: firstName || "",
       lastName: lastName || "",
-      status: status || null,
-      platoon: platoon || null,
+      status: status,
+      platoon: platoon,
       photoUrl: imageName || "",
       rank: rank || null,
       leadershipPosition: leadershipPosition || "",
-      cadetPosition: cadetPosition || null
     };
 
     try {
@@ -194,11 +176,37 @@ const ManageCadets = () => {
     }
   };
 
-  const filteredCadets = cadets.filter(({ firstName, lastName, platoon, status }) =>
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedCadets = React.useMemo(() => {
+    if (sortConfig.key) {
+      return [...cadets].sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'asc' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'asc' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return cadets;
+  }, [cadets, sortConfig]);
+
+  const filteredCadets = sortedCadets.filter(({ firstName, lastName, platoon, status }) =>
     `${firstName} ${lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) &&
     (!filterPlatoon || platoon === filterPlatoon) &&
     (!filterStatus || status === filterStatus)
   );
+
+  const formatPlatoonDisplay = (platoon) => platoon.charAt(0).toUpperCase() + platoon.slice(1).toLowerCase();
+  const formatStatusDisplay = (status) => status.charAt(0).toUpperCase() + status.slice(1).toLowerCase();
 
   return (
     <div className="manage-cadets">
@@ -225,26 +233,40 @@ const ManageCadets = () => {
           <Add /> Add Cadet
         </button>
       </div>
-      <table>
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Rank</th>
-          <th>Platoon</th>
-          <th>Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        {filteredCadets.map(cadet => (
-          <tr key={cadet.id} onClick={() => openModal(cadet)} className="clickable-row">
-            <td>{`${cadet.firstName} ${cadet.lastName}`}</td>
-            <td>{cadet.rank ? cadet.rank.rankName : 'N/A'}</td>
-            <td>{formatPlatoonDisplay(cadet.platoon)}</td>
-            <td>{formatStatusDisplay(cadet.status)}</td>
+      <div style={{ overflowX: 'auto' }}>
+        <table>
+          <thead>
+          <tr>
+            <th onClick={() => handleSort('firstName')} className="sortable">
+              First Name {sortConfig.key === 'firstName' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+            </th>
+            <th onClick={() => handleSort('lastName')} className="sortable">
+              Last Name {sortConfig.key === 'lastName' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+            </th>
+            <th onClick={() => handleSort('rank.rankName')} className="sortable">
+              Rank {sortConfig.key === 'rank.rankName' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+            </th>
+            <th onClick={() => handleSort('platoon')} className="sortable">
+              Platoon {sortConfig.key === 'platoon' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+            </th>
+            <th onClick={() => handleSort('status')} className="sortable">
+              Status {sortConfig.key === 'status' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+            </th>
           </tr>
-        ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+          {filteredCadets.map(cadet => (
+            <tr key={cadet.id} onClick={() => openModal(cadet)} className="clickable-row">
+              <td>{cadet.firstName}</td>
+              <td>{cadet.lastName}</td>
+              <td>{cadet.rank ? cadet.rank.rankName : 'N/A'}</td>
+              <td>{formatPlatoonDisplay(cadet.platoon)}</td>
+              <td>{formatStatusDisplay(cadet.status)}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -303,7 +325,7 @@ const ManageCadets = () => {
                     value={editingCadet.rank ? editingCadet.rank.id : ''}
                     onChange={handleInputChange}
                   >
-                    <option value="" disabled hidden>Select a Rank</option>
+                    <option value="">Select Rank</option>
                     {ranks.map(rank => (
                       <option key={rank.id} value={rank.id}>{rank.rankName}</option>
                     ))}
@@ -317,7 +339,7 @@ const ManageCadets = () => {
                     value={editingCadet.platoon}
                     onChange={handleInputChange}
                   >
-                    <option value="" disabled hidden>Select a Platoon</option>
+                    <option value="">Select Platoon</option>
                     {platoons.map(platoon => (
                       <option key={platoon} value={platoon}>{formatPlatoonDisplay(platoon)}</option>
                     ))}
@@ -331,23 +353,23 @@ const ManageCadets = () => {
                     value={editingCadet.status}
                     onChange={handleInputChange}
                   >
-                    <option value="" disabled hidden>Select a Status</option>
+                    <option value="">Select Status</option>
                     {statuses.map(status => (
                       <option key={status} value={status}>{formatStatusDisplay(status)}</option>
                     ))}
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="cadetPosition">Position</label>
+                  <label htmlFor="leadershipPosition">Leadership Position</label>
                   <select
-                    id="cadetPosition"
-                    name="cadetPosition"
-                    value={editingCadet.cadetPosition ? editingCadet.cadetPosition.id : ''}
+                    id="leadershipPosition"
+                    name="leadershipPosition"
+                    value={editingCadet.leadershipPosition}
                     onChange={handleInputChange}
                   >
-                    <option value="" disabled hidden>Select a Position</option>
+                    <option value="">Select Position</option>
                     {positions.map(position => (
-                      <option key={position.id} value={position.id}>{position.position}</option>
+                      <option key={position.id} value={position.position}>{position.position}</option>
                     ))}
                   </select>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { People, Logout } from '@mui/icons-material';
+import { People } from '@mui/icons-material';
 import ManageCadets from './ManageCadets';
 import './styles/AdminDashboard.component.css';
 
@@ -40,16 +40,9 @@ const AdminDashboard = () => {
     // Add more menu items here as needed
   ];
 
-  const handleLogout = () => {
-    // Implement logout functionality here
-    console.log('Logout clicked');
-    // For example: redirect to login page or clear session
-  };
-
   return (
     <div className="admin-dashboard" ref={dashboardRef}>
       <div className="admin-dashboard-sidebar">
-        <div className="admin-dashboard-logo">NJROTC Admin</div>
         <nav className="admin-dashboard-menu">
           {menuItems.map((item) => (
             <button
@@ -62,9 +55,6 @@ const AdminDashboard = () => {
             </button>
           ))}
         </nav>
-        <button className="admin-dashboard-logout-button" onClick={handleLogout}>
-          <Logout /> Logout
-        </button>
       </div>
       <main className="admin-dashboard-content">
         <div className="admin-dashboard-content-body">

@@ -1,7 +1,5 @@
-/* styles/AdminDashboard.component.css */
-
 :root {
-    --primary-color: #003165;
+    --primary-color: #002b55;
     --secondary-color: #f0f3f7;
     --accent-color: #4a90e2;
     --text-color: #333;
@@ -9,6 +7,9 @@
     --border-color: #e0e0e0;
     --hover-color: #e6f2ff;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --logout-color: rgba(255, 0, 0, 0.85);
+    --logout-hover-color: #e64a19;
+    --sort-icon-color: #fff;
 }
 
 body, html {
@@ -28,13 +29,14 @@ body, html {
 
 /* Sidebar styles */
 .admin-dashboard-sidebar {
-    width: 250px;
+    width: 200px;
     background-color: var(--primary-color);
     color: var(--white);
     display: flex;
     flex-direction: column;
     padding: 20px;
     box-shadow: var(--shadow);
+    position: relative;
 }
 
 .admin-dashboard-logo {
@@ -46,6 +48,7 @@ body, html {
 
 .admin-dashboard-menu {
     flex-grow: 1;
+    margin: 50px 0;
 }
 
 .admin-dashboard-menu-item {
@@ -55,7 +58,7 @@ body, html {
     margin-bottom: 10px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     color: var(--white);
     background-color: transparent;
     border: none;
@@ -66,6 +69,7 @@ body, html {
 .admin-dashboard-menu-item:hover,
 .admin-dashboard-menu-item.active {
     background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
 }
 
 .admin-dashboard-menu-item svg {
@@ -73,9 +77,8 @@ body, html {
 }
 
 .admin-dashboard-logout-button {
-    margin-top: auto;
-    padding: 12px 16px;
-    background-color: #d32f2f;
+    padding: 8px 12px;
+    background-color: var(--logout-color);
     color: var(--white);
     border: none;
     border-radius: 8px;
@@ -83,11 +86,15 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    width: 50%;
 }
 
 .admin-dashboard-logout-button:hover {
-    background-color: #b71c1c;
+    background-color: var(--logout-hover-color);
+    transform: scale(1.05);
 }
 
 /* Main content area styles */
@@ -109,28 +116,30 @@ body, html {
 .manage-cadets {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-.filter-section {
+.filter-add-section {
     display: flex;
+    justify-content: space-between;
     gap: 15px;
     margin-bottom: 20px;
+    align-items: center;
 }
 
-.filter-section input,
-.filter-section select {
+.filter-add-section input,
+.filter-add-section select {
     padding: 10px 15px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.filter-section input:focus,
-.filter-section select:focus {
+.filter-add-section input:focus,
+.filter-add-section select:focus {
     outline: none;
     border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
 }
 
 .add-button {
@@ -145,11 +154,13 @@ body, html {
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    max-height: 39px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .add-button:hover {
     background-color: #3a7bc8;
+    box-shadow: var(--shadow);
 }
 
 /* Table styles */
@@ -165,7 +176,32 @@ th {
     background-color: var(--primary-color);
     color: var(--white);
     font-weight: 600;
-    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+th.sortable:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: var(--sort-icon-color) transparent transparent transparent;
+    transform: translateY(-50%);
+}
+
+th.sortable.sorted-asc:after {
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent var(--sort-icon-color) transparent;
+}
+
+th.sortable.sorted-desc:after {
+    border-width: 5px 5px 0 5px;
+    border-color: var(--sort-icon-color) transparent transparent transparent;
 }
 
 td {
@@ -203,7 +239,7 @@ tr.clickable-row:hover td {
     border-radius: 12px;
     width: 90%;
     max-width: 800px;
-    max-height: 90vh;
+    max-height: 60vh;
     display: flex;
     flex-direction: row;
     padding: 30px;
@@ -252,12 +288,13 @@ tr.clickable-row:hover td {
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-upload-button:hover {
     background-color: #3a7bc8;
     transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .form-grid {
@@ -285,13 +322,14 @@ tr.clickable-row:hover td {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
 }
 
 .modal-actions {
@@ -311,7 +349,7 @@ tr.clickable-row:hover td {
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cadet-save-button {
@@ -327,6 +365,7 @@ tr.clickable-row:hover td {
 .cadet-save-button:hover,
 .cadet-close-button:hover {
     transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .cadet-save-button:hover {

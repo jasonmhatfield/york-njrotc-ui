@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Update admin dashboard.">
+      <change afterPath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +133,7 @@
       <workItem from="1724065186837" duration="24292000" />
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
-      <workItem from="1724710536753" duration="4473000" />
+      <workItem from="1724710536753" duration="7761000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -178,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724714539968</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update admin dashboard.">
+      <option name="closed" value="true" />
+      <created>1724716062940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724716062940</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

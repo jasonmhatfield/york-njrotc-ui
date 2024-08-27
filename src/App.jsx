@@ -1,6 +1,7 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import AdminHeader from '../src/components/admin/header/AdminHeader';  // New Admin Header
 import Home from './components/Home';
 import About from './components/About';
 import Calendar from './components/Calendar';
@@ -12,14 +13,17 @@ import August2023 from './events/2023/08-August';
 import September2023 from './events/2023/09-September';
 import October2023 from './events/2023/10-October';
 import November2023 from './events/2023/11-November';
-import AdminDashboard from './components/admin/AdminDashboard';
+import AdminDashboard from '../src/components/admin/AdminDashboard';
 
 import config from './config/config'
 
 const App = () => {
+  const location = useLocation(); // Get current location
+  const isAdminRoute = location.pathname.startsWith('/admin'); // Check if it's an admin route
+
   return (
     <div>
-      <Header />
+      {isAdminRoute ? <AdminHeader /> : <Header />}
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
