@@ -65,11 +65,32 @@
     border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
+    padding-right: 40px; /* Ensure space for the eye icon */
 }
 
 .login-modal-content input:focus {
     border-color: #007bff;
     outline: none;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+    font-size: 1.2em; /* Adjust size to match the input field */
+}
+
+.toggle-password:hover {
+    color: #0056b3;
 }
 
 .login-modal-content button {
@@ -87,23 +108,4 @@
 
 .login-modal-content button:hover {
     background-color: #0056b3;
-}
-
-.password-container {
-    position: relative;
-    width: 100%;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #007bff;
-    transition: color 0.3s;
-}
-
-.toggle-password:hover {
-    color: #0056b3;
 }

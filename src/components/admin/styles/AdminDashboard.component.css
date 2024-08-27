@@ -268,13 +268,35 @@ tr.clickable-row:hover td {
 }
 
 .cadet-image {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+    width: auto;
+    height: 250px;
     object-fit: contain;
     margin-bottom: 20px;
     border: 3px solid var(--primary-color);
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color); /* Placeholder color */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+}
+
+.cadet-image.loaded {
+    opacity: 1; /* Fade in when loaded */
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    background-color: var(--secondary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 14px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

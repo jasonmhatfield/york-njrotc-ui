@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="Fix bug where new student could not be created.">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="refactor for syntax and cleanup.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CadetStaff.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +132,7 @@
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
       <workItem from="1724710536753" duration="17426000" />
-      <workItem from="1724761342979" duration="3456000" />
+      <workItem from="1724761342979" duration="9258000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -228,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724766255142</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor for syntax and cleanup.">
+      <option name="closed" value="true" />
+      <created>1724773243870</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1724773243870</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +255,7 @@
     <MESSAGE value="Update admin dashboard." />
     <MESSAGE value="Add admin login functionality." />
     <MESSAGE value="Fix bug where new student could not be created." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug where new student could not be created." />
+    <MESSAGE value="refactor for syntax and cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor for syntax and cleanup." />
   </component>
 </project>

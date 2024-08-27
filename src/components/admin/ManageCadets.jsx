@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { AccountCircle, Add, Close, Save } from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {AccountCircle, Add, Close, Save} from '@mui/icons-material';
 import './styles/AdminDashboard.component.css';
-import { useAuth } from './context/AuthContext';
+import {useAuth} from './context/AuthContext';
 
 const ManageCadets = () => {
   const [cadets, setCadets] = useState([]);
@@ -15,6 +15,7 @@ const ManageCadets = () => {
   const [ranks, setRanks] = useState([]);
   const [positions, setPositions] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [imageLoading, setImageLoading] = useState(false); // New state for image loading
   const { token } = useAuth();
 
   const platoons = ['Alpha', 'Bravo', 'Charlie'];
@@ -169,21 +170,33 @@ const ManageCadets = () => {
     formData.append('file', file);
 
     try {
+      setImageLoading(true); // Start loading
+
       const response = await fetch(`http://localhost:8080/api/cadets/${cadetId}/uploadImage`, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`, // Ensure 'Bearer ' prefix
+        },
         body: formData,
       });
 
       if (!response.ok) throw new Error('Failed to upload image');
 
       const updatedPhotoUrl = await response.text();
-      setEditingCadet(prev => ({ ...prev, photoUrl: updatedPhotoUrl }));
-      setUploadedImage(updatedPhotoUrl);
+
+      // Preload the new image
+      const img = new Image();
+      img.src = updatedPhotoUrl;
+      img.onload = () => {
+        setEditingCadet(prev => ({...prev, photoUrl: updatedPhotoUrl}));
+        setImageLoading(false); // End loading immediately after load
+      };
+
       setIsFormChanged(false);
-      closeModal();
     } catch (error) {
       console.error('Error uploading image:', error);
       alert(`Failed to upload image: ${error.message}`);
+      setImageLoading(false); // End loading if there's an error
     }
   };
 
@@ -282,15 +295,21 @@ const ManageCadets = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <div className="modal-image-section">
-              {(uploadedImage || editingCadet.photoUrl) ? (
-                <img
-                  src={uploadedImage || editingCadet.photoUrl}
-                  alt="Cadet"
-                  className="cadet-image"
-                />
-              ) : (
-                <AccountCircle className="cadet-image" style={{ fontSize: '200px', color: '#ccc' }} />
-              )}
+              {
+                imageLoading ? (
+                  <div className = "image-placeholder">Loading...</div> // Placeholder while loading
+                ) : (
+                  editingCadet.photoUrl ? (
+                    <img
+                      src = {editingCadet.photoUrl}
+                      alt = "Cadet"
+                      className = "cadet-image loaded" // Always apply the loaded class
+                    />
+                  ) : (
+                    <AccountCircle className = "cadet-image" style = {{fontSize: '200px', color: '#ccc'}}/>
+                  )
+                )
+              }
               <input
                 type="file"
                 id="imageUpload"

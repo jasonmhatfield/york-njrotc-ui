@@ -57,19 +57,24 @@ const LoginModal = ({ onClose }) => {
         <form onSubmit={handleSubmit}>
           <input
             type="email"
+            id="email"
+            name="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            autoComplete="username"
           />
-          <div style={{ position: 'relative', width: '100%' }}>
+          <div className="password-container">
             <input
               type={showPassword ? 'text' : 'password'}
+              id="password"
+              name="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={{ paddingRight: '40px' }}
+              autoComplete="current-password"
             />
             <span
               className="toggle-password"
