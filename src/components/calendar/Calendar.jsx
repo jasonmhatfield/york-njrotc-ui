@@ -5,7 +5,7 @@ const CALENDAR_ID = 2;
 
 const Calendar = ({ config, selectedMonth }) => {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [modalEvent, setModalEvent] = useState(null);
   const containerRef = useRef(null);
@@ -156,10 +156,6 @@ const Calendar = ({ config, selectedMonth }) => {
       }
     };
   }, []);
-
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
 
   if (error) {
     return <div className="error">Error loading events.</div>;

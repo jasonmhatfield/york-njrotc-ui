@@ -4,46 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="finalize admin login">
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quarterdeck/EventCard.jsx" afterDir="false" />
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="styling enhancements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventCard.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PQS.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pqs/PQS.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/ManageCadets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/context/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/header/AdminHeader.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/header/AdminHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/styles/AdminDashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/08-August.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/08-August.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/09-September.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/09-September.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/10-October.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/10-October.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/2023/11-November.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/11-November.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/About.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/CadetStaff.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Calendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/EventCard.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Events.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Header.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Quarterdeck.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/RibbonChecker.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +129,7 @@
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
       <workItem from="1724710536753" duration="17426000" />
-      <workItem from="1724761342979" duration="24100000" />
+      <workItem from="1724761342979" duration="25826000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -272,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724798001159</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="styling enhancements">
+      <option name="closed" value="true" />
+      <created>1724813700523</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1724813700523</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +270,7 @@
     <MESSAGE value="Fix bug where new student could not be created." />
     <MESSAGE value="refactor for syntax and cleanup." />
     <MESSAGE value="finalize admin login" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalize admin login" />
+    <MESSAGE value="styling enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling enhancements" />
   </component>
 </project>
