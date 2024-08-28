@@ -1,0 +1,184 @@
+/* Header.component.css */
+
+.header-container {
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #003366, #004080);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+    padding-bottom: 20px; /* Adjust to prevent overlap with other content */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 850px;
+}
+
+.logo {
+    max-height: 100px;
+}
+
+.title-and-nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 10px; /* Space between title and buttons */
+}
+
+.title {
+    font-size: 2rem;
+    color: gold;
+    margin-left: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Lora', serif; /* Change to a more visually appealing font */
+    text-transform: none; /* Ensure the text is not all caps */
+    font-weight: 700; /* Make the font slightly bold for emphasis */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s ease;
+    border-radius: 5px;
+    background-color: #1e3c72;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    position: relative;
+    outline: none; /* Remove default outline */
+}
+
+.nav-link:focus {
+    outline: none; /* Prevent gold border on focus */
+}
+
+.nav-link:hover, .nav-link-active {
+    background-color: #004080;
+    color: #ffd700;
+}
+
+/* Dropdown Menu Styles */
+.nav-link-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0); /* Center and scale for the grow effect */
+    background-color: rgba(0, 51, 102, 0.5); /* More transparent background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Match the width of the parent button */
+    padding: 0; /* Remove padding for full-width effect */
+    z-index: 1;
+    transition: opacity 1s ease-in-out, transform 0.6s ease-in-out; /* Slower transition */
+    transform-origin: top;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.dropdown-content li {
+    list-style: none;
+    text-align: center;
+}
+
+.dropdown-content .dropdown-item {
+    color: #ffd700;
+    background-color: rgba(0, 51, 102, 0.5); /* More transparent background */
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%; /* Span the width of the dropdown */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content .dropdown-item:hover {
+    background-color: rgba(0, 64, 128, 0.8); /* Adjust hover to match transparency */
+    color: #fff;
+}
+
+.nav-link-dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.nav-link-dropdown:hover .nav-link {
+    background-color: #555; /* Grey out the button when dropdown is present */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-container {
+        margin-bottom: 10px;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+
+    .header-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        transform-origin: center;
+    }
+}

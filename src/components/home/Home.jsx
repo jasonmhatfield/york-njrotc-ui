@@ -1,15 +1,14 @@
 import React from 'react';
-import unitPhoto from '../assets/images/unit-photos/york-njrotc-fall-2023.jpg';
-import '../styles/Home.component.css';
+import unitPhoto from '../../assets/images/unit-photos/york-njrotc-fall-2023.jpg';
+import './Home.component.css';
 
 const Home = () => (
   <main className="home-container">
     <section className="home-intro-section">
-      <h1 className="heading">Welcome to York Comprehensive High School NJROTC</h1>
-      <img src={unitPhoto} alt="Unit" className="unit-image" />
-      <p className="paragraph">
+      <p className="mission-statement">
         Our mission is to instill in our cadets the values of citizenship, service to the United States, personal responsibility, and a sense of accomplishment.
       </p>
+      <img src={unitPhoto} alt="Unit" className="unit-image" />
     </section>
 
     <section className="highlight-section">

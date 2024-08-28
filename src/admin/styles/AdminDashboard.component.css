@@ -1,6 +1,6 @@
 :root {
     --primary-color: #002b55;
-    --secondary-color: #f0f3f7;
+    --secondary-color: #16222a;
     --accent-color: #4a90e2;
     --text-color: #333;
     --white: #ffffff;
@@ -29,8 +29,7 @@ body, html {
 
 /* Sidebar styles */
 .admin-dashboard-sidebar {
-    width: 200px;
-    background-color: var(--primary-color);
+    width: 175px;
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -102,7 +101,7 @@ body, html {
     flex-grow: 1;
     padding: 30px;
     overflow-y: auto;
-    background-color: var(--white);
+    background-color: #16222a
 }
 
 .admin-dashboard-content-body {
@@ -110,6 +109,7 @@ body, html {
     border-radius: 12px;
     padding: 30px;
     box-shadow: var(--shadow);
+    min-height: 100%;
 }
 
 /* ManageCadets styles */

@@ -1,25 +1,30 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Calendar from './components/Calendar';
-import RibbonChecker from './components/RibbonChecker';
-import CadetStaff from './components/CadetStaff';
-import PQS from './components/PQS';
-import Quarterdeck from './components/Quarterdeck';
-import AdminDashboard from './components/admin/AdminDashboard';
-import LoginModal from './components/admin/LoginModal/LoginModal';
-import { useAuth } from './components/admin/context/AuthContext';
-import Header from './components/Header';
-import AdminHeader from './components/admin/header/AdminHeader';
+import Home from './components/home/Home';
+import About from './components/about/About';
+import Calendar from './components/calendar/Calendar';
+import RibbonChecker from './components/ribbon-checker/RibbonChecker';
+import CadetStaff from './components/cadet-staff/CadetStaff';
+import PQS from './components/pqs/PQS';
+import Quarterdeck from './components/quarterdeck/Quarterdeck';
+import AdminDashboard from './admin/AdminDashboard';
+import LoginModal from './admin/LoginModal/LoginModal';
+import { useAuth } from './admin/context/AuthContext';
+import Header from './components/header/Header';
+import AdminHeader from './admin/header/AdminHeader';
 import config from './config/config';
 
 const App = () => {
   const { isAuthenticated, isLoading, token, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const [showLoginModal, setShowLoginModal] = React.useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [selectedMonth, setSelectedMonth] = useState(new Date().toLocaleString('en-US', { month: 'long' }));
   const isAdminPath = location.pathname.startsWith('/admin');
+
+  const handleMonthSelect = useCallback((month) => {
+    setSelectedMonth(month);
+  }, []);
 
   // Validate token on initial load
   const validateToken = useCallback(async () => {
@@ -61,12 +66,12 @@ const App = () => {
 
   return (
     <>
-      {isAdminPath ? <AdminHeader /> : <Header />}
+      {isAdminPath ? <AdminHeader /> : <Header onMonthSelect={handleMonthSelect} />}
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/calendar" element={<Calendar config={config} />} />
+        <Route path="/calendar" element={<Calendar config={config} selectedMonth={selectedMonth} />} />
         <Route path="/ribbon-checker" element={<RibbonChecker />} />
         <Route path="/cadet-staff" element={<CadetStaff />} />
         <Route path="/pqs" element={<PQS />} />

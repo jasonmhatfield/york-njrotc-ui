@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/CadetStaff.component.css';
+import './CadetStaff.component.css';
 
 const CadetStaff = () => {
   const [loading, setLoading] = useState(true);

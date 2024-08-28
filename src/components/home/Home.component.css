@@ -1,45 +1,41 @@
 /* Home.component.css */
 
 .home-container {
-    max-width: 1200px;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 10px;
     background-color: #16222a;
     color: #ecf0f1;
-    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
 }
 
 .home-intro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.heading {
-    font-size: 2.5rem;
-    color: #ffd700;  /* Gold color for headings */
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
-.paragraph {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+.mission-statement {
+    font-size: 1.5rem;
+    color: gold;
+    margin-top: 0;
+    max-width: 800px;
 }
 
 .unit-image {
-    max-width: 100%;
-    max-height: 500px;
+    max-height: 450px;
+    width: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    animation: zoomIn 1s ease-in-out;
+    margin-bottom: 20px;
+    object-fit: cover;
+    flex-grow: 1;
 }
 
 .highlight-section {
@@ -58,4 +54,10 @@
     color: #ffd700;  /* Gold color for subheadings */
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }

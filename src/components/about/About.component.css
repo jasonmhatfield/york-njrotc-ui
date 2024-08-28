@@ -1,0 +1,87 @@
+/* About.component.css */
+
+/* Hero Section */
+.about-hero {
+    background-color: #003366; /* Solid background color */
+    color: #ecf0f1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Reduced bottom margin */
+}
+
+.about-hero-title {
+    font-size: 2rem; /* Smaller font size */
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 5px; /* Smaller bottom margin */
+}
+
+.about-hero-text {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+}
+
+/* Content Container */
+.about-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #16222a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.about-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #1a2a3a;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.about-section-title {
+    font-size: 1.75rem; /* Slightly smaller font size */
+    color: #ffd700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 10px;
+}
+
+.about-section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 15px 10px;
+        height: auto;
+    }
+
+    .about-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .about-hero-text {
+        font-size: 0.9rem;
+    }
+
+    .about-section {
+        padding: 15px;
+    }
+
+    .about-section-title {
+        font-size: 1.5rem;
+    }
+
+    .about-section-text {
+        font-size: 1rem;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EventCard from './EventCard';
-import '../styles/Quarterdeck.component.css'; // Import the CSS file
+import './Quarterdeck.component.css'; // Import the CSS file
 
 const Quarterdeck = () => {
   const [currentSection, setCurrentSection] = useState('chief-chat');

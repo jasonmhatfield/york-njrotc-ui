@@ -4,12 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="refactor for syntax and cleanup.">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="finalize admin login">
+      <change afterPath="$PROJECT_DIR$/src/components/header/Header.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/quarterdeck/EventCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PQS.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pqs/PQS.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Quarterdeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/ManageCadets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/header/AdminHeader.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/header/AdminHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/header/AdminHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/styles/AdminDashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/styles/AdminDashboard.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/08-August.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/08-August.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/09-September.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/09-September.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/10-October.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/10-October.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/2023/11-November.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/2023/11-November.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/About.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/CadetStaff.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Calendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/EventCard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Events.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Quarterdeck.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/RibbonChecker.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,15 +109,15 @@
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\assets\images\events" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\context" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\LoginModal" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
-      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\assets" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\calendar" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\quarterdeck" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\admin" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\ribbon-checker" />
+      <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\pqs" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration name="AdminDashboard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/admin/AdminDashboard.jsx" working-dir="$PROJECT_DIR$/src/components/admin">
+    <configuration name="AdminDashboard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" working-dir="$PROJECT_DIR$/src/components/admin">
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -132,7 +166,7 @@
       <workItem from="1724612579618" duration="137000" />
       <workItem from="1724612729475" duration="4277000" />
       <workItem from="1724710536753" duration="17426000" />
-      <workItem from="1724761342979" duration="9258000" />
+      <workItem from="1724761342979" duration="24100000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -230,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724773243870</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="finalize admin login">
+      <option name="closed" value="true" />
+      <created>1724798001159</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1724798001159</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +298,7 @@
     <MESSAGE value="Add admin login functionality." />
     <MESSAGE value="Fix bug where new student could not be created." />
     <MESSAGE value="refactor for syntax and cleanup." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor for syntax and cleanup." />
+    <MESSAGE value="finalize admin login" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalize admin login" />
   </component>
 </project>

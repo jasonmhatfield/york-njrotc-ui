@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/RibbonChecker.component.css'; // Import the CSS file
+import './RibbonChecker.component.css'; // Import the CSS file
 
 const RibbonChecker = () => {
   const [ribbons, setRibbons] = useState([]);
