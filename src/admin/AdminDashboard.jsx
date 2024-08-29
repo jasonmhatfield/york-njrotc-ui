@@ -9,6 +9,7 @@ const AdminDashboard = () => {
   const [cadetData, setCadetData] = useState([]);
   const dashboardRef = useRef(null);
   const { isAuthenticated } = useAuth();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const fetchCadetData = async () => {
@@ -16,7 +17,7 @@ const AdminDashboard = () => {
 
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:8080/api/cadets', {
+        const response = await fetch(`${API_BASE_URL}/api/cadets`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ const AdminDashboard = () => {
       }
     };
     fetchCadetData();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, API_BASE_URL]);
 
   useEffect(() => {
     const adjustHeight = () => {
@@ -49,7 +50,6 @@ const AdminDashboard = () => {
 
   const menuItems = [
     { name: 'Cadets', icon: <People /> }
-    // Add more menu items here as needed
   ];
 
   return (

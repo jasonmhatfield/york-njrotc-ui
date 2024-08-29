@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './RibbonChecker.component.css'; // Import the CSS file
+import './RibbonChecker.component.css';
 
 const RibbonChecker = () => {
   const [ribbons, setRibbons] = useState([]);
   const [currentRibbon, setCurrentRibbon] = useState(null);
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/ribbons')
+    fetch(`${API_BASE_URL}/api/ribbons`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -18,7 +19,7 @@ const RibbonChecker = () => {
         console.error('Error fetching ribbons:', error);
         alert('Failed to fetch ribbons. Please check the console for more details.');
       });
-  }, []);
+  }, [API_BASE_URL]);
 
   useEffect(() => {
     sessionStorage.setItem('selectedRibbons', JSON.stringify(ribbons));

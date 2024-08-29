@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="styling enhancements">
+    <list default="true" id="fad36817-d280-4840-a2f3-429896dead11" name="Changes" comment="implemented access to heroku api">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.localprod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/LoginModal/LoginModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/ManageCadets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/ManageCadets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cadet-staff/CadetStaff.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quarterdeck/Quarterdeck.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ribbon-checker/RibbonChecker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +61,26 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;admin-development-v2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/components/admin/utils&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "admin-development-v2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jason/Documents/repos/york-njrotc/york-njrotc-ui/src/components/admin/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "npm.start:localprod.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\admin\utils" />
@@ -79,7 +95,7 @@
       <recent name="C:\Users\jason\Documents\repos\york-njrotc\york-njrotc-ui\src\components\pqs" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.start:localprod">
     <configuration name="AdminDashboard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/admin/AdminDashboard.jsx" working-dir="$PROJECT_DIR$/src/components/admin">
       <method v="2" />
     </configuration>
@@ -93,8 +109,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start:localprod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:localprod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start:localprod" />
         <item itemvalue="npm.start" />
         <item itemvalue="Node.js.AdminDashboard.jsx" />
         <item itemvalue="npm.start" />
@@ -130,6 +157,8 @@
       <workItem from="1724612729475" duration="4277000" />
       <workItem from="1724710536753" duration="17426000" />
       <workItem from="1724761342979" duration="25826000" />
+      <workItem from="1724902688485" duration="9000" />
+      <workItem from="1724923718190" duration="3920000" />
     </task>
     <task id="LOCAL-00002" summary="Remove hard coded images and call to dreamhost through api">
       <option name="closed" value="true" />
@@ -271,6 +300,7 @@
     <MESSAGE value="refactor for syntax and cleanup." />
     <MESSAGE value="finalize admin login" />
     <MESSAGE value="styling enhancements" />
-    <option name="LAST_COMMIT_MESSAGE" value="styling enhancements" />
+    <MESSAGE value="implemented access to heroku api" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented access to heroku api" />
   </component>
 </project>

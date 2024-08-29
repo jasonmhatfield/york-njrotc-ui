@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/global.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './admin/context/AuthContext'; // Import AuthProvider
+import { AuthProvider } from './admin/context/AuthContext';
 
 const rootElement = document.getElementById('root');
 

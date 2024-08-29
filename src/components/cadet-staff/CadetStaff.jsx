@@ -4,11 +4,12 @@ import './CadetStaff.component.css';
 const CadetStaff = () => {
   const [loading, setLoading] = useState(true);
   const [cadetData, setCadetData] = useState([]);
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/cadets');
+        const response = await fetch(`${API_BASE_URL}/api/cadets`);
         const data = await response.json();
         setCadetData(data.filter(cadet => cadet.status === 'ACTIVE'));
         setLoading(false);
@@ -18,7 +19,7 @@ const CadetStaff = () => {
     };
 
     fetchData();
-  }, []);
+  }, [API_BASE_URL]);
 
   const isEnlisted = (rankPrecedence) => {
     return rankPrecedence > 6;

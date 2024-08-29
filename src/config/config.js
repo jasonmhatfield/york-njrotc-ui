@@ -1,5 +1,4 @@
 const config = {
-  // Calendar configurations
   calendars: [
     {
       id: 1,

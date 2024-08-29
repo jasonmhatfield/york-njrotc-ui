@@ -7,15 +7,16 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
-      // Function to validate the token
       const validateToken = async (token) => {
         try {
-          const response = await fetch('http://localhost:8080/api/validate-token', {
+          const response = await fetch(`${API_BASE_URL}/api/validate-token`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -26,21 +27,21 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setToken(storedToken);
           } else {
-            logout(); // If token is invalid, log the user out
+            logout();
           }
         } catch (error) {
           console.error('Token validation failed:', error);
-          logout(); // Log out if there is any error validating the token
+          logout();
         } finally {
-          setIsLoading(false); // Set loading to false after validation
+          setIsLoading(false);
         }
       };
 
       validateToken(storedToken);
     } else {
-      setIsLoading(false); // Set loading to false if no token is found
+      setIsLoading(false);
     }
-  }, []);
+  }, [API_BASE_URL]);
 
   const login = (newToken) => {
     setIsAuthenticated(true);

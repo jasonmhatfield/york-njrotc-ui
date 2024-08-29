@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {AccountCircle, Add, Close, Save} from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import { AccountCircle, Add, Close, Save } from '@mui/icons-material';
 import './styles/AdminDashboard.component.css';
-import {useAuth} from './context/AuthContext';
+import { useAuth } from './context/AuthContext';
 
 const ManageCadets = () => {
   const [cadets, setCadets] = useState([]);
@@ -18,6 +18,8 @@ const ManageCadets = () => {
   const [imageLoading, setImageLoading] = useState(false); // New state for image loading
   const { token } = useAuth();
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   const platoons = ['Alpha', 'Bravo', 'Charlie'];
   const statuses = ['ACTIVE', 'INACTIVE', 'GRADUATED'];
 
@@ -29,8 +31,7 @@ const ManageCadets = () => {
 
   const fetchData = async (endpoint, setData, formatter = data => data) => {
     try {
-      const token = localStorage.getItem('token'); // Get the token from local storage
-      const response = await fetch(`http://localhost:8080/api/${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}/api/${endpoint}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -92,8 +93,8 @@ const ManageCadets = () => {
   const handleSave = async () => {
     const method = editingCadet.id ? 'PUT' : 'POST';
     const url = editingCadet.id
-      ? `http://localhost:8080/api/cadets/${editingCadet.id}`
-      : `http://localhost:8080/api/cadets`;
+      ? `${API_BASE_URL}/api/cadets/${editingCadet.id}`
+      : `${API_BASE_URL}/api/cadets`;
 
     const { firstName, lastName, status, platoon, photoUrl, rank, leadershipPosition } = editingCadet;
 
@@ -170,12 +171,12 @@ const ManageCadets = () => {
     formData.append('file', file);
 
     try {
-      setImageLoading(true); // Start loading
+      setImageLoading(true);
 
-      const response = await fetch(`http://localhost:8080/api/cadets/${cadetId}/uploadImage`, {
+      const response = await fetch(`${API_BASE_URL}/api/cadets/${cadetId}/uploadImage`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`, // Ensure 'Bearer ' prefix
+          'Authorization': `Bearer ${token}`,
         },
         body: formData,
       });
@@ -184,19 +185,18 @@ const ManageCadets = () => {
 
       const updatedPhotoUrl = await response.text();
 
-      // Preload the new image
       const img = new Image();
       img.src = updatedPhotoUrl;
       img.onload = () => {
         setEditingCadet(prev => ({...prev, photoUrl: updatedPhotoUrl}));
-        setImageLoading(false); // End loading immediately after load
+        setImageLoading(false);
       };
 
       setIsFormChanged(false);
     } catch (error) {
       console.error('Error uploading image:', error);
       alert(`Failed to upload image: ${error.message}`);
-      setImageLoading(false); // End loading if there's an error
+      setImageLoading(false);
     }
   };
 
@@ -297,13 +297,13 @@ const ManageCadets = () => {
             <div className="modal-image-section">
               {
                 imageLoading ? (
-                  <div className = "image-placeholder">Loading...</div> // Placeholder while loading
+                  <div className = "image-placeholder">Loading...</div>
                 ) : (
                   editingCadet.photoUrl ? (
                     <img
                       src = {editingCadet.photoUrl}
                       alt = "Cadet"
-                      className = "cadet-image loaded" // Always apply the loaded class
+                      className = "cadet-image loaded"
                     />
                   ) : (
                     <AccountCircle className = "cadet-image" style = {{fontSize: '200px', color: '#ccc'}}/>

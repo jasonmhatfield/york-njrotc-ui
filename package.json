@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:localprod": "dotenv -e .env.localprod -- react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "dotenv-cli": "^7.4.2"
   }
 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from './components/home/Home';
 import About from './components/about/About';
@@ -19,19 +19,18 @@ const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [selectedMonth, setSelectedMonth] = useState(new Date().toLocaleString('en-US', { month: 'long' }));
-  const isAdminPath = location.pathname.startsWith('/admin');
+  const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
+  const isAdminPath = isAdminRoute(location.pathname);
 
   const handleMonthSelect = useCallback((month) => {
     setSelectedMonth(month);
   }, []);
 
-  // Validate token on initial load
   const validateToken = useCallback(async () => {
     if (!token) return;
 
     try {
-      const response = await fetch('http://localhost:8080/api/validate-token', {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/validate-token`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,26 +39,25 @@ const App = () => {
       });
 
       if (!response.ok) {
-        logout();
-        navigate('/');
+        handleLogout();
       }
     } catch (error) {
       console.error('Error validating token:', error);
-      logout();
-      navigate('/');
+      handleLogout();
     }
-  }, [token, logout, navigate]);
+  }, [token]);
 
-  React.useEffect(() => {
+  const handleLogout = useCallback(() => {
+    logout();
+    navigate('/');
+  }, [logout, navigate]);
+
+  useEffect(() => {
     validateToken();
   }, [validateToken]);
 
-  React.useEffect(() => {
-    if (isAdminPath && !isAuthenticated && !isLoading) {
-      setShowLoginModal(true);
-    } else {
-      setShowLoginModal(false);
-    }
+  useEffect(() => {
+    setShowLoginModal(isAdminPath && !isAuthenticated && !isLoading);
   }, [isAdminPath, isAuthenticated, isLoading]);
 
   if (isLoading) return null;
@@ -81,5 +79,9 @@ const App = () => {
     </>
   );
 };
+
+const getCurrentMonth = () => new Date().toLocaleString('en-US', { month: 'long' });
+
+const isAdminRoute = (pathname) => pathname.startsWith('/admin');
 
 export default App;
