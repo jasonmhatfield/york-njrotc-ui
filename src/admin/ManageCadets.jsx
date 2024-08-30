@@ -15,7 +15,7 @@ const ManageCadets = () => {
   const [ranks, setRanks] = useState([]);
   const [positions, setPositions] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
-  const [imageLoading, setImageLoading] = useState(false); // New state for image loading
+  const [imageLoading, setImageLoading] = useState(false);
   const { token } = useAuth();
 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
