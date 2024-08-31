@@ -12,13 +12,19 @@ const CadetStaff = () => {
         const response = await fetch(`${API_BASE_URL}/api/cadets`);
         const data = await response.json();
         setCadetData(data.filter(cadet => cadet.status === 'ACTIVE'));
-        setLoading(false);
       } catch (error) {
         console.error('Error fetching cadet data:', error);
       }
     };
 
     fetchData();
+
+    // Set a timeout to control how long the loading screen appears
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, [API_BASE_URL]);
 
   const isEnlisted = (rankPrecedence) => {
@@ -38,56 +44,62 @@ const CadetStaff = () => {
 
       return (
         <div key={index} className={`staff-card ${rankType}`}>
+          <p className="staff-title">{staff.title}</p>
           <img
             src={staffMember.photoUrl}
             alt={`${staff.title} ${staffMember.firstName} ${staffMember.lastName}`}
             className={`staff-image ${rankType}`}
-            onLoad={() => setLoading(false)}
           />
           <div className="staff-info">
-            <p className="staff-name">{`Cadet ${staffMember.rank.rankName} ${staffMember.firstName} ${staffMember.lastName}`}</p>
+            <p className={`staff-rank ${rankType}`}>Cadet {staffMember.rank.rankName}</p>
+            <p className="staff-name">{`${staffMember.firstName} ${staffMember.lastName}`}</p>
           </div>
-          <p className="staff-title">{staff.title}</p>
         </div>
       );
     });
   };
 
   const triad = [
-    { title: 'Commanding Officer' },
-    { title: 'Executive Officer' },
-    { title: 'Command Master Chief' },
+    {title: 'Commanding Officer'},
+    {title: 'Executive Officer'},
+    {title: 'Command Master Chief'},
   ];
 
   const wardroom = [
-    { title: 'Operations Officer' },
-    { title: 'Supply Officer' },
-    { title: 'Administration Officer' },
+    {title: 'Operations Officer'},
+    {title: 'Supply Officer'},
+    {title: 'Administration Officer'},
   ];
 
   const unitStaff = [
-    { title: 'Master-at-Arms' },
-    { title: 'Public Affairs Officer' },
-    { title: 'Weapons Officer' },
+    {title: 'Master-at-Arms'},
+    {title: 'Public Affairs Officer'},
+    {title: 'Weapons Officer'},
   ];
 
   return (
     <div className="container">
-      {loading && <div className="loading">Loading...</div>}
-      <div style={{ display: loading ? 'none' : 'block' }}>
-        <div className="section">
-          <h2 className="section-title">The Triad</h2>
-          <div className="section-content">{renderStaffCards(triad)}</div>
+      {loading && (
+        <div className="loading">
+          <div className="loading-text">Loading...</div>
         </div>
-        <div className="section">
-          <h2 className="section-title">The Wardroom</h2>
-          <div className="section-content">{renderStaffCards(wardroom)}</div>
+      )}
+      {!loading && (
+        <div className="content">
+          <div className="section">
+            <h2 className="section-title">The Triad</h2>
+            <div className="section-content">{renderStaffCards(triad)}</div>
+          </div>
+          <div className="section">
+            <h2 className="section-title">The Wardroom</h2>
+            <div className="section-content">{renderStaffCards(wardroom)}</div>
+          </div>
+          <div className="section" style={{ borderBottom: 'none' }}>
+            <h2 className="section-title">Unit Staff</h2>
+            <div className="section-content">{renderStaffCards(unitStaff)}</div>
+          </div>
         </div>
-        <div className="section" style={{ borderBottom: 'none' }}>
-          <h2 className="section-title">Unit Staff</h2>
-          <div className="section-content">{renderStaffCards(unitStaff)}</div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

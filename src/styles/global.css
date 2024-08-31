@@ -56,16 +56,14 @@ img {
 
 /* Container and Section Styles */
 .container, .section {
+    margin: 0;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .section {
-    margin-bottom: 40px;
     text-align: center;
     background-color: #1a2a3a;
     border-radius: 8px;
@@ -94,7 +92,6 @@ img {
 .card {
     background-color: #1a2a3a;
     border-radius: 8px;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
